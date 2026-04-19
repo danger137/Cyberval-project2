@@ -1,15 +1,15 @@
 .nav {
     width: 100%;
-    padding: 20px 0;
-    z-index: 100;
-    position: relative;
-    scrollbar-width: none;
+    padding: 30px 0;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
 .nav::-webkit-scrollbar,
-.mega-menu::-webkit-scrollbar,
-body::-webkit-scrollbar {
+.mega-menu::-webkit-scrollbar {
     display: none;
 }
 
@@ -27,12 +27,12 @@ html {
 }
 
 .nav-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 60px;
     position: relative;
 }
 
@@ -85,6 +85,7 @@ html {
     color: #ffffff;
     font-size: 16px;
     font-weight: 500;
+    font-family: var(--font-manrope), sans-serif;
     transition: all 0.3s ease;
     opacity: 0.8;
 }
@@ -339,9 +340,9 @@ html {
     transform: translateY(-2px);
 }
 
-/* ===== RESPONSIVE STYLES ===== */
 
-/* Hamburger Icon */
+
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -428,7 +429,7 @@ html {
         display: none;
     }
 
-    /* Mega Menu on Mobile */
+
     .dropdown.active .mega-menu {
         display: flex;
         position: static;
@@ -480,7 +481,7 @@ html {
         height: 180px;
     }
 
-    /* Logo and Header Adjustments for small screens */
+
     .brand-name {
         font-size: 20px;
     }
@@ -489,14 +490,14 @@ html {
         height: 30px;
     }
 
-    /* Hamburger Position Adjust */
+
     .nav-container {
         padding: 0 20px;
     }
 }
 
 
-/* ===== WEBINAR CARD (Resources) ===== */
+
 .webinar-card {
     background: #ffffff;
     border-radius: 12px;

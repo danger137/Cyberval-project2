@@ -4,7 +4,10 @@ export default function Hero() {
     return(
         <section className="hero">
             <div className="hero-background-effects">
-                <div className="light-beam"></div>
+                <div className="light-beam lb-1"></div>
+                <div className="light-beam lb-2"></div>
+                <div className="light-beam lb-3"></div>
+                <div className="spotlight"></div>
             </div>
             
             <div className="hero-container">
@@ -31,7 +34,7 @@ export default function Hero() {
                 </div>
                 
                 <div className="hero-image">
-                    <img src="/images/header-items/hero/earth.png" alt="Earth Globe" />
+                    <img src="/images/header-items/hero/earth.gif" alt="Earth Globe" />
                 </div>
             </div>
 
