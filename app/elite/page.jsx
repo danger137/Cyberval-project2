@@ -7,7 +7,7 @@ export default function ElitePage() {
     <div className="elite-page-wrapper">
       <section className="elite-section">
         <div className="elite-container">
-          
+
           <div className="elite-content">
             {/* Left Column */}
             <div className="elite-left">
@@ -19,7 +19,7 @@ export default function ElitePage() {
               <p className="elite-description">
                 We transform risk into resilience, delivering comprehensive cybersecurity that empowers and protects your organization.
               </p>
-              
+
               <div className="elite-logo-wrapper">
                 <img src="/images/pages/elite/logo.svg" alt="Cybervol Elite Logo" className="elite-logo" />
               </div>
@@ -30,7 +30,7 @@ export default function ElitePage() {
               <img src="/images/pages/elite/right-colun.svg" alt="Elite Security Features" className="features-svg" />
             </div>
           </div>
-          
+
         </div>
       </section>
     </div>
