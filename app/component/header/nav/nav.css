@@ -469,7 +469,7 @@ html {
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
-        margin: 20px 0 0 0; /* Reset negative margins on mobile */
+        margin: 20px 0 0 0;
         padding: 20px 0 0 0;
     }
 
