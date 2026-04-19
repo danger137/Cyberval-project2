@@ -8,9 +8,7 @@
 .services-section {
   width: 100%;
   padding: 100px 100px 80px;
-  background: 
-    radial-gradient(circle at 85% 60%, rgba(206, 226, 245, 0.4) 0%, rgba(255, 255, 255, 0) 50%),
-    linear-gradient(to bottom, #ffffff, #f8fafc);
+  background: linear-gradient(180deg, rgba(253, 253, 253, 0) 0%, rgba(111, 144, 180, 0.07) 50%, rgba(135, 187, 243, 0.36) 100%);
   position: relative;
   overflow: hidden;
 }
