@@ -8,25 +8,29 @@ export default function Industries() {
       id: 1,
       title: "Financial Services & Fintech",
       desc: "Robust security frameworks to protect high-stakes financial data and transactions.",
-      image: "finance.jpg"
+      image: "/images/pages/industry/card-image-1.svg",
+      icon: "/images/pages/industry/card-icon-1.svg"
     },
     {
       id: 2,
       title: "Healthcare, Pharma & Life Sciences",
       desc: "Ensuring compliance and protecting sensitive patient data and medical records.",
-      image: "healthcare.jpg"
+      image: "/images/pages/industry/card-image-2.svg",
+      icon: "/images/pages/industry/card-icon-2.svg"
     },
     {
       id: 3,
       title: "Technology, Media & Telecom",
       desc: "Securing modern communication channels and digital content ecosystems.",
-      image: "tech.jpg"
+      image: "/images/pages/industry/card-image-3.svg",
+      icon: "/images/pages/industry/card-icon-3.svg"
     },
     {
       id: 4,
       title: "Energy, Utilities & Infrastructure",
       desc: "Safeguarding critical national infrastructure against sophisticated threats.",
-      image: "energy.jpg"
+      image: "energy.jpg",
+      icon: null
     }
   ];
 
@@ -49,8 +53,17 @@ export default function Industries() {
           {industryCards.map((card) => (
             <div key={card.id} className="industry-card">
               <div className="industry-image-wrapper">
-                {/* Placeholders for images */}
-                <div className="industry-image-placeholder"></div>
+                {card.id <= 3 ? (
+                  <img src={card.image} alt={card.title} className="industry-main-image" />
+                ) : (
+                  <div className="industry-image-placeholder"></div>
+                )}
+                
+                {card.icon && (
+                  <div className="industry-icon-wrapper">
+                    <img src={card.icon} alt="Icon" className="industry-card-icon" />
+                  </div>
+                )}
               </div>
               <div className="industry-card-content">
                 <h3 className="industry-card-title">{card.title}</h3>

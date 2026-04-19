@@ -84,9 +84,47 @@
 
 .industry-image-wrapper {
   width: 100%;
-  padding-top: 60%; /* Aspect ratio */
+  padding-top: 56.25%; /* 16:9 Aspect ratio */
   background-color: #f1f5f9;
   position: relative;
+  overflow: hidden;
+}
+
+.industry-main-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.industry-card:hover .industry-main-image {
+  transform: scale(1.1);
+}
+
+.industry-icon-wrapper {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.industry-card-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .industry-image-placeholder {
