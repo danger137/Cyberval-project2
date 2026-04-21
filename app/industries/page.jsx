@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './industries.css';
 
 export default function Industries() {
@@ -50,6 +50,31 @@ export default function Industries() {
     const newIndex = Math.round(progress * (industryCards.length - 1));
     setActiveIndex(newIndex);
   };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleWheel = (e) => {
+      if (e.deltaY !== 0) {
+        const isAtStart = el.scrollLeft <= 0 && e.deltaY < 0;
+        const isAtEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth && e.deltaY > 0;
+        
+        if (!isAtStart && !isAtEnd) {
+          e.preventDefault();
+          el.scrollLeft += e.deltaY;
+        }
+      }
+    };
+
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => el.removeEventListener('wheel', handleWheel);
+  }, []);
+
+  useEffect(() => {
+    // Initial scroll check if needed
+    handleScroll();
+  }, []);
 
   const scrollToDot = (index) => {
     if (!scrollRef.current) return;

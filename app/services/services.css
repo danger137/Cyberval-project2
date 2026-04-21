@@ -85,7 +85,6 @@
 .services-cards {
   display: flex;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   scrollbar-width: none;
   gap: 24px;
   padding-bottom: 20px;
@@ -99,7 +98,6 @@
 .service-card {
   flex: 0 0 320px;
   height: 398px;
-  scroll-snap-align: start;
   background-color: #ffffff;
   border-radius: 16px;
   padding: 34px 24px;

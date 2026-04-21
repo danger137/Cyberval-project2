@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Testimonials.css';
 
 const testimonialData = [
@@ -27,11 +27,68 @@ const testimonialData = [
     image: "/images/pages/charlie.jpg",
     text: "Cybervol transformed our security infrastructure completely. Their proactive approach and deep expertise helped us identify vulnerabilities before they became threats. We now operate with full confidence knowing our systems are protected.",
     rating: 5
-  }
+  },
+ 
+
 ];
 
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isScrollable, setIsScrollable] = useState(false);
+
+  const checkScrollable = () => {
+    if (scrollRef.current) {
+      const { scrollWidth, clientWidth } = scrollRef.current;
+      setIsScrollable(scrollWidth > clientWidth);
+    }
+  };
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    if (scrollWidth <= clientWidth) return;
+    
+    const maxScroll = scrollWidth - clientWidth;
+    const progress = (scrollLeft / maxScroll) * 100;
+    setScrollProgress(progress);
+  };
+
+  useEffect(() => {
+    checkScrollable();
+    window.addEventListener('resize', checkScrollable);
+    
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleWheel = (e) => {
+      if (e.deltaY !== 0) {
+        const isAtStart = el.scrollLeft <= 0 && e.deltaY < 0;
+        const isAtEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth && e.deltaY > 0;
+        
+        if (!isAtStart && !isAtEnd) {
+          e.preventDefault();
+          el.scrollLeft += e.deltaY;
+        }
+      }
+    };
+
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      el.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('resize', checkScrollable);
+    };
+  }, []);
+
+  const scrollToPercent = (percent) => {
+    if (!scrollRef.current) return;
+    const { scrollWidth, clientWidth } = scrollRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    scrollRef.current.scrollTo({
+      left: (maxScroll * percent) / 100,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <section className="testimonials-section">
@@ -51,7 +108,8 @@ export default function Testimonials() {
         <div className="testimonials-slider-viewport">
           <div 
             className="testimonials-cards-row"
-            style={{ transform: `translateX(-${activeIndex * (100 / 3)}%)` }}
+            ref={scrollRef}
+            onScroll={handleScroll}
           >
             {testimonialData.map((item) => (
               <div key={item.id} className="testimonial-card-wrapper">
@@ -77,17 +135,19 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="testimonials-indicators">
-          <div className="slider-indicator-bar">
-            {[0, 1, 2].map((i) => (
-              <div 
-                key={i} 
-                className={`indicator-segment ${activeIndex / 1.5 === i ? 'active' : ''}`}
-                onClick={() => setActiveIndex(i * 1.5)}
-              ></div>
-            ))}
+        {isScrollable && (
+          <div className="testimonials-indicators">
+            <div className="slider-indicator-bar">
+               <div 
+                  className="indicator-active-thumb" 
+                  style={{ 
+                    left: `${scrollProgress * (1 - (44 / 180))}%`,
+                    width: `44px` 
+                  }}
+                ></div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

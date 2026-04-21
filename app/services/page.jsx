@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './services.css';
 
 export default function ServicesPage() {
@@ -75,6 +75,26 @@ export default function ServicesPage() {
     const currentDot = Math.round((scrollLeft / maxScroll) * (serviceCards.length - 1));
     setActiveDot(currentDot);
   };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const handleWheel = (e) => {
+      if (e.deltaY !== 0) {
+        const isAtStart = el.scrollLeft <= 0 && e.deltaY < 0;
+        const isAtEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth && e.deltaY > 0;
+        
+        if (!isAtStart && !isAtEnd) {
+          e.preventDefault();
+          el.scrollLeft += e.deltaY;
+        }
+      }
+    };
+
+    el.addEventListener('wheel', handleWheel, { passive: false });
+    return () => el.removeEventListener('wheel', handleWheel);
+  }, []);
 
   const scrollToDot = (index) => {
     if (!scrollRef.current) return;
