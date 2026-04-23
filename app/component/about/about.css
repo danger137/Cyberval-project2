@@ -347,7 +347,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .commitment-cards-container {
     flex-direction: column;
     align-items: center;
@@ -372,7 +372,7 @@
   .about-badge { left: 0; }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .about-hero-container {
     flex-direction: column;
     align-items: center;

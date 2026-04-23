@@ -27,7 +27,7 @@
   z-index: 2;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .services-container {
     padding-left: 102px;
   }
@@ -326,7 +326,7 @@
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1023px) {
   .services-section {
     padding: 60px 0;
     height: auto;

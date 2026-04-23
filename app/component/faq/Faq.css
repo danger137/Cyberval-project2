@@ -208,7 +208,7 @@
 }
 
 /* Responsive FAQ */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .faq-section {
         height: auto;
         min-height: auto;

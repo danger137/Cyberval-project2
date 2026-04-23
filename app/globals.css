@@ -68,7 +68,7 @@ body {
   border-radius: 8px;
   position: relative;
   margin: 0 auto;
-  transform: translateY(100px); /* Shifts it down slightly to bridge with footer */
+  transform: translateY(180px); /* Shifts it down slightly to bridge with footer */
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -120,4 +120,23 @@ body {
 
 .footer-cta-btn:hover {
   background: #333333;
+}
+@media (max-width: 425px) {
+  .footer-cta-banner {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0;
+    padding: 60px 20px;
+    transform: translateY(120px);
+    margin: 0;
+  }
+  .footer-cta-title {
+    font-size: 26px;
+  }
+  .footer-cta-desc {
+    font-size: 15px;
+  }
+  .footer-cta-desc br {
+    display: none;
+  }
 }

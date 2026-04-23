@@ -198,7 +198,7 @@
   border-radius: 10px;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .insights-section {
     padding-left: 0; /* Remove left padding for centering */
     display: flex;
@@ -237,7 +237,7 @@
   .insights-section { padding: 80px 40px; }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1023px) {
   .insights-section { padding: 60px 20px; }
   .insights-header { flex-direction: column; align-items: flex-start; gap: 24px; margin-bottom: 40px; }
   .insights-title { font-size: 32px; }

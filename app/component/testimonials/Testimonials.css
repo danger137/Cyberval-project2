@@ -106,7 +106,8 @@
   background: #ffffff;
   border-radius: 20px;
   padding: 30px;
-  width: 335px;
+  width: 100%;
+  max-width: 386px;
   height: 396px;
   display: flex;
   flex-direction: column;
@@ -170,8 +171,9 @@
   letter-spacing: 0%;
   margin: 0 0 8px 0; /* Gap before stars */
   flex-grow: 1;
-  width: 342px;
-  height: 200px;
+  width: 100%;
+  height: auto;
+  min-height: 180px;
   overflow: hidden;
 }
 
@@ -207,7 +209,7 @@
   width: 44px; /* Slightly wider active dot as in design */
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .testimonials-section {
     padding-left: 0; /* Remove fixed left padding for centering */
     display: flex;
@@ -248,7 +250,7 @@
   .testimonials-section { padding: 80px 40px; }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1023px) {
   .testimonials-section { padding: 60px 20px; }
   .testimonials-cards-row {
     display: grid;
