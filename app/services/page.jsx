@@ -125,7 +125,7 @@ export default function ServicesPage() {
             
             <div className="services-header-right">
               <p className="services-description">
-                Comprehensive digital solutions designed to transform your business and accelerate growth through innovative technology.
+                Comprehensive digital solutions designed to transform your <br className="services-br" /> business and accelerate growth through innovative technology.
               </p>
             </div>
           </div>

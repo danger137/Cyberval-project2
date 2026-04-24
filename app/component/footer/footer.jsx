@@ -58,10 +58,11 @@ export default function Footer() {
           <h3 className="footer-heading">Services</h3>
           <ul className="footer-links">
             <li><a href="#">CyberShield Solutions</a></li>
-            <li><a href="#">Governance, Risk & Compliance (GRC)</a></li>
+            <li><a href="#">(GRC) </a></li>
             <li><a href="#">Offensive Security</a></li>
             <li><a href="#">Security Awareness & Training</a></li>
-            <li><a href="#">Managed Cybersecurity as a Service (MCaaS)</a></li>
+            <li><a href="#">Managed Cybersecurity as a </a></li>
+            <li><a href="#">Service (MCaaS)</a></li>
             <li><a href="#">Training and Certifications</a></li>
           </ul>
         </div>
@@ -103,19 +104,20 @@ export default function Footer() {
 
       </div>
 
-        <div className="footer-watermark-img">
-          <img src="/images/Footer/footer-waterpack.svg" alt="Cybervol watermark" />
-        </div>
-    
-      <div className="footer-bottom">
-        <p>© 2025 Cybervol. All rights reserved.</p>
-        <div className="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <span className="separator">|</span>
-          <a href="#">Terms & conditions</a>
-        </div>
+       
+      </div>
       </div>
 
+      <div className="footer-bottom-wrapper">
+        <div className="footer-container">
+          <div className="footer-bottom">
+            <p>© 2025 Cybervol. All rights reserved.</p>
+            <div className="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <span className="separator">|</span>
+              <a href="#">Terms & conditions</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
