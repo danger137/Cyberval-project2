@@ -224,9 +224,12 @@
 
 .commitment-heading {
   font-family: var(--font-sora), sans-serif;
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 600;
   color: #1a1a1a;
+  line-height: 57px;
+  letter-spacing: 0;
+  text-align: center;
   margin: 0 0 12px 0;
 }
 

@@ -112,7 +112,7 @@ export default function Industries() {
           </div>
           <div className="industries-header-right">
             <p className="industries-description">
-              From regulated sectors to high-growth digital businesses, we tailor cybersecurity and GRC programs to how your industry operates, competes, and earns trust.
+              From regulated sectors to high-growth digital businesses, we tailor cybersecurity <br className="industries-br" /> and GRC programs to how your industry operates, competes, and earns trust.
             </p>
           </div>
         </div>

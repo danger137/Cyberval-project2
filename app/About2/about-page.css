@@ -585,6 +585,10 @@
     grid-row: 1 / span 2;
 }
 
+.card-needs .card-title {
+    color: #ffffff;
+}
+
 .card-needs .card-description {
     color: #ffffff;
 }
@@ -618,6 +622,10 @@
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     grid-column: 3;
     grid-row: 1 / span 2;
+}
+
+.card-excellence .card-title {
+    color: #ffffff;
 }
 
 .card-excellence .card-description {
@@ -713,7 +721,7 @@
 .team-badge-wrapper {
     display: flex;
     justify-content: center;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
 }
 
 .team-badge {
@@ -740,9 +748,10 @@
     font-size: 32px;
     font-weight: 600;
     color: #ffffff;
-    line-height: 36px; /* Further reduced from 40px */
+    line-height: 36px;
     letter-spacing: 0%;
-    margin-bottom: 4px; /* Added minor margin to control exact gap */
+    margin-bottom: 12px;
+    margin-top: 0;
     text-align: center;
 }
 
@@ -751,14 +760,16 @@
     font-size: 32px;
     font-weight: 600;
     color: #ffffff;
-    line-height: 36px; /* Further reduced from 40px */
+    line-height: 36px;
     letter-spacing: 0%;
+    margin-top: 0;
+    margin-bottom: 0;
     text-align: center;
 }
 
 .team-slider-viewport {
     width: auto;
-    margin-right: -80px; /* Bypasses the 80px right padding to bleed to edge */
+    margin-right: 0;
     overflow: hidden; 
     margin-bottom: 60px;
 }
@@ -768,7 +779,7 @@
     max-width: 1440px;
     margin: 0 auto;
     overflow: hidden;
-    padding: 0 80px 20px;
+    padding: 0 0 10px 85px;
 }
 
 .team-slider-track {
@@ -780,15 +791,15 @@
 .team-slide-group {
     display: flex;
     flex: 0 0 100%;
-    gap: 32px;
+    gap: 24px;
     padding-left: 0;
 }
 
 .team-card {
-    /* (100% viewport - 3 gaps of 32px) / 3.5 cards = exactly 3.5 visible! */
-    flex: 0 0 calc((100% - 96px) / 3.5);
-    width: calc((100% - 96px) / 3.5);
-    height: auto;
+    flex: 0 0 340px;
+    width: 340px;
+    height: 502px;
+    opacity: 1;
     display: flex;
     flex-direction: column;
 }
@@ -1041,7 +1052,11 @@
     display: flex;
     align-items: center;
     padding: 80px 20px;
-    background: #f8fafc; /* Light background for contrast */
+    background-image: url('/faqBg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f8fafc; /* Light background for contrast */
     color: #0f172a;
     opacity: 1;
 }
@@ -1166,7 +1181,7 @@
 }
 
 .faq-item:first-child {
-    border-top: 1px solid #e2e8f0;
+    border-top: none;
 }
 
 .faq-question {
