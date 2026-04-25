@@ -62,12 +62,10 @@ export default function BlogDetailPage() {
   const blog = blogs.find((b) => b.id === id) || blogs[0];
 
   return (
-    <div className="w-full min-h-screen bg-[#ffffff] pt-[32px]">
+    <div className="w-full min-h-screen bg-[#ffffff] pt-[120px]">
       <div className="max-w-[1224px] mx-auto px-[20px]">
         {/* Navigation - Static Image */}
-        <div className="w-full mb-[60px] flex justify-center">
-           <img src="/images/pages/services/service-5/(SOCaaS)/Nav.svg" alt="Navigation" className="w-full max-w-[1224px] h-auto" />
-        </div>
+
 
         {/* Header Section */}
         <div className="flex justify-between items-start mb-[30px] gap-[40px]">
@@ -232,9 +230,8 @@ export default function BlogDetailPage() {
                   Navigating AI Regulations: What Companies Need to Watch
                 </h3>
                 <div className="mt-auto flex items-center">
-                  <Link href="/resources/Blog/2" className="text-[14px] font-bold text-[#2E5A88] flex items-center gap-[6px] group/link font-manrope">
-                    Read More 
-                    <img 
+                  <Link href="/resources/Blog/2" className="text-[14px] font-bold text-[#2E5A88] flex items-center gap-[10px] group/link font-manrope">
+                    <span className="opacity-100">Read More</span>                    <img 
                       src="/images/pages/resources/Blog/blog-detail/all-cards-airow-iconicons.svg" 
                       alt="" 
                       className="w-[24px] h-[24px] transition-transform duration-300 group-hover/link:translate-x-1" 
@@ -259,9 +256,8 @@ export default function BlogDetailPage() {
                   The Future of Data Privacy in a Decentralized World
                 </h3>
                 <div className="mt-auto flex items-center">
-                  <Link href="/resources/Blog/3" className="text-[14px] font-bold text-[#2E5A88] flex items-center gap-[6px] group/link font-manrope">
-                    Read More 
-                    <img 
+                  <Link href="/resources/Blog/3" className="text-[14px] font-bold text-[#2E5A88] flex items-center gap-[10px] group/link font-manrope">
+                    <span className="opacity-100">Read More</span>                    <img 
                       src="/images/pages/resources/Blog/blog-detail/all-cards-airow-iconicons.svg" 
                       alt="" 
                       className="w-[24px] h-[24px] transition-transform duration-300 group-hover/link:translate-x-1" 
@@ -286,9 +282,8 @@ export default function BlogDetailPage() {
                   Zero Trust: Why Your Perimeter is No Longer Enough
                 </h3>
                 <div className="mt-auto flex items-center">
-                  <Link href="/resources/Blog/4" className="text-[14px] font-bold text-[#2E5A88] flex items-center gap-[6px] group/link font-manrope">
-                    Read More 
-                    <img 
+                  <Link href="/resources/Blog/4" className="text-[14px] font-bold text-[#2E5A88] flex items-center gap-[10px] group/link font-manrope">
+                    <span className="opacity-100">Read More</span>                    <img 
                       src="/images/pages/resources/Blog/blog-detail/all-cards-airow-iconicons.svg" 
                       alt="" 
                       className="w-[24px] h-[24px] transition-transform duration-300 group-hover/link:translate-x-1" 

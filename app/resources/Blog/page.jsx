@@ -115,8 +115,8 @@ export default function BlogPage() {
                       {blog.description}
                     </p>
                     <div className="mt-auto pt-[20px] border-t border-[#E5E7EB] flex items-center">
-                      <Link href={`/resources/Blog/${blog.id}`} className="text-[14px] font-bold text-[#2E5A88] flex items-center gap-[6px] cursor-pointer group/link font-manrope">
-                        Read More 
+                      <Link href={`/resources/Blog/${blog.id}`} className="text-[14px] font-bold text-[#2E5A88] flex items-center gap-[10px] cursor-pointer group/link font-manrope">
+                        <span className="inline-block opacity-100 visible">Read More</span>
                         <img 
                           src="/images/pages/resources/Blog/all-cards-airow-iconicons.svg" 
                           alt="" 

@@ -333,13 +333,9 @@
         margin-bottom: 36px;
         min-height: 180px;
     }
-    @media (max-width: 425px) {
+    @media (max-width: 1024px) {
         .footer-cta-banner {
-            width: 100% !important;
-            max-width: 100% !important;
-            border-radius: 0;
-            padding: 40px 15px;
-            margin: 0;
+            box-shadow: none !important;
         }
     }
     .footer-content {

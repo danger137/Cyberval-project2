@@ -1,7 +1,6 @@
 import { Outfit, Manrope, Sora } from "next/font/google";
 import "./globals.css";
-import  Header from "./component/header/header.jsx"
-import FooterWrapper from "./component/footer/FooterWrapper.jsx"
+import "./globals.css";
 
 const outfit = Outfit({ subsets: ["latin"] });
 const manrope = Manrope({ 
@@ -14,15 +13,15 @@ const sora = Sora({
 });
 
 
+import GlobalLayoutWrapper from "./component/GlobalLayoutWrapper.jsx";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${outfit.className} ${manrope.variable} ${sora.variable}`}>
-        <div className="global-wrapper">
-          <Header />
+        <GlobalLayoutWrapper>
           {children}
-          <FooterWrapper />
-        </div>
+        </GlobalLayoutWrapper>
       </body>
     </html>
   );

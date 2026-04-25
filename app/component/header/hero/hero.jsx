@@ -1,10 +1,8 @@
 import "./hero.css"
-import Nav from "../nav/nav"
 
 export default function Hero() {
     return(
         <div className="hero-with-nav-wrapper">
-            <Nav />
             <section className="home-hero">
                 <div className="home-hero-bg-overlay"></div>
                 

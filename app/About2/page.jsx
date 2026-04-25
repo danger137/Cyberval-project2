@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import './about-page.css';
 import '../component/about/about.css'; // Original styles for stats/commitment
 import Link from 'next/link';
-import Nav from '../component/header/nav/nav';
 import Faq from '../component/faq/Faq';
 
 export default function About() {
@@ -27,7 +26,6 @@ export default function About() {
     <div className="about-page-container">
       {/* Hero Section of About Page (Custom Dark Style from Screenshot) */}
       <section className="about-hero-section">
-        <Nav />
         <div className="hero-background-effects">
           <div className="light-beam lb-1"></div>
           <div className="light-beam lb-2"></div>

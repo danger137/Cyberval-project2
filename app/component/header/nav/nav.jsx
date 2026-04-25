@@ -1,13 +1,26 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./nav.css"
 
 export default function Nav() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
+
+    const closeAll = () => {
+        setIsMenuOpen(false);
+        setActiveDropdown(null);
+        if (document.activeElement instanceof HTMLElement) {
+            document.activeElement.blur();
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', closeAll, { passive: true });
+        return () => window.removeEventListener('scroll', closeAll);
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -17,16 +30,16 @@ export default function Nav() {
     };
 
     const toggleDropdown = (e, name) => {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            setActiveDropdown(activeDropdown === name ? null : name);
-        }
+        setActiveDropdown(activeDropdown === name ? null : name);
     };
+
+    const isBlogDetail = pathname.startsWith("/resources/Blog/") && pathname !== "/resources/Blog";
+    const isServiceOrResource = pathname.startsWith("/services/") || pathname.startsWith("/resources/");
 
     const isActive = (path) => pathname === path;
 
     return (
-        <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''}`}>
+        <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''} ${isBlogDetail ? 'blog-detail-nav' : ''}`}>
             <div className="nav-container">
                 <div className="logo">
                     <img src="/images/header-items/header-logo.svg" alt="Cybervol" />
@@ -37,69 +50,73 @@ export default function Nav() {
                 </div>
 
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-                    <li><Link href="/" className={isActive('/') ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-                    <li><Link href="/About2" className={isActive('/about') ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>About us</Link></li>
-                    <li className={`dropdown ${activeDropdown === 'services' || isActive('/services') ? 'active' : ''}`}>
-                        <Link href="/" onClick={(e) => toggleDropdown(e, 'services')}>Services <span className="arrow">▾</span></Link>
+                    <li><Link href="/" className={isActive('/') ? 'active' : ''} onClick={closeAll}>Home</Link></li>
+                    <li><Link href="/About2" className={isActive('/about') ? 'active' : ''} onClick={closeAll}>About us</Link></li>
+                    <li className={`dropdown ${activeDropdown === 'services' ? 'open' : ''} ${pathname.startsWith('/services') ? 'active' : ''}`}>
+                        <div className="dropdown-trigger" tabIndex="0" onClick={(e) => toggleDropdown(e, 'services')}>
+                            Services <span className="arrow">▾</span>
+                        </div>
                         <div className="mega-menu">
                             <div className="mega-left">
                                 <p className="mega-heading">OUR SERVICES</p>
                                 <div className="mega-grid">
-                                    <div className="mega-item">
+                                    <Link href="/services/service-1" className="mega-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/services-icons/service-menu-icon-1.svg" alt="" />
                                         </div>
                                         <div className="mega-item-text">
                                             <h4>CyberShield Solutions</h4>
                                         </div>
-                                    </div>
-                                    <div className="mega-item">
+                                    </Link>
+                                    <Link href="/services/service-4" className="mega-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/services-icons/service-menu-icon-2.svg" alt="" />
                                         </div>
                                         <div className="mega-item-text">
                                             <h4>Security Awareness & Training</h4>
                                         </div>
-                                    </div>
-                                    <div className="mega-item">
+                                    </Link>
+                                    <Link href="/services/service-2" className="mega-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/services-icons/service-menu-icon-3.svg" alt="" />
                                         </div>
                                         <div className="mega-item-text">
                                             <h4>Governance, Risk & Compliance (GRC)</h4>
                                         </div>
-                                    </div>
-                                    <div className="mega-item">
+                                    </Link>
+                                    <Link href="/services/service-5" className="mega-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/services-icons/service-menu-icon-4.svg" alt="" />
                                         </div>
                                         <div className="mega-item-text">
                                             <h4>Managed Cybersecurity as a Service (MCaaS)</h4>
                                         </div>
-                                    </div>
-                                    <div className="mega-item">
+                                    </Link>
+                                    <Link href="/services/service-3" className="mega-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/services-icons/service-menu-icon-5.svg" alt="" />
                                         </div>
                                         <div className="mega-item-text">
                                             <h4>Offensive Security</h4>
                                         </div>
-                                    </div>
-                                    <div className="mega-item">
+                                    </Link>
+                                    <Link href="/services/service-6" className="mega-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/services-icons/service-menu-icon-6.svg" alt="" />
                                         </div>
                                         <div className="mega-item-text">
                                             <h4>Training and Certifications</h4>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
                                 <div className="mega-footer">
                                     <div className="mega-footer-text">
                                         <h2>Contact Us Today</h2>
                                         <p>Ready to strengthen your cybersecurity posture? <br /> Get in touch and we'll help you find the right solution.</p>
                                     </div>
-                                    <button className="mega-contact-btn">Contact Us</button>
+                                    <Link href="/Contact" onClick={closeAll}>
+                                        <button className="mega-contact-btn">Contact Us</button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="mega-right">
@@ -110,17 +127,21 @@ export default function Nav() {
                                     <li>Scalable & Tailored Solutions</li>
                                     <li>Expert-Led Security Guidance</li>
                                 </ul>
-                                <button className="talk-btn">Talk to Experts</button>
+                                <Link href="/Contact">
+                                    <button className="talk-btn">Talk to Experts</button>
+                                </Link>
                             </div>
                         </div>
                     </li>
-                    <li className={`dropdown ${activeDropdown === 'resources' ? 'active' : ''}`}>
-                        <Link href="/" onClick={(e) => toggleDropdown(e, 'resources')}>Resources <span className="arrow">▾</span></Link>
+                    <li className={`dropdown ${activeDropdown === 'resources' ? 'open' : ''} ${pathname.startsWith('/resources') ? 'active' : ''}`}>
+                        <div className="dropdown-trigger" tabIndex="0" onClick={(e) => toggleDropdown(e, 'resources')}>
+                            Resources <span className="arrow">▾</span>
+                        </div>
                         <div className="mega-menu resources-menu">
                             <div className="mega-left">
                                 <p className="mega-heading">RESOURCES</p>
                                 <div className="mega-grid resources-grid">
-                                    <div className="mega-item resource-item">
+                                    <Link href="/resources/Blog" className="mega-item resource-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/resources-icons/icon-1.svg" alt="Blogs" />
                                         </div>
@@ -128,8 +149,8 @@ export default function Nav() {
                                             <h4>Blogs</h4>
                                             <p>Browse our latest blog content and open each item to read the full detail page.</p>
                                         </div>
-                                    </div>
-                                    <div className="mega-item resource-item">
+                                    </Link>
+                                    <Link href="/resources/Ebooks" className="mega-item resource-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/resources-icons/icon-2.svg" alt="Ebooks" />
                                         </div>
@@ -137,8 +158,8 @@ export default function Nav() {
                                             <h4>Ebooks</h4>
                                             <p>Browse our latest Ebook content and open each item to read the full detail page.</p>
                                         </div>
-                                    </div>
-                                    <div className="mega-item resource-item">
+                                    </Link>
+                                    <Link href="/resources/Webinars" className="mega-item resource-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/resources-icons/icon-3.svg" alt="Webinar" />
                                         </div>
@@ -146,8 +167,8 @@ export default function Nav() {
                                             <h4>Webinar</h4>
                                             <p>Browse our latest webinar content and open each item to read the full detail page.</p>
                                         </div>
-                                    </div>
-                                    <div className="mega-item resource-item">
+                                    </Link>
+                                    <Link href="/resources/DataSheet" className="mega-item resource-item" onClick={closeAll}>
                                         <div className="mega-icon">
                                             <img src="/images/header-items/resources-icons/icon-4.svg" alt="Data Sheets" />
                                         </div>
@@ -155,14 +176,16 @@ export default function Nav() {
                                             <h4>Data Sheets</h4>
                                             <p>Browse our latest Datasheets content and open each item to read the full detail page.</p>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
                                 <div className="mega-footer">
                                     <div className="mega-footer-text">
                                         <h2>Contact Us Today</h2>
                                         <p>Ready to strengthen your cybersecurity posture? <br /> Get in touch and we'll help you find the right solution.</p>
                                     </div>
-                                    <button className="mega-contact-btn">Contact Us</button>
+                                    <Link href="/Contact" onClick={closeAll}>
+                                        <button className="mega-contact-btn">Contact Us</button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="mega-right">
