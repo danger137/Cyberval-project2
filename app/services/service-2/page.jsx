@@ -1,90 +1,168 @@
 "use client";
 
-const journeyCards = [
+const capabilityCards = [
   {
-    id: "program",
+    id: "third-party",
+    title: "Third Party Risk Assessment",
+    desc: "Assess, monitor, and mitigate risks associated with vendors, suppliers, and other third parties to ensure security and compliance across your extended ecosystem.",
+    icon: "/images/pages/services/service-1/icon-1.svg", 
+    cardClass: "min-[1025px]:!w-[727px] min-[1025px]:!h-[334px] bg-[url('/images/pages/services/service-2/right-card-image.svg')] bg-cover bg-center", 
+    contentClass: "min-[1025px]:!w-[330px]",
+    titleClass: "text-[24px] font-semibold leading-[32px] antialiased",
+    descClass: "text-[16px] leading-[26px] font-normal antialiased"
+  },
+  {
+    id: "cyber-program",
     title: "Cybersecurity Program",
     desc: "Establish and manage a strategic cybersecurity program aligned with business goals, risk tolerance, and regulatory expectations to ensure continuous protection and improvement",
     icon: "/images/pages/services/service-2/icon-1.svg",
-  },
-  {
-    id: "continuity",
-    title: "Business Continuity",
-    desc: "Develop and implement continuity plans that ensure mission-critical operations remain functional during disruptions, with recovery strategies that minimize downtime and data loss",
-    icon: "/images/pages/services/service-2/icon-2.svg",
+    cardClass: "min-[1025px]:!w-[482px] min-[1025px]:!h-[334px]",
+    contentClass: "min-[1025px]:!w-[380px]",
+    titleClass: "text-[22px] font-semibold leading-[30px] antialiased",
+    descClass: "text-[16px] leading-[28px] font-normal antialiased"
   },
   {
     id: "compliance",
     title: "Security & Privacy Compliance",
     desc: "Achieve and sustain compliance with key standards and frameworks including NIST, ISO 27001, HITRUST, SOC 2, GDPR, NDPR, and PCI-DSS, through well-defined security and privacy controls.",
     icon: "/images/pages/services/service-2/icon-3.svg",
+    cardClass: "",
+    contentClass: "",
+    titleClass: "text-[18px] font-semibold leading-[28px] antialiased",
+    descClass: "text-[15.07px] leading-[28px] font-normal antialiased"
+  },
+  {
+    id: "continuity",
+    title: "Business Continuity",
+    desc: "Develop and implement continuity plans that ensure mission-critical operations remain functional during disruptions with recovery strategies that minimize downtime and data loss.",
+    icon: "/images/pages/services/service-2/icon-2.svg",
+    cardClass: "",
+    contentClass: "",
+    titleClass: "text-[18px] font-semibold leading-[28px] antialiased",
+    descClass: "text-[15.07px] leading-[28px] font-normal antialiased"
   },
   {
     id: "maturity",
     title: "Cyber Maturity & Risk Assessment",
     desc: "Evaluate your organization's cybersecurity maturity, identify control gaps, and prioritize risk mitigation strategies to enhance resilience and reduce exposure.",
     icon: "/images/pages/services/service-2/icon-4.svg",
-  },
+    cardClass: "",
+    contentClass: "",
+    titleClass: "text-[18px] font-semibold leading-[28px] antialiased",
+    descClass: "text-[15.07px] leading-[28px] font-normal antialiased"
+  }
 ];
+
+const baseCardClass = "bg-[#F6F8FB] rounded-[12px] p-[32px_24px_100px] relative overflow-hidden transition-all duration-300 hover:shadow-lg max-[1024px]:w-full max-[1024px]:max-w-[425px] max-[1024px]:mx-auto max-[425px]:!w-full max-[425px]:!px-[20px] max-[375px]:!p-[24px_16px_80px]";
+const baseContentClass = "flex flex-col gap-[12px] z-[5] max-[425px]:!gap-[8px]";
+const baseTitleClass = "font-sora text-[#212121] max-[425px]:!text-[18px] max-[375px]:!text-[16px] max-[320px]:!text-[15px]";
+const baseDescClass = "font-manrope text-[#585858] max-[425px]:!text-[14px] max-[425px]:!leading-[24px] max-[375px]:!text-[13px] max-[320px]:!text-[12px]";
 
 export default function ServiceTwoPage() {
   return (
-    <div className="about-page-container">
-      <section className="relative w-[1440px] max-w-full h-[556px] mx-auto bg-[url('/images/pages/services/service-2/service-2-hero-bg.svg')] bg-cover bg-center bg-no-repeat flex justify-center max-[1440px]:w-full max-[768px]:h-auto max-[768px]:min-h-[480px] max-[768px]:p-[100px_20px]">
-        <div className="absolute w-[795px] h-[216px] top-[184px] flex flex-col items-center gap-[21px] text-center max-[1440px]:left-1/2 max-[1440px]:-translate-x-1/2 max-[768px]:relative max-[768px]:w-full max-[768px]:h-auto max-[768px]:top-0 max-[768px]:left-0 max-[768px]:translate-x-0">
-          <div className="flex justify-center items-center w-[128px] h-[38px] gap-[8.12px] rounded-[27.61px] p-[8.12px] bg-[#FFFFFF12] border-[0.81px] border-[#FFFFFF26] opacity-100 m-0">
-            <span className="flex justify-center items-center w-[75px] h-[37px] opacity-100 font-manrope font-semibold text-[14px] leading-[36.54px] tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none">SERVICES</span>
-          </div>
-
-          <h1 className="w-[795px] h-[57px] m-0 max-w-none font-sora text-[40px] font-semibold text-[#ffffff] leading-[57px] text-center max-[768px]:w-full max-[768px]:h-auto">
-            Governance, Risk & Compliance (GRC)
-          </h1>
-
-          <p className="w-[795px] h-[90px] m-0 max-w-none font-manrope font-normal text-[18px] leading-[30px] text-[#EEEEEE] text-center max-[768px]:w-full max-[768px]:h-auto">
-            At Cybervol, we partner with leading cybersecurity vendors to deliver robust, integrated solutions that protect your digital assets, ensure compliance, and build digital trust — all while adapting to an ever-evolving threat landscape.
-          </p>
-        </div>
-      </section>
-      <section className="w-full bg-[#ffffff] p-[100px_20px_120px] text-[#111827]" aria-labelledby="s2-journey-heading">
-        <div className="max-w-[1230px] mx-auto">
-          <header className="flex justify-between items-start gap-[40px] mb-[48px] max-[900px]:flex-col max-[900px]:gap-[20px]">
-            <h2 id="s2-journey-heading" className="flex-[0_1_520px] m-0 font-sora font-semibold text-[36px] leading-[1.25] tracking-[-0.02em] text-[#212121] max-[900px]:flex-none max-[900px]:max-w-none max-[900px]:text-[30px]">
-              Empowering Your{" "}
-              <span className="text-[#2e5a88]">Security Journey</span>
-            </h2>
-            <p className="flex-[0_0_600px] max-w-[600px] m-0 text-right font-manrope font-normal text-[16px] leading-[30px] text-[#6b7280] max-[900px]:flex-none max-[900px]:max-w-none max-[900px]:text-left">
-              Our holistic approach covers everything from initial risk assessments to ensuring ongoing compliance and maintaining business continuity, all within a unified strategic framework.
-            </p>
-          </header>
-
-          <div className="flex flex-row items-stretch gap-[20px] w-full max-w-[1230px] min-h-[640px] max-[1200px]:flex-col max-[1200px]:min-h-0">
-            <div className="flex-[1_1_730px] min-w-0 grid grid-cols-2 grid-rows-2 gap-[20px] max-[1200px]:flex-none max-[1200px]:w-full max-[900px]:grid-cols-1 max-[900px]:grid-rows-auto">
-              {journeyCards.map((card) => (
-                <article key={card.id} className="relative w-full h-full min-h-[280px] m-0 p-[28px_28px_72px] bg-[#f3f6fa] rounded-[18px] overflow-hidden flex flex-col box-border max-[900px]:min-h-0">
-                  <div className="relative z-[1] flex-1 min-h-0">
-                    <h3 className="m-[0_0_10px] font-sora font-semibold text-[18px] leading-[1.35] text-[#1f2937]">{card.title}</h3>
-                    <p className="m-0 font-manrope font-normal text-[14px] leading-[22px] text-[#6b7280]">{card.desc}</p>
-                  </div>
-                  <div className="absolute right-[22px] bottom-[22px] w-[52px] h-[52px] rounded-[12px] bg-[rgba(46,90,136,0.12)] flex items-center justify-center z-[2]" aria-hidden="true">
-                    <img src={card.icon} alt="" className="w-[28px] h-[28px] object-contain block" />
-                  </div>
-                </article>
-              ))}
+    <div className="w-full bg-[#01060B]">
+      {/* Wrapper to control overall width on tablet */}
+      <div className="w-full max-[1024px]:max-w-[425px] max-[1024px]:mx-auto bg-[#ffffff]">
+        {/* Hero Section */}
+        <section className="relative w-[1454px] h-[556px] left-[-3px] mx-auto flex flex-col justify-center items-center overflow-hidden bg-[url('/images/pages/services/service-2/service-2-hero-bg.svg')] max-[1024px]:!bg-[url('/images/pages/services/service-2/mobile-view-hero-bg%20.svg')] bg-cover bg-top bg-no-repeat bg-[#01060B] opacity-100 p-[100px_20px_60px] max-[1454px]:p-[160px_20px_100px] text-center max-[1024px]:!text-center max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!aspect-[430/631] max-[1024px]:!pt-[75px] max-[1024px]:!pb-[60px] max-[425px]:!pt-[60px] max-[425px]:!pb-[40px] max-[1024px]:!px-[24px] max-[1024px]:!left-0">
+          <div className="absolute top-[184px] left-[367px] w-[721px] h-[216px] flex flex-col items-center gap-[21px] z-[5] opacity-100 max-[1454px]:relative max-[1454px]:top-0 max-[1454px]:left-0 max-[1454px]:w-full max-[1454px]:max-w-[721px] max-[1454px]:h-auto max-[1454px]:mx-auto max-[1024px]:!relative max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!top-0 max-[1024px]:!left-0 max-[1024px]:!gap-[21px] max-[1024px]:!items-center max-[1024px]:!mx-auto max-[1024px]:!mt-0">
+            <div className="flex justify-center items-center w-[128px] h-[38px] rounded-[27.61px] bg-[#FFFFFF12] border-[0.81px] border-[#FFFFFF26] opacity-100 p-[8.12px] gap-[8.12px] max-[425px]:!w-[104px] max-[425px]:!h-[38px] max-[425px]:!p-[8.12px] max-[425px]:!gap-[8.12px]">
+              <span className="flex justify-center items-center opacity-100 font-manrope font-semibold text-[14px] w-[75px] h-[37px] leading-[36.54px] tracking-[0.09em] uppercase text-[#FFFFFF] max-[425px]:!w-[65px] max-[425px]:!h-[37px] max-[425px]:!text-[12px] max-[425px]:!font-semibold max-[425px]:!leading-[36.54px] max-[425px]:!tracking-[0.09em] antialiased">SERVICES</span>
             </div>
 
-            <article className="relative flex-[0_0_428px] w-[428px] h-[608px] m-0 rounded-[20px] opacity-100 overflow-hidden bg-[#0b1a33] bg-[url('/images/pages/services/service-2/right-card-image.svg')] bg-cover bg-center box-border max-[1200px]:flex-none max-[1200px]:w-full max-[1200px]:h-[420px]">
-              <div className="absolute w-[397px] h-[209px] top-[383px] left-[15.5px] bg-[rgba(255,255,255,0.1)] rounded-[20px] opacity-100 flex flex-col items-center justify-center backdrop-blur-xl border border-[rgba(255,255,255,0.15)] shadow-lg px-[20px]">
-                <div className="w-full flex flex-col gap-[8px]">
-                  <h3 className="m-0 font-sora font-semibold text-[18px] leading-[1.2] tracking-normal text-[#ffffff] opacity-100">Third Party Risk Assessment</h3>
-                  <p className="m-0 font-manrope font-normal text-[14px] leading-[24px] tracking-normal text-[#ffffff] opacity-100">
-                    Assess, monitor, and mitigate risks associated with vendors, suppliers, and other third parties to ensure security and compliance across your extended ecosystem.
-                  </p>
-                </div>
-              </div>
-            </article>
+            <div className="flex flex-col items-center gap-[10px] w-[721px] h-[157px] opacity-100 max-[1454px]:w-full max-[1454px]:h-auto max-[1024px]:!gap-[21px]">
+              <h1 className="font-sora text-[40px] font-semibold text-[#ffffff] w-[721px] h-[57px] opacity-100 leading-[57px] text-center [text-wrap:balance] mx-auto max-[1454px]:w-full max-[1454px]:h-auto max-[1454px]:text-[clamp(32px,5vw,40px)] max-[1454px]:leading-normal max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.2] max-[1024px]:!text-center max-[1024px]:!mx-0 max-[425px]:!text-[28px] max-[375px]:!text-[24px]">
+                Governance, Risk & Compliance (GRC)
+              </h1>
+
+              <p className="w-[649px] h-[90px] font-manrope font-normal text-[18px] leading-[30px] text-center text-[#EEEEEE] opacity-100 mx-auto antialiased max-[1454px]:w-full max-[1454px]:h-auto max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!text-[16px] max-[1024px]:!text-center max-[1024px]:!mx-auto max-[425px]:!text-[14px] max-[425px]:!leading-[24px]">
+                At Cybervol, we partner with leading cybersecurity vendors to deliver <br className="hidden min-[1025px]:block" /> robust, integrated solutions that protect your digital assets, ensure compliance, and <br className="hidden min-[1025px]:block" /> build digital trust — all while adapting to an ever-evolving threat landscape.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Capabilities Section */}
+        <section className="p-[100px_20px_120px] bg-[#ffffff] max-[1024px]:!p-[60px_24px_10px] max-[425px]:!p-[40px_20px_10px] max-[1024px]:!overflow-hidden">
+          <div className="w-[1230px] h-auto mx-auto flex flex-col gap-[44px] max-[1024px]:w-full max-[1024px]:max-w-[425px] max-[1024px]:px-0 max-[1024px]:mx-auto">
+            <div className="flex justify-between items-start w-full min-[1025px]:w-[1230px] h-auto opacity-100 max-[1024px]:flex-col max-[1024px]:!w-full max-[1024px]:!gap-[12px] max-[1024px]:!mb-0">
+              <h2 className="font-sora text-[32px] font-semibold text-[#212121] w-full min-[1025px]:w-[389px] h-auto min-[1025px]:h-[50px] leading-[50px] m-0 opacity-100 max-[1024px]:!text-[28px] max-[1024px]:!leading-[1.2] antialiased max-[425px]:!text-[24px]">
+                Empowering Your <span className="text-[#2E5A88]">Security Journey</span>
+              </h2>
+              <p className="font-manrope text-[16px] font-normal leading-[30px] text-[#585858] w-full min-[1025px]:w-[736px] h-auto min-[1025px]:h-[60px] m-0 opacity-100 max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!text-[16px] max-[1024px]:!leading-[28px] antialiased max-[425px]:!text-[14px]">
+                Our holistic approach covers everything from initial risk assessments to ensuring ongoing compliance and maintaining business continuity, all within a unified strategic framework.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-[20px] w-full min-[1025px]:w-[1230px] h-auto opacity-100 max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!gap-[24px]">
+              {/* Featured Row */}
+              <div className="w-full min-[1025px]:w-[1230px] h-auto min-[1025px]:h-[334px] flex flex-col min-[1025px]:flex-row gap-[19px] opacity-100 max-[1024px]:!gap-[24px]">
+                {capabilityCards.slice(0, 2).map((card, idx) => (
+                  <article
+                    key={card.id}
+                    className={`${baseCardClass} ${card.cardClass || ""} ${idx === 0 ? "min-[1025px]:!p-[32px_40px_47px_29px] max-[1024px]:!min-h-[460px]" : "min-[1025px]:!p-[32px_32px_32px_30px] max-[1024px]:!min-h-[306px]"}`}
+                  >
+                      {idx === 0 ? (
+                        <div className="flex flex-col min-[1025px]:flex-row items-start gap-[35px] w-full min-[1025px]:w-[647px] h-auto min-[1025px]:h-[255px]">
+                          <div className={`${baseContentClass} ${card.contentClass || ""} min-[1025px]:!w-[330px] min-[1025px]:!h-[162.74px] min-[1025px]:!gap-[2.74px]`}>
+                            <h3 className={`${baseTitleClass} ${card.titleClass || ""} !text-white`}>{card.title}</h3>
+                            <p className={`${baseDescClass} ${card.descClass || ""} !text-[#EEEEEE]`}>{card.desc}</p>
+                          </div>
+
+                          <div className="relative w-full min-[1025px]:w-[282px] h-auto min-[1025px]:h-[255px] max-[1024px]:absolute max-[1024px]:right-0 max-[1024px]:bottom-0">
+                            <img
+                              src={card.icon}
+                              alt={card.title}
+                              className="absolute left-[11.39px] top-0 w-[270.62px] h-[255px] object-contain max-[1024px]:!static max-[1024px]:!w-[200px] max-[1024px]:!h-auto max-[1024px]:!float-right"
+                            />
+                          </div>
+                        </div>
+                      ) : (
+                        <div className={`${baseContentClass} ${card.contentClass || ""} min-[1025px]:!w-[380px] min-[1025px]:!h-[119.69px] min-[1025px]:!gap-[3.69px]`}>
+                          <h3 className={`${baseTitleClass} ${card.titleClass || ""} min-[1025px]:!w-[380px] min-[1025px]:!h-[29px] min-[1025px]:!leading-[29px]`}>{card.title}</h3>
+                          <p className={`${baseDescClass} ${card.descClass || ""} min-[1025px]:!w-[380px] min-[1025px]:!h-[87px] min-[1025px]:!text-[16px] min-[1025px]:!leading-[30px]`}>{card.desc}</p>
+                        </div>
+                      )}
+
+                      {idx !== 0 && (
+                        <div className="absolute bottom-[24px] right-[24px] w-[52px] h-[52px] flex items-center justify-center z-[10] max-[375px]:bottom-[16px] max-[375px]:right-[16px]">
+                          <img
+                            src={card.icon}
+                            alt={card.title}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      )}
+                    </article>
+                  ))}
+              </div>
+
+              {/* Standard Grid */}
+              <div className="grid grid-cols-1 min-[1025px]:grid-cols-3 w-full min-[1025px]:w-[1230px] h-auto gap-[24px] min-[1025px]:gap-[19px] opacity-100 max-[1024px]:px-0">
+                {capabilityCards.slice(2).map((card) => (
+                  <article
+                    key={card.id}
+                    className={`${baseCardClass} ${card.cardClass || ""} max-[1024px]:!min-h-[306px]`}
+                  >
+                    <div className={`${baseContentClass} ${card.contentClass || ""}`}>
+                      <h3 className={`${baseTitleClass} ${card.titleClass || ""}`}>{card.title}</h3>
+                      <p className={`${baseDescClass} ${card.descClass || ""}`}>{card.desc}</p>
+                    </div>
+
+                    <div className="absolute bottom-[24px] right-[24px] w-[52px] h-[52px] flex items-center justify-center z-[10] max-[375px]:bottom-[16px] max-[375px]:right-[16px]">
+                      <img
+                        src={card.icon}
+                        alt={card.title}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
