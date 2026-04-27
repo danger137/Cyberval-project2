@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-family-sora: var(--font-sora), sans-serif;
+  --font-family-manrope: var(--font-manrope), sans-serif;
+}
+
 html, body {
   margin: 0;
   padding: 0;

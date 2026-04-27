@@ -131,6 +131,7 @@ export default function ServiceOnePage() {
                   <article
                     key={card.id}
                     className={`${baseCardClass} ${card.cardClass || ""} ${idx === 0 ? "min-[1025px]:!p-[32px_40px_47px_29px] max-[1024px]:!min-h-[460px]" : "min-[1025px]:!p-[32px_32px_32px_30px] max-[1024px]:!min-h-[306px]"}`}
+                    style={idx === 0 ? { background: "linear-gradient(230.36deg, rgba(135, 187, 243, 0.36) 3.31%, rgba(111, 144, 180, 0.07) 49.84%, rgba(246, 248, 251, 0.49) 95.24%)" } : {}}
                   >
                       {idx === 0 ? (
                         <div className="flex flex-col min-[1025px]:flex-row items-start gap-[35px] w-full min-[1025px]:w-[647px] h-auto min-[1025px]:h-[255px]">
@@ -143,7 +144,7 @@ export default function ServiceOnePage() {
                             <img
                               src={card.icon}
                               alt={card.title}
-                              className="absolute left-[11.39px] top-0 w-[270.62px] h-[255px] object-contain max-[1024px]:!static max-[1024px]:!w-[200px] max-[1024px]:!h-auto max-[1024px]:!float-right"
+                              className="absolute left-[11.39px] top-0 w-[270.62px] h-[255px] object-contain max-[1024px]:!static max-[1024px]:!w-[282px] max-[1024px]:!h-[255px] max-[1024px]:!float-right"
                             />
                           </div>
                         </div>
