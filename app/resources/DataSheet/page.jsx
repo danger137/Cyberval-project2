@@ -60,11 +60,11 @@ export default function DataSheetPage() {
               <span className="opacity-100 font-manrope font-semibold text-[14px] leading-none tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none whitespace-nowrap max-[1024px]:!text-[12px]">DATA DEEP DIVE</span>
             </div>
 
-            <h1 className="font-sora text-[40px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[24px] max-[1024px]:!leading-[1.4] antialiased">
+            <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.4] antialiased">
               Datasheets
             </h1>
 
-            <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0 max-[1024px]:!text-[14px] max-[1024px]:!leading-[22px] antialiased">
+            <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0 max-[1024px]:!text-[18px] max-[1024px]:!leading-[22px] antialiased">
               Explore our detailed datasheets to learn about our products and services.
             </p>
 
@@ -112,7 +112,7 @@ export default function DataSheetPage() {
                     <h3 className="text-[18px] font-semibold text-[#030D1A] mb-[16px] leading-[1.3] font-sora antialiased">
                       {item.title}
                     </h3>
-                    <p className="text-[16px] leading-[28px] text-[#4A5568] mb-[24px] font-manrope flex-grow antialiased">
+                    <p className="text-[18px] leading-[28px] text-[#4A5568] mb-[24px] font-manrope flex-grow antialiased">
                       {item.description}
                     </p>
 

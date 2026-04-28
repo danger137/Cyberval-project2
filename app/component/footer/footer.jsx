@@ -171,12 +171,35 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="footer-branding-wrapper">
-            <div className="footer-large-branding">
-              <h2 className="branding-text">Cybervol</h2>
+          <div className="w-full">
+            {/* Large Branding (Desktop Only) */}
+            <div className="hidden lg:block w-full text-center mt-[-40px]">
+              <h2 
+                className="font-sora font-semibold font-weight-600 m-0 tracking-[-5px] leading-none bg-clip-text text-transparent select-none mx-auto relative z-[1]"
+                style={{ 
+                  backgroundImage: "linear-gradient(171.02deg, #6F90B4 -36.59%, rgba(84, 122, 162, 0.27) 19.25%, rgba(46, 90, 136, 0) 98.42%)",
+                  width: "908px",
+                  height: "164px",
+                  fontSize: "180px"
+                }}
+              >
+                Cybervol
+              </h2>
             </div>
-            <div className="footer-small-branding">
-              <h2 className="small-branding-text">Cybervol</h2>
+            {/* Small Branding (Mobile/Tablet Only) */}
+            <div className="block lg:hidden w-full text-center pt-[40px] pb-[20px] min-h-[68px]">
+              <h2 
+                className="font-sora font-bold m-0 tracking-[-2px] leading-none bg-clip-text text-transparent select-none mx-auto relative z-[1]"
+                style={{
+                  marginTop:"12px",
+                  backgroundImage:"linear-gradient(171.02deg, #6F90B4 -36.59%, rgba(84, 122, 162, 0.27) 19.25%, rgba(46, 90, 136, 0) 98.42%)",
+                  maxWidth: "100%",
+                  height: "auto",
+                  fontSize: "64px"
+                }}
+              >
+               Cybervol
+              </h2>
             </div>
           </div>
         </div>

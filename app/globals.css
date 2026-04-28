@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-family-sora: var(--font-sora), sans-serif;
-  --font-family-manrope: var(--font-manrope), sans-serif;
+  --font-sora: var(--font-sora);
+  --font-manrope: var(--font-manrope);
 }
+
 
 html, body {
   margin: 0;
@@ -117,7 +118,7 @@ body {
   padding: 16px 32px;
   border-radius: 8px;
   border: none;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;

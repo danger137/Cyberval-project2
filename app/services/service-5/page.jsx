@@ -13,7 +13,7 @@ export default function ServiceFivePage() {
             <span className="flex justify-center items-center w-[75px] h-[37px] opacity-100 font-manrope font-semibold text-[14px] leading-[36.54px] tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none">SERVICES</span>
           </div>
 
-          <h1 className="font-sora font-semibold text-[#FFFFFF] opacity-100 text-center [text-wrap:balance] mx-auto w-full h-auto min-[1025px]:w-[795px] min-[1025px]:text-[40px] min-[1025px]:leading-[57px] max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[16px] max-[320px]:!leading-[1.25] antialiased">
+          <h1 className="font-sora font-semibold text-[#FFFFFF] opacity-100 text-center [text-wrap:balance] mx-auto w-full h-auto min-[1025px]:w-[795px] min-[1025px]:text-[32px] min-[1025px]:leading-[57px] max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[32px] max-[320px]:!leading-[1.25] antialiased">
             Managed Cybersecurity as a Service (MCaaS)
           </h1>
 
@@ -37,11 +37,11 @@ export default function ServiceFivePage() {
             </picture>
           </div>
           <div className="flex-1 flex flex-col items-start card-entrance" style={{ animationDelay: '0.1s' }}>
-            <h2 className="text-[32px] font-semibold text-[#212121] leading-[49px] mb-[24px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased font-sora">
+            <h2 className="text-[32px] font-semibold text-[#212121] leading-[49px] mb-[10px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased font-sora">
               Vulnerability Management & Penetration Testing as a Service{" "}
               <span className="text-[#2E5A88]">(VMPTaaS)</span>
             </h2>
-            <p className="text-[16px] leading-[30px] text-[#585858] mb-[40px] max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased font-manrope">
+            <p className="text-[18px] leading-[30px] text-[#585858] mb-[20px] max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased font-manrope">
               Continuously identify, assess, and prioritize vulnerabilities
               across your infrastructure while simulating real-world attacks to
               validate the effectiveness of your defenses. Our automated and
@@ -60,10 +60,10 @@ export default function ServiceFivePage() {
       <section className="p-[120px_0] max-[1024px]:p-[60px_0] bg-[#F8FAFF]">
         <div className="w-full max-w-[1230px] mx-auto px-[20px] flex items-center justify-between gap-[80px] max-[1024px]:flex-col max-[1024px]:gap-[40px] max-[1024px]:text-left">
           <div className="flex-1 flex flex-col items-start card-entrance" style={{ animationDelay: '0.2s' }}>
-            <h2 className="text-[32px] font-semibold text-[#212121] leading-[49px] mb-[24px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased font-sora">
+            <h2 className="text-[32px] font-semibold text-[#212121] leading-[49px] mb-[10px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased font-sora">
               Virtual CISO <span className="text-[#2E5A88]">(vCISO)</span>
             </h2>
-            <p className="text-[16px] leading-[30px] text-[#585858] mb-[40px] max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased font-manrope">
+            <p className="text-[18px] leading-[30px] text-[#585858] mb-[20px] max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased font-manrope">
               Gain access to strategic cybersecurity leadership for risk
               management, governance, and compliance. Our vCISO service delivers
               tailored guidance to strengthen your security posture—cost-effectively
@@ -90,11 +90,11 @@ export default function ServiceFivePage() {
       <section className="p-[120px_0] max-[1024px]:p-[60px_0] bg-[#ffffff]">
         <div className="w-full max-w-[1230px] mx-auto px-[20px] flex items-center justify-between gap-[80px] max-[1024px]:flex-col max-[1024px]:gap-[40px] max-[1024px]:text-left">
           <div className="flex-1 flex flex-col items-start card-entrance" style={{ animationDelay: '0.3s' }}>
-            <h2 className="text-[32px] font-semibold text-[#212121] leading-[49px] mb-[24px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased font-sora">
+            <h2 className="text-[32px] font-semibold text-[#212121] leading-[49px] mb-[10px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased font-sora">
               Security Operations Center-as-a-Service{" "}
               <span className="text-[#2E5A88]">(SOCaaS)</span>
             </h2>
-            <p className="text-[16px] leading-[30px] text-[#585858] mb-[40px] max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased font-manrope">
+            <p className="text-[18px] leading-[30px] text-[#585858] mb-[20px] max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased font-manrope">
               Gain continuous, expert-driven threat monitoring without the
               overhead of building an in-house team. Our SOC-as-a-Service
               (SOCaaS) delivers real-time detection, rapid incident response,
@@ -120,8 +120,8 @@ export default function ServiceFivePage() {
         </div>
       </section>
       {/* Why Choose Section */}
-      <section className="p-[120px_0] max-[1024px]:p-[60px_0] bg-[#ffffff] text-center">
-        <h2 className="text-[32px] font-semibold text-[#212121] leading-[49px] mb-[60px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] antialiased font-sora">
+      <section className="p-[140px_0] max-[1024px]:p-[60px_0] bg-[#ffffff] text-center">
+        <h2 className="text-[32px] font-semibold text-[#212121] leading-[49px] mb-[30px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] antialiased font-sora">
           Why Choose <span className="text-[#2E5A88]">MCaaS</span>
         </h2>
 
@@ -137,7 +137,7 @@ export default function ServiceFivePage() {
                 />
               </div>
               <h3 className="text-[18px] font-semibold text-[#212121] leading-[38px] antialiased font-sora mb-[12px] max-w-[180px]">Unparalleled trust</h3>
-              <p className="text-[16px] leading-[28px] text-[#585858] antialiased font-manrope">Build next-level security & customer trust</p>
+              <p className="text-[18px] leading-[28px] text-[#585858] antialiased font-manrope">Build next-level security & customer trust</p>
             </div>
             <div className="bg-[#F6F8FB] rounded-[16px] p-[32px] text-left flex flex-col justify-center min-h-[250px] relative service-card-anim card-entrance" style={{ animationDelay: '0.5s' }}>
               <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
@@ -148,7 +148,7 @@ export default function ServiceFivePage() {
                 />
               </div>
               <h3 className="text-[18px] font-semibold text-[#212121] leading-[38px] antialiased font-sora mb-[12px] max-w-[200px]">Focus on business innovation</h3>
-              <p className="text-[16px] leading-[28px] text-[#585858] antialiased font-manrope">
+              <p className="text-[18px] leading-[28px] text-[#585858] antialiased font-manrope">
                 Offload the burden of managing complex security issues and focus
                 on business growth and innovation
               </p>
@@ -171,7 +171,7 @@ export default function ServiceFivePage() {
               </div>
               <div className="flex flex-col gap-[12px] w-full">
                 <h3 className="font-sora text-[18px] font-semibold text-[#FFFFFF] pr-[50px] leading-[38px] m-0 antialiased">Expert led cyber defense</h3>
-                <p className="font-manrope text-[16px] leading-[28px] text-[rgba(255,255,255,0.9)] m-0 antialiased">
+                <p className="font-manrope text-[18px] leading-[28px] text-[rgba(255,255,255,0.9)] m-0 antialiased">
                   Access top-tier cybersecurity professionals who leverage
                   advanced tools and frameworks to safeguard your digital assets
                 </p>
@@ -190,7 +190,7 @@ export default function ServiceFivePage() {
                 />
               </div>
               <h3 className="text-[18px] font-semibold text-[#212121] leading-[38px] antialiased font-sora mb-[12px] max-w-[200px]">Proactive threat management</h3>
-              <p className="text-[16px] leading-[28px] text-[#585858] antialiased font-manrope">
+              <p className="text-[18px] leading-[28px] text-[#585858] antialiased font-manrope">
                 Continuous monitoring, real-time threat detection, and rapid
                 incident response to keep your business secure.
               </p>
@@ -204,7 +204,7 @@ export default function ServiceFivePage() {
                 />
               </div>
               <h3 className="text-[18px] font-semibold text-[#212121] leading-[38px] antialiased font-sora mb-[12px] max-w-[200px]">Tailored security solutions</h3>
-              <p className="text-[16px] leading-[28px] text-[#585858] antialiased font-manrope">
+              <p className="text-[18px] leading-[28px] text-[#585858] antialiased font-manrope">
                 Customized to fit your unique security needs, leveraging a
                 risk-based approach to build resilience against evolving
                 threats.

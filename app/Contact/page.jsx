@@ -30,10 +30,10 @@ export default function ContactPage() {
             {/* Form Column - Reordered for Mobile */}
             <div className="flex-[1.2] contact-form-anim order-1 min-[1025px]:order-2">
               <div className="max-[1024px]:text-left mb-[40px] block min-[1025px]:hidden">
-                <h2 className="font-sora text-[28px] font-semibold text-[#212121] leading-[40px] mb-[12px] antialiased">
+                <h2 className="font-sora text-[32px] font-semibold text-[#212121] leading-[40px] mb-[12px] antialiased">
                   Let's <span className="text-[#2E5A88]">connect</span>
                 </h2>
-                <p className="font-manrope font-normal text-[15px] leading-[26px] text-[#585858] m-0 antialiased">
+                <p className="font-manrope font-normal text-[18px] leading-[26px] text-[#585858] m-0 antialiased">
                   Tell us about your current security landscape, upcoming projects, or challenges you're facing. We'll respond with clear, actionable guidance.
                 </p>
               </div>
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 <h2 className="font-sora text-[32px] font-semibold text-[#212121] leading-[49px] mb-[20px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] antialiased">
                   Let's <span className="text-[#2E5A88]">connect</span>
                 </h2>
-                <p className="font-manrope font-normal text-[16px] leading-[30px] text-[#585858] max-w-[450px] m-0 max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased">
+                <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#585858] max-w-[450px] m-0 max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased">
                   Tell us about your current security landscape, upcoming projects, or challenges you're facing. We'll respond with clear, actionable guidance.
                 </p>
               </div>

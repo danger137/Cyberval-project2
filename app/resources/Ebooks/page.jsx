@@ -60,11 +60,11 @@ export default function EbooksPage() {
               <span className="opacity-100 font-manrope font-semibold text-[14px] leading-none tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none whitespace-nowrap max-[1024px]:!text-[12px]">EBOOKS</span>
             </div>
 
-            <h1 className="font-sora text-[40px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[24px] max-[1024px]:!leading-[1.4] antialiased">
+            <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.4] antialiased">
               Ebooks
             </h1>
 
-            <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0 max-[1024px]:!text-[14px] max-[1024px]:!leading-[22px] antialiased">
+            <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0 max-[1024px]:!text-[18px] max-[1024px]:!leading-[22px] antialiased">
               Browse our latest ebook content and open each item to read the full detail page.
             </p>
 
@@ -111,11 +111,11 @@ export default function EbooksPage() {
                     <div className="flex justify-between items-center pr-1">
                       <div className="flex flex-col">
                         <Link href={`/resources/Ebooks/${ebook.id}`}>
-                          <h3 className="text-[20px] font-bold text-[#030D1A] mb-1 font-sora leading-tight group-hover:text-[#2E5A88] transition-colors antialiased">
+                          <h3 className="text-[18px] font-bold text-[#030D1A] mb-1 font-sora leading-tight group-hover:text-[#2E5A88] transition-colors antialiased">
                             {ebook.title}
                           </h3>
                         </Link>
-                        <span className="text-[15px] text-[#718096] font-manrope font-medium antialiased">{ebook.author}</span>
+                        <span className="text-[18px] text-[#718096] font-manrope font-medium antialiased">{ebook.author}</span>
                       </div>
                       <Link href={`/resources/Ebooks/${ebook.id}`} className="flex-shrink-0 w-auto h-auto flex justify-center items-center transition-all duration-300 hover:scale-110">
                         <img src="/images/pages/resources/Ebooks/card-6-image.svg" alt="" className="!w-[28.252685546875px] !h-[28.121946334838867px] object-contain" />

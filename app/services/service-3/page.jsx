@@ -15,7 +15,7 @@ export default function ServiceThreePage() {
             <span className="w-[75px] h-[37px] font-manrope font-semibold text-[14px] leading-[36.54px] tracking-[0.09em] uppercase text-[#FFFFFF] flex items-center justify-center max-[1024px]:w-[65px] max-[1024px]:text-[12px]">SERVICES</span>
           </div>
 
-          <h1 className="w-full max-w-[721px] font-semibold font-sora text-[#FFFFFF] m-0 min-[1025px]:w-[721px] min-[1025px]:text-[40px] min-[1025px]:leading-[57px] max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[16px] max-[320px]:!leading-[1.25] antialiased">
+          <h1 className="w-full max-w-[721px] font-semibold font-sora text-[#FFFFFF] m-0 min-[1025px]:w-[721px] min-[1025px]:text-[32px] min-[1025px]:leading-[57px] max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[32px] max-[320px]:!leading-[1.25] antialiased">
             Offensive Security
           </h1>
 
@@ -27,13 +27,13 @@ export default function ServiceThreePage() {
 
       {/* Capabilities Section */}
 
-      <section className="p-[100px_20px_120px] bg-[#ffffff] max-[1024px]:p-[60px_20px_80px]">
+      <section className="p-[140px_20px_120px] bg-[#ffffff] max-[1024px]:p-[60px_20px_80px]">
         <div className="max-w-[1230px] mx-auto">
-          <div className="flex justify-between items-start mb-[48px] gap-[40px] max-[1024px]:flex-col max-[1024px]:!w-full max-[1024px]:!gap-[12px] max-[1024px]:text-left max-[1024px]:mx-auto min-[1025px]:w-[1230px] min-[1025px]:h-[60px] min-[1025px]:mx-auto">
+          <div className="flex justify-between items-start mb-[30px] gap-[40px] max-[1024px]:flex-col max-[1024px]:!w-full max-[1024px]:!gap-[12px] max-[1024px]:text-left max-[1024px]:mx-auto min-[1025px]:w-[1230px] min-[1025px]:h-[60px] min-[1025px]:mx-auto">
             <h2 className="font-sora text-[32px] font-semibold text-[#212121] leading-[49px] m-0 max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] min-[1025px]:w-[289px] min-[1025px]:h-[50px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased">
               Our <span className="text-[#2E5A88]">Capabilities</span>
             </h2>
-            <p className="font-manrope text-[16px] leading-[30px] text-[#585858] max-w-[736px] w-full m-0 max-[1024px]:!w-full max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] min-[1025px]:w-[736px] min-[1025px]:h-[60px] antialiased">
+            <p className="font-manrope text-[18px] leading-[30px] text-[#585858] max-w-[736px] w-full m-0 max-[1024px]:!w-full max-[1024px]:!text-[18px] max-[1024px]:!leading-[26px] min-[1025px]:w-[736px] min-[1025px]:h-[60px] antialiased">
               At Cybervol, our goal is simple: to fortify your business with elite security. We champion asset protection, promote innovation, and ensure leaders navigate the digital landscape with confidence.
             </p>
           </div>
@@ -59,7 +59,7 @@ export default function ServiceThreePage() {
                 <div className="relative z-[2] w-full h-full max-[1024px]:flex max-[1024px]:flex-col max-[1024px]:items-start min-[1025px]:flex min-[1025px]:flex-row min-[1025px]:justify-between min-[1025px]:items-start min-[1025px]:w-[670.09px] min-[1025px]:h-[235px] min-[1025px]:gap-[35px]">
                   <div className="flex flex-col items-start max-[1024px]:!w-[330px] max-[1024px]:h-[132.74px] max-[1024px]:gap-[2.74px] min-[1025px]:w-[330px] min-[1025px]:h-[132.74px] min-[1025px]:gap-[2.74px]">
                     <h3 className="m-0 !font-sora font-semibold text-left max-[1024px]:!w-[330px] max-[1024px]:h-[40px] max-[1024px]:text-[18px] max-[1024px]:leading-[38px] min-[1025px]:w-[330px] min-[1025px]:h-[40px] min-[1025px]:text-[18px] min-[1025px]:leading-[38px] text-[#212121] antialiased">Web Application VAPT</h3>
-                    <p className="m-0 font-manrope font-normal text-left text-[#585858] max-[1024px]:w-[334px] max-[1024px]:h-[90px] max-[1024px]:text-[16px] max-[1024px]:leading-[28px] min-[1025px]:w-[334px] min-[1025px]:h-[90px] min-[1025px]:text-[16px] min-[1025px]:leading-[28px] antialiased">Identifies security flaws in web applications, including authentication, session management, and injection vulnerabilities.</p>
+                    <p className="m-0 font-manrope font-normal text-left text-[#585858] max-[1024px]:w-[334px] max-[1024px]:h-[90px] max-[1024px]:text-[18px] max-[1024px]:leading-[28px] min-[1025px]:w-[334px] min-[1025px]:h-[90px] min-[1025px]:text-[18px] min-[1025px]:leading-[28px] antialiased">Identifies security flaws in web applications, including authentication, session management, and injection vulnerabilities.</p>
                   </div>
 
                   {/* Desktop Icon (Preserved for 1440px) */}
@@ -80,7 +80,7 @@ export default function ServiceThreePage() {
               >
                 <div className="relative z-[2] flex flex-col max-[1024px]:absolute max-[1024px]:top-[32px] max-[1024px]:left-[26px] max-[1024px]:w-[307px] max-[1024px]:h-[119.69px] max-[1024px]:gap-[3.69px] max-[1024px]:items-start min-[1025px]:w-[380px] min-[1025px]:h-[119.69px] min-[1025px]:gap-[3.69px]">
                   <h3 className="m-0 font-sora font-semibold max-[1024px]:w-[307px] max-[1024px]:h-[29px] max-[1024px]:text-[18px] max-[1024px]:leading-[38px] min-[1025px]:w-[380px] min-[1025px]:h-[29px] min-[1025px]:text-[18px] min-[1025px]:leading-[38px] text-[#212121] antialiased">Mobile Application VAPT</h3>
-                  <p className="m-0 font-manrope font-normal text-[#585858] max-[1024px]:!w-[307px] max-[1024px]:!h-[87px] max-[1024px]:!text-[16px] max-[1024px]:!leading-[28px] min-[1025px]:w-[380px] min-[1025px]:h-[87px] min-[1025px]:text-[16px] min-[1025px]:leading-[28px] antialiased">Assesses mobile apps for weaknesses in authentication, data storage, and API security to prevent exploitation.</p>
+                  <p className="m-0 font-manrope font-normal text-[#585858] max-[1024px]:!w-[307px] max-[1024px]:!h-[87px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[28px] min-[1025px]:w-[380px] min-[1025px]:h-[87px] min-[1025px]:text-[18px] min-[1025px]:leading-[28px] antialiased">Assesses mobile apps for weaknesses in authentication, data storage, and API security to prevent exploitation.</p>
                 </div>
                 <div className={`${commonIconBoxClass} ${notLargeIconBoxResponsiveClass}`}>
                   <img
@@ -101,7 +101,7 @@ export default function ServiceThreePage() {
               >
                 <div className="relative z-[2] flex flex-col max-[1024px]:!absolute max-[1024px]:!top-[32px] max-[1024px]:!left-[26px] max-[1024px]:!w-[326px] max-[1024px]:!h-[119.69px] max-[1024px]:!gap-[3.69px] max-[1024px]:!items-start min-[1025px]:w-[380px] min-[1025px]:h-[119.69px] min-[1025px]:gap-[3.69px]">
                   <h3 className="m-0 !font-sora font-semibold max-[1024px]:!w-[326px] max-[1024px]:!h-[29px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[38px] min-[1025px]:w-[380px] min-[1025px]:h-[29px] min-[1025px]:text-[18px] min-[1025px]:leading-[38px] text-[#212121] antialiased">Network VAPT</h3>
-                  <p className="m-0 !font-manrope font-normal text-[#585858] max-[1024px]:!w-[326px] max-[1024px]:!h-[87px] max-[1024px]:!text-[16px] max-[1024px]:!leading-[28px] min-[1025px]:w-[380px] min-[1025px]:h-[87px] min-[1025px]:text-[16px] min-[1025px]:leading-[30px] antialiased">Evaluates internal and external networks for vulnerabilities, misconfigurations, and unauthorized access points.</p>
+                  <p className="m-0 !font-manrope font-normal text-[#585858] max-[1024px]:!w-[326px] max-[1024px]:!h-[87px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[28px] min-[1025px]:w-[380px] min-[1025px]:h-[87px] min-[1025px]:text-[18px] min-[1025px]:leading-[30px] antialiased">Evaluates internal and external networks for vulnerabilities, misconfigurations, and unauthorized access points.</p>
                 </div>
                 <div className={`${commonIconBoxClass} ${notLargeIconBoxResponsiveClass}`}>
                   <img
@@ -119,7 +119,7 @@ export default function ServiceThreePage() {
               >
                 <div className="z-[2] flex flex-col max-[1024px]:!absolute max-[1024px]:!top-[61px] max-[1024px]:!left-[26px] max-[1024px]:!w-[330px] max-[1024px]:!h-[391.74px] max-[1024px]:!gap-[31px] max-[1024px]:!items-start min-[1025px]:absolute min-[1025px]:top-[86px] min-[1025px]:left-[48px] min-[1025px]:w-[303px] min-[1025px]:h-[162.74px] min-[1025px]:gap-[2.74px]">
                   <h3 className="m-0 font-sora font-semibold text-[#212121] max-[1024px]:!w-[330px] max-[1024px]:!h-[40px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[38px] min-[1025px]:w-[303px] min-[1025px]:h-[40px] min-[1025px]:text-[18px] min-[1025px]:leading-[38px] antialiased">Cloud VAPT</h3>
-                  <p className="m-0 font-manrope font-normal max-[1024px]:!w-[284px] max-[1024px]:!h-[120px] max-[1024px]:!text-[16px] max-[1024px]:!leading-[28px] max-[1024px]:!text-[#585858] min-[1025px]:w-[284px] min-[1025px]:max-w-[284px] min-[1025px]:h-[120px] min-[1025px]:text-[16px] min-[1025px]:leading-[28px] min-[1025px]:text-[#585858] antialiased">Tests cloud environments for misconfigurations, identity weaknesses, and compliance risks to secure cloud workloads.</p>
+                  <p className="m-0 font-manrope font-normal max-[1024px]:!w-[284px] max-[1024px]:!h-[120px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[28px] max-[1024px]:!text-[#585858] min-[1025px]:w-[284px] min-[1025px]:max-w-[284px] min-[1025px]:h-[120px] min-[1025px]:text-[18px] min-[1025px]:leading-[28px] min-[1025px]:text-[#585858] antialiased">Tests cloud environments for misconfigurations, identity weaknesses, and compliance risks to secure cloud workloads.</p>
                   
                   {/* Mobile only icon box placement */}
                   <div className="hidden max-[1024px]:block w-[322px] h-[198px] relative left-[10px]">
@@ -151,7 +151,7 @@ export default function ServiceThreePage() {
               >
                 <div className="relative z-[2] flex flex-col max-[1024px]:!absolute max-[1024px]:!top-[36px] max-[1024px]:!left-[24.21px] max-[1024px]:!w-[291px] max-[1024px]:!h-[132.74px] max-[1024px]:!gap-[3.66px] max-[1024px]:!items-start min-[1025px]:absolute min-[1025px]:top-[36px] min-[1025px]:left-[24.21px] min-[1025px]:w-[291px] min-[1025px]:h-[132.74px] min-[1025px]:gap-[3.69px]">
                   <h3 className="m-0 font-sora font-semibold text-[#212121] max-[1024px]:!w-[291px] max-[1024px]:!h-[40px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[38px] min-[1025px]:w-[291px] min-[1025px]:h-[40px] min-[1025px]:text-[18px] min-[1025px]:leading-[38px] antialiased">API Assessment</h3>
-                  <p className="m-0 font-manrope font-normal text-[#585858] max-[1024px]:!w-[291px] max-[1024px]:!h-[90px] max-[1024px]:!text-[16px] max-[1024px]:!leading-[28px] min-[1025px]:w-[291px] min-[1025px]:h-[90px] min-[1025px]:text-[16px] min-[1025px]:leading-[28px] antialiased">Identifies security gaps in APIs, including authentication flaws, data exposure, and injection risks.</p>
+                  <p className="m-0 font-manrope font-normal text-[#585858] max-[1024px]:!w-[291px] max-[1024px]:!h-[90px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[28px] min-[1025px]:w-[291px] min-[1025px]:h-[90px] min-[1025px]:text-[18px] min-[1025px]:leading-[28px] antialiased">Identifies security gaps in APIs, including authentication flaws, data exposure, and injection risks.</p>
                 </div>
                 <div className={`${commonIconBoxClass} ${notLargeIconBoxResponsiveClass}`}>
                   <img
@@ -169,7 +169,7 @@ export default function ServiceThreePage() {
               >
                 <div className="relative z-[2] flex flex-col max-[1024px]:!absolute max-[1024px]:!top-[36px] max-[1024px]:!left-[22.53px] max-[1024px]:!w-[307px] max-[1024px]:!h-[122.69px] max-[1024px]:!gap-[3.69px] max-[1024px]:!items-start min-[1025px]:absolute min-[1025px]:top-[36px] min-[1025px]:left-[22.53px] min-[1025px]:w-[307px] min-[1025px]:h-[122.69px] min-[1025px]:gap-[3.69px]">
                   <h3 className="m-0 font-sora font-semibold text-[#212121] max-[1024px]:!w-[307px] max-[1024px]:!h-[29px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[29px] min-[1025px]:w-[307px] min-[1025px]:h-[29px] min-[1025px]:text-[18px] min-[1025px]:leading-[29px]">Wireless Assessment</h3>
-                  <p className="m-0 font-manrope font-normal text-[#585858] max-[1024px]:!w-[326px] max-[1024px]:!h-[90px] max-[1024px]:!text-[16px] max-[1024px]:!leading-[30px] min-[1025px]:w-[326px] min-[1025px]:h-[90px] min-[1025px]:text-[16px] min-[1025px]:leading-[30px]">Secures wireless networks against unauthorized access, rogue APs, and encryption weaknesses.</p>
+                  <p className="m-0 font-manrope font-normal text-[#585858] max-[1024px]:!w-[326px] max-[1024px]:!h-[90px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[30px] min-[1025px]:w-[326px] min-[1025px]:h-[90px] min-[1025px]:text-[18px] min-[1025px]:leading-[30px]">Secures wireless networks against unauthorized access, rogue APs, and encryption weaknesses.</p>
                 </div>
                 <div className={`${commonIconBoxClass} ${notLargeIconBoxResponsiveClass}`}>
                   <img
@@ -187,7 +187,7 @@ export default function ServiceThreePage() {
               >
                 <div className="relative z-[2] flex flex-col max-[1024px]:!absolute max-[1024px]:!top-[36px] max-[1024px]:!left-[24.47px] max-[1024px]:!w-[331px] max-[1024px]:!h-[131.74px] max-[1024px]:!gap-[2.74px] max-[1024px]:!items-start min-[1025px]:absolute min-[1025px]:top-[36px] min-[1025px]:left-[24.47px] min-[1025px]:w-[331px] min-[1025px]:h-[131.74px] min-[1025px]:gap-[2.74px]">
                   <h3 className="m-0 font-sora font-semibold text-[#212121] max-[1024px]:!w-[331px] max-[1024px]:!h-[40px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[38px] min-[1025px]:w-[331px] min-[1025px]:h-[40px] min-[1025px]:text-[18px] min-[1025px]:leading-[38px] antialiased">Social Engineering Simulation</h3>
-                  <p className="m-0 font-manrope font-normal text-[#585858] max-[1024px]:!w-[308px] max-[1024px]:!h-[89px] max-[1024px]:!text-[16px] max-[1024px]:!leading-[28px] min-[1025px]:w-[308px] min-[1025px]:h-[89px] min-[1025px]:text-[16px] min-[1025px]:leading-[30px] antialiased">Assess human-layer vulnerabilities through phishing campaigns, pretexting, and other real-world deception techniques.</p>
+                  <p className="m-0 font-manrope font-normal text-[#585858] max-[1024px]:!w-[308px] max-[1024px]:!h-[89px] max-[1024px]:!text-[18px] max-[1024px]:!leading-[28px] min-[1025px]:w-[308px] min-[1025px]:h-[89px] min-[1025px]:text-[18px] min-[1025px]:leading-[30px] antialiased">Assess human-layer vulnerabilities through phishing campaigns, pretexting, and other real-world deception techniques.</p>
                 </div>
                 <div className={`${commonIconBoxClass} ${notLargeIconBoxResponsiveClass}`}>
                   <img

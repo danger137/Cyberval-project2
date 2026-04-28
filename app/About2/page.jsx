@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './about-page.css';
 import '../component/about/about.css'; // Original styles for stats/commitment
 import Link from 'next/link';
@@ -10,6 +10,9 @@ export default function About() {
   const [isMobile, setIsMobile] = useState(false);
   const [openFaq, setOpenFaq] = useState(0); // First FAQ open by default
 
+  const scrollRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 1024);
@@ -18,6 +21,16 @@ export default function About() {
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  const handleScroll = () => {
+    if (!scrollRef.current || !isMobile) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) return;
+    
+    const index = Math.round((scrollLeft / maxScroll) * (totalSlides - 1));
+    setCurrentSlide(index);
+  };
 
 
 
@@ -180,10 +193,14 @@ export default function About() {
             <h3 className="team-subtitle">Behind Our Mission</h3>
           </div>
 
-          <div className="team-slider-viewport">
+          <div 
+            className="team-slider-viewport" 
+            ref={scrollRef}
+            onScroll={handleScroll}
+          >
             <div
               className="team-slider-track"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              style={!isMobile ? { transform: `translateX(-${currentSlide * 100}%)` } : {}}
             >
               {/* Slide 1: Members 1-4 */}
               <div className="team-slide-group">

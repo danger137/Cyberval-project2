@@ -91,11 +91,11 @@ export default function WebinarsPage() {
               <span className="opacity-100 font-manrope font-semibold text-[14px] leading-none tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none whitespace-nowrap max-[1024px]:!text-[12px]">WEBINARS</span>
             </div>
 
-            <h1 className="font-sora text-[40px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[24px] max-[1024px]:!leading-[1.4] antialiased webinar-hero-title-fluid">
+            <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.4] antialiased webinar-hero-title-fluid">
               Webinars
             </h1>
 
-            <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0 max-[1024px]:!text-[14px] max-[1024px]:!leading-[22px] antialiased webinar-hero-desc-fluid">
+            <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0 max-[1024px]:!text-[18px] max-[1024px]:!leading-[22px] antialiased webinar-hero-desc-fluid">
               Gain expert insights and stay ahead of cyber threats with our live and on-demand webinars led by industry leaders.
             </p>
 
@@ -151,7 +151,7 @@ export default function WebinarsPage() {
                       <h3 className="text-[18px] font-semibold text-[#030D1A] mb-3 font-sora leading-[1.3] antialiased group-hover:text-[#2E5A88] transition-colors">
                         {webinar.title}
                       </h3>
-                      <p className="text-[16px] text-[#4A5568] mb-6 font-manrope leading-[28px] antialiased">
+                      <p className="text-[18px] text-[#4A5568] mb-6 font-manrope leading-[28px] antialiased">
                         {webinar.description}
                       </p>
                       
@@ -164,7 +164,7 @@ export default function WebinarsPage() {
                       <div className="mt-auto pt-6 border-t border-gray-100 flex items-center gap-3">
                         <img src="/images/pages/resources/Webiners/all-cards-bottom-image.svg" className="w-[44px] h-[44px] rounded-full object-cover" alt={webinar.speaker} />
                         <div className="flex flex-col">
-                          <span className="text-[16px] font-bold text-[#030D1A] font-manrope">{webinar.speaker}</span>
+                          <span className="text-[18px] font-bold text-[#030D1A] font-manrope">{webinar.speaker}</span>
                           <span className="text-[14px] text-[#718096] font-manrope">{webinar.designation}</span>
                         </div>
                       </div>

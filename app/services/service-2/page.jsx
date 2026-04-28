@@ -54,7 +54,7 @@ const capabilityCards = [
 const baseCardClass = "bg-[#F6F8FB] rounded-[12px] p-[32px_24px_100px] min-[1025px]:!p-[34px_28px] min-[1025px]:!rounded-[20px] relative overflow-hidden transition-all duration-300 hover:shadow-lg max-[1024px]:w-full max-[1024px]:max-w-[425px] max-[1024px]:mx-auto max-[425px]:!w-full max-[425px]:!px-[20px] max-[375px]:!p-[24px_16px_80px]";
 const baseContentClass = "flex flex-col gap-[12px] min-[1025px]:!gap-[10px] z-[5] max-[425px]:!gap-[8px]";
 const baseTitleClass = "font-sora text-[18px] font-semibold leading-[38px] text-[#212121] max-[1024px]:leading-normal max-[425px]:!text-[18px] max-[375px]:!text-[16px] max-[320px]:!text-[15px] antialiased";
-const baseDescClass = "font-manrope text-[16px] font-normal leading-[28px] text-[#585858] max-[1024px]:text-[14px] max-[1024px]:leading-[1.7] max-[425px]:!text-[14px] max-[425px]:!leading-[24px] max-[375px]:!text-[13px] max-[320px]:!text-[12px] antialiased";
+const baseDescClass = "font-manrope text-[18px] font-normal leading-[28px] text-[#585858] max-[1024px]:text-[18px] max-[1024px]:leading-[1.7] max-[425px]:!text-[18px] max-[425px]:!leading-[24px] max-[375px]:!text-[18px] max-[320px]:!text-[18px] antialiased";
 
 export default function ServiceTwoPage() {
   return (
@@ -68,7 +68,7 @@ export default function ServiceTwoPage() {
             </div>
 
             <div className="flex flex-col items-center min-[1025px]:gap-[10px] min-[1025px]:w-[795px] h-auto opacity-100 max-[1454px]:w-full max-[1454px]:h-auto max-[1024px]:!gap-[21px] hero-reveal">
-              <h1 className="font-sora text-[40px] font-semibold text-[#ffffff] min-[1025px]:w-[795px] h-auto opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[1024px]:!text-center max-[1024px]:!mx-0 max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[16px] max-[320px]:!leading-[1.25] antialiased">
+              <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] min-[1025px]:w-[795px] h-auto opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[1024px]:!text-center max-[1024px]:!mx-0 max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[32px] max-[320px]:!leading-[1.25] antialiased">
                 Governance, Risk & Compliance (GRC)
               </h1>
 
@@ -80,13 +80,13 @@ export default function ServiceTwoPage() {
         </section>
 
         {/* Capabilities Section */}
-        <section className="p-[100px_20px_120px] bg-[#ffffff] max-[1024px]:!p-[60px_24px_10px] max-[425px]:!p-[40px_20px_10px] max-[1024px]:!overflow-hidden">
-          <div className="w-[1230px] h-auto mx-auto flex flex-col gap-[44px] max-[1024px]:w-full max-[1024px]:max-w-[440px] max-[1024px]:px-0 max-[1024px]:mx-auto">
+        <section className="p-[140px_20px_120px] bg-[#ffffff] max-[1024px]:!p-[60px_24px_10px] max-[425px]:!p-[40px_20px_10px] max-[1024px]:!overflow-hidden">
+          <div className="w-[1230px] h-auto mx-auto flex flex-col gap-[30px] max-[1024px]:w-full max-[1024px]:max-w-[440px] max-[1024px]:px-0 max-[1024px]:mx-auto">
             <div className="flex justify-between items-start w-full min-[1025px]:w-[1230px] h-auto opacity-100 max-[1024px]:flex-col max-[1024px]:!w-full max-[1024px]:!gap-[12px] max-[1024px]:!mb-0">
               <h2 className="font-sora text-[32px] font-semibold text-[#212121] w-full min-[1025px]:w-[311px] h-auto leading-[49px] m-0 opacity-100 max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] antialiased max-[425px]:!text-[26px] max-[425px]:!leading-[36px] max-[375px]:!text-[24px] max-[375px]:!leading-[32px] max-[320px]:!text-[22px] max-[320px]:!leading-[30px]">
                 Empowering Your <br /> <span className="text-[#2E5A88]">Security Journey</span>
               </h2>
-              <p className="font-manrope text-[16px] font-normal leading-[30px] text-[#585858] w-full min-[1025px]:w-[676px] h-auto m-0 opacity-100 max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased max-[320px]:!text-[14px] max-[320px]:!leading-[24px]">
+              <p className="font-manrope text-[18px] font-normal leading-[30px] text-[#585858] w-full min-[1025px]:w-[676px] h-auto m-0 opacity-100 max-[1024px]:!w-full max-[1024px]:!h-auto max-[1024px]:!text-[18px] max-[1024px]:!leading-[26px] antialiased max-[320px]:!text-[18px] max-[320px]:!leading-[24px]">
                 Our holistic approach covers everything from initial risk assessments to ensuring ongoing compliance and maintaining business continuity, all within a unified strategic framework.
               </p>
             </div>

@@ -18,9 +18,18 @@ export default function Nav() {
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', closeAll, { passive: true });
-        return () => window.removeEventListener('scroll', closeAll);
-    }, []);
+        const handleScroll = () => {
+            if (isMenuOpen || activeDropdown) {
+                closeAll();
+            }
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isMenuOpen, activeDropdown]);
+
+    useEffect(() => {
+        closeAll();
+    }, [pathname]);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -44,10 +53,12 @@ export default function Nav() {
             <div className="nav-container max-[1024px]:max-w-[440px] max-[1024px]:mx-auto">
                 <div className="logo">
                     <img src={isBlogDetail ? "/images/header-items/nav/Group 1.svg" : "/images/header-items/header-logo.svg"} alt="Cybervol" />
-                    <div className="logo-text">
-                        <span className="brand-name">Cybervol</span>
-                        <span className="tagline">by Rotvol Solutions</span>
-                    </div>
+                    {!isBlogDetail && (
+                        <div className="logo-text">
+                            <span className="brand-name">Cybervol</span>
+                            <span className="tagline">by Rotvol Solutions</span>
+                        </div>
+                    )}
                 </div>
 
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
@@ -149,7 +160,7 @@ export default function Nav() {
                                     <li>Scalable & Tailored Solutions</li>
                                     <li>Expert-Led Security Guidance</li>
                                 </ul>
-                                <Link href="/Contact">
+                                <Link href="/Contact" onClick={closeAll}>
                                     <button className="talk-btn">Talk to Experts</button>
                                 </Link>
                             </div>
@@ -253,7 +264,9 @@ export default function Nav() {
 
                 <div className="nav-right">
                     <div className="nav-cta">
-                        <button className="contact-btn">Contact us</button>
+                        <Link href="/Contact" onClick={closeAll}>
+                            <button className="contact-btn">Contact us</button>
+                        </Link>
                     </div>
                     <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
                         <span></span>
