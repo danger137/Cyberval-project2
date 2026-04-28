@@ -173,14 +173,30 @@ export default function Footer() {
           </div>
           <div className="w-full">
             {/* Large Branding (Desktop Only) */}
-            <div className="!hidden lg:!block w-full text-center pt-[100px] pb-[40px]">
-              <h2 className="font-sora text-[180px] font-bold text-[#000F2E] opacity-[0.05] m-0 tracking-[-5px] capitalize leading-none select-none">
+            <div className="hidden lg:block w-full text-center relative pt-[100px] pb-[40px] min-h-[164px]">
+              <h2 
+                className="font-sora font-bold m-0 tracking-[-5px] leading-none bg-clip-text text-transparent select-none mx-auto"
+                style={{ 
+                  backgroundImage: "linear-gradient(171.02deg, #6F90B4 -36.59%, rgba(84, 122, 162, 0.27) 19.25%, rgba(46, 90, 136, 0) 98.42%)",
+                  width: "908px",
+                  height: "164px",
+                  fontSize: "180px"
+                }}
+              >
                 Cybervol
               </h2>
             </div>
             {/* Small Branding (Mobile/Tablet Only) */}
-            <div className="!block lg:!hidden w-full text-center pt-[40px] pb-[20px]">
-              <h2 className="font-sora text-[48px] md:text-[64px] font-bold text-[#000F2E] opacity-[0.05] m-0 tracking-[-2px] capitalize leading-none select-none">
+            <div className="block lg:hidden w-full text-center pt-[40px] pb-[20px] min-h-[68px]">
+              <h2 
+                className="font-sora font-bold m-0 tracking-[-2px] leading-none bg-clip-text text-transparent select-none mx-auto"
+                style={{ 
+                  backgroundImage: "linear-gradient(171.02deg, #6F90B4 -36.59%, rgba(84, 122, 162, 0.27) 19.25%, rgba(46, 90, 136, 0) 98.42%)",
+                  width: "380px",
+                  height: "68px",
+                  fontSize: "64px"
+                }}
+              >
                 Cybervol
               </h2>
             </div>
