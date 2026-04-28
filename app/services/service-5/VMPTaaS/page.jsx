@@ -12,20 +12,20 @@ export default function VMPTaaSPage() {
             <span className="opacity-100 font-manrope font-semibold text-[12px] sm:text-[14px] leading-[1.5] tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none text-center">MANAGED CYBERSECURITY AS A SERVICE</span>
           </div>
 
-          <h1 className="font-sora text-[32px] sm:text-[40px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 leading-[1.3] text-center [text-wrap:balance] mx-auto m-0">
+          <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 leading-[1.3] text-center [text-wrap:balance] mx-auto m-0">
             Vulnerability Management & Penetration Testing as a Service (VMPTaaS)
           </h1>
 
-          <p className="font-manrope font-normal text-[16px] sm:text-[18px] leading-[1.6] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0">
+          <p className="font-manrope font-normal text-[18px] leading-[1.6] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0">
             Continuous vulnerability visibility, prioritized remediation, and real-world validation in one service.
           </p>
         </div>
       </section>
 
       {/* Why Choose Section */}
-      <section className="p-[120px_20px] bg-[#ffffff]">
+      <section className="p-[140px_20px_120px] bg-[#ffffff]">
         <div className="max-w-[1300px] mx-auto text-center">
-          <h2 className="font-sora text-[40px] font-bold text-[#212121] mb-[80px] max-[768px]:text-[32px]">
+          <h2 className="font-sora text-[32px] font-bold text-[#212121] mb-[30px] max-[768px]:text-[32px]">
             Why Choose <span className="text-[#2E5A88]">VMPTaaS</span>
           </h2>
           
@@ -37,16 +37,16 @@ export default function VMPTaaSPage() {
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
                    <img src="/images/pages/services/service-5/(VMPTaaS)/left-colum-icon-1.svg" alt="" className="w-full h-full" />
                  </div>
-                 <h3 className="font-sora text-[20px] font-bold text-[#212121] mb-[12px] mt-[40px]">What is VMPTaaS?</h3>
-                 <p className="font-manrope text-[14px] leading-[1.6] text-[#585858]">VMPTaaS combines continuous vulnerability management with focused penetration testing so you can see risk, rank it, and validate what really matters.</p>
+                 <h3 className="font-sora text-[18px] font-bold text-[#212121] mb-[12px] mt-[40px]">What is VMPTaaS?</h3>
+                 <p className="font-manrope text-[18px] leading-[1.6] text-[#585858]">VMPTaaS combines continuous vulnerability management with focused penetration testing so you can see risk, rank it, and validate what really matters.</p>
               </article>
               {/* Feature 2 */}
               <article className="bg-[#F6F8FB] border-none rounded-[16px] p-[32px] text-left relative flex flex-col justify-center min-h-[250px] flex-1">
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
                    <img src="/images/pages/services/service-5/(VMPTaaS)/left-colum-icon-2.svg" alt="" className="w-full h-full" />
                  </div>
-                 <h3 className="font-sora text-[20px] font-bold text-[#212121] mb-[12px] mt-[40px]">Why it matters</h3>
-                 <p className="font-manrope text-[14px] leading-[1.6] text-[#585858]">Threats change fast, and point-in-time testing misses a lot. Ongoing reviews keep remediation focused on the issues most likely to be exploited.</p>
+                 <h3 className="font-sora text-[18px] font-bold text-[#212121] mb-[12px] mt-[40px]">Why it matters</h3>
+                 <p className="font-manrope text-[18px] leading-[1.6] text-[#585858]">Threats change fast, and point-in-time testing misses a lot. Ongoing reviews keep remediation focused on the issues most likely to be exploited.</p>
               </article>
             </div>
 
@@ -69,16 +69,16 @@ export default function VMPTaaSPage() {
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
                    <img src="/images/pages/services/service-5/(VMPTaaS)/right-colum-icon-1.svg" alt="" className="w-full h-full" />
                  </div>
-                 <h3 className="font-sora text-[20px] font-bold text-[#212121] mb-[12px] mt-[40px]">How we work</h3>
-                 <p className="font-manrope text-[14px] leading-[1.6] text-[#585858]">We scan, triage, and test on a schedule that fits your environment, then deliver clear remediation guidance and validation reports your teams can act on.</p>
+                 <h3 className="font-sora text-[18px] font-bold text-[#212121] mb-[12px] mt-[40px]">How we work</h3>
+                 <p className="font-manrope text-[18px] leading-[1.6] text-[#585858]">We scan, triage, and test on a schedule that fits your environment, then deliver clear remediation guidance and validation reports your teams can act on.</p>
               </article>
               {/* Feature 4 */}
               <article className="bg-[#F6F8FB] border-none rounded-[16px] p-[32px] text-left relative flex flex-col justify-center min-h-[250px] flex-1">
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
                    <img src="/images/pages/services/service-5/(VMPTaaS)/right-coloum-icon-2.svg" alt="" className="w-full h-full" />
                  </div>
-                 <h3 className="font-sora text-[20px] font-bold text-[#212121] mb-[12px] mt-[40px]">Who benefits</h3>
-                 <p className="font-manrope text-[14px] leading-[1.6] text-[#585858]">It is a strong fit for teams that need regular security evidence, clearer prioritization, and a practical way to show progress across compliance or internal risk programs.</p>
+                 <h3 className="font-sora text-[18px] font-bold text-[#212121] mb-[12px] mt-[40px]">Who benefits</h3>
+                 <p className="font-manrope text-[18px] leading-[1.6] text-[#585858]">It is a strong fit for teams that need regular security evidence, clearer prioritization, and a practical way to show progress across compliance or internal risk programs.</p>
               </article>
             </div>
           </div>

@@ -76,7 +76,7 @@ html {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 34px;
     margin: 0;
     padding: 0;
     align-items: center;
@@ -85,8 +85,8 @@ html {
 .nav-links li a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 400;
     font-family: var(--font-manrope), sans-serif;
     transition: all 0.3s ease;
     line-height: 100%;
@@ -135,8 +135,8 @@ html {
 .dropdown-trigger {
     cursor: pointer;
     color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 400;
     font-family: var(--font-manrope), sans-serif;
     transition: all 0.3s ease;
     display: flex;
@@ -216,12 +216,10 @@ html {
     flex-direction: row;
     overflow: hidden;
     gap: 0;
-    transition: all 2s ease; /* 2-second animation as requested */
+    transition: all 0.3s ease; 
 }
 
-.dropdown:hover .mega-menu,
-.dropdown:focus-within .mega-menu,
-.dropdown.active .mega-menu {
+.dropdown.open .mega-menu {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
@@ -252,9 +250,10 @@ html {
 
 .mega-item {
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    align-items: center;
+    gap: 16px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 

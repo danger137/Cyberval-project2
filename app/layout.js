@@ -1,16 +1,17 @@
-import { Outfit, Manrope, Sora } from "next/font/google";
-import "./globals.css";
+import { Sora, Manrope } from 'next/font/google'
 import "./globals.css";
 
-const outfit = Outfit({ subsets: ["latin"] });
-const manrope = Manrope({ 
-  subsets: ["latin"],
-  variable: '--font-manrope'
-});
 const sora = Sora({
-  subsets: ["latin"],
-  variable: '--font-sora'
-});
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-sora',
+})
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-manrope',
+})
 
 
 import GlobalLayoutWrapper from "./component/GlobalLayoutWrapper.jsx";
@@ -18,7 +19,7 @@ import GlobalLayoutWrapper from "./component/GlobalLayoutWrapper.jsx";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} ${manrope.variable} ${sora.variable}`}>
+      <body className={`${sora.variable} ${manrope.variable}`}>
         <GlobalLayoutWrapper>
           {children}
         </GlobalLayoutWrapper>

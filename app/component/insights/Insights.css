@@ -15,7 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 60px;
+  margin-bottom: 20px; /* Reduced from 60px */
 }
 
 .insights-badge {
@@ -74,7 +74,7 @@
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding: 20px 0;
+  padding: 0 0 20px 0; /* Removed top padding */
 }
 
 .insights-grid::-webkit-scrollbar {
@@ -134,7 +134,7 @@
 
 .insight-card-title {
   font-family: 'Sora', var(--font-sora), sans-serif;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
   color: #111827;
   line-height: 1.4;
@@ -239,7 +239,7 @@
 
 @media (max-width: 1023px) {
   .insights-section { padding: 60px 20px; }
-  .insights-header { flex-direction: column; align-items: flex-start; gap: 24px; margin-bottom: 40px; }
+  .insights-header { flex-direction: column; align-items: flex-start; gap: 24px; margin-bottom: 20px; }
   .insights-title { font-size: 32px; }
   
   .insights-grid {

@@ -11,7 +11,7 @@ export default function ServiceFourPage() {
             <span className="opacity-100 font-manrope font-semibold text-[12px] min-[1025px]:text-[14px] leading-[1.5] tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none text-center">SERVICES</span>
           </div>
 
-          <h1 className="font-sora text-[40px] font-semibold text-[#ffffff] w-full max-w-[800px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[16px] max-[320px]:!leading-[1.25] antialiased">
+          <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] w-full max-w-[800px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[32px] max-[320px]:!leading-[1.25] antialiased">
             Awareness & Training
           </h1>
 
@@ -20,13 +20,13 @@ export default function ServiceFourPage() {
           </p>
         </div>
       </section>
-      <section className="w-full bg-[#ffffff] p-[40px_20px_120px] text-[#111827]" aria-labelledby="s4-defense-heading">
+      <section className="w-full bg-[#ffffff] p-[140px_20px_120px] text-[#111827]" aria-labelledby="s4-defense-heading">
         <div className="max-w-[1185px] mx-auto">
-          <header className="flex flex-col min-[1025px]:flex-row justify-between items-start gap-[40px] mb-[80px] max-[1024px]:!gap-[12px]">
+          <header className="flex flex-col min-[1025px]:flex-row justify-between items-start gap-[40px] mb-[40px] max-[1024px]:!gap-[12px]">
             <h2 id="s4-defense-heading" className="m-0 font-sora font-semibold text-[#212121] text-[32px] leading-[49px] text-left max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased">
               Strengthening Your First Line of <br className="hidden min-[1025px]:block" /> <span className="text-[#2E5A88]">Defense</span>
             </h2>
-            <p className="m-0 font-manrope font-normal text-[#585858] text-[16px] leading-[30px] max-w-[600px] min-[1025px]:text-right text-left max-[1024px]:!w-full max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] antialiased">
+            <p className="m-0 font-manrope font-normal text-[#585858] text-[18px] leading-[30px] max-w-[600px] min-[1025px]:text-right text-left max-[1024px]:!w-full max-[1024px]:!text-[18px] max-[1024px]:!leading-[26px] antialiased">
               Empowering Your Workforce with Essential Practical Skills to Effectively Detect, Prevent, and Respond to a Wide Range of Cyber Threats.
             </p>
           </header>
@@ -42,7 +42,7 @@ export default function ServiceFourPage() {
               </div>
               <div className="flex flex-col p-[24px_28px_64px_28px] flex-1 gap-[12px] min-[1025px]:gap-[10px]">
                 <h3 className="m-0 font-sora font-semibold text-[#212121] text-[18px] leading-[38px] antialiased">Cybersecurity Program</h3>
-                <p className="m-0 font-manrope font-normal text-[#585858] text-[16px] leading-[28px] antialiased">
+                <p className="m-0 font-manrope font-normal text-[#585858] text-[18px] leading-[28px] antialiased">
                   Tailored, role-based training programs that cover essential cybersecurity topics—aligned with industry best practices and compliance requirements.
                 </p>
               </div>
@@ -60,7 +60,7 @@ export default function ServiceFourPage() {
               >
                 <div className="flex flex-col gap-[12px] min-[1025px]:gap-[10px]">
                   <h3 className="m-0 font-sora font-semibold text-[#212121] text-[18px] leading-[38px] antialiased">Phishing Simulations</h3>
-                  <p className="m-0 font-manrope font-normal text-[#585858] text-[16px] leading-[28px] antialiased">
+                  <p className="m-0 font-manrope font-normal text-[#585858] text-[18px] leading-[28px] antialiased">
                     Realistic and customizable phishing campaigns to test employee awareness and response. Gain insights into vulnerabilities in user behavior and deliver targeted reinforcement training where needed.
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export default function ServiceFourPage() {
               >
                 <div className="flex flex-col gap-[12px] min-[1025px]:gap-[10px]">
                   <h3 className="m-0 font-sora font-semibold text-[#212121] text-[18px] leading-[38px] antialiased">Interactive Workshops</h3>
-                  <p className="m-0 font-manrope font-normal text-[#585858] text-[16px] leading-[28px] antialiased">
+                  <p className="m-0 font-manrope font-normal text-[#585858] text-[18px] leading-[28px] antialiased">
                     Engaging, hands-on sessions that go beyond lectures—teaching through real-life scenarios, attack demonstrations, and response exercises to embed lasting cybersecurity habits across your workforce.
                   </p>
                 </div>
@@ -96,7 +96,7 @@ export default function ServiceFourPage() {
               </div>
               <div className="flex flex-col p-[24px_28px_64px_28px] flex-1 gap-[12px] min-[1025px]:gap-[10px]">
                 <h3 className="m-0 font-sora font-semibold text-[#212121] text-[18px] leading-[38px] antialiased">Measurement & Improvement</h3>
-                <p className="m-0 font-manrope font-normal text-[#585858] text-[16px] leading-[28px] antialiased">
+                <p className="m-0 font-manrope font-normal text-[#585858] text-[18px] leading-[28px] antialiased">
                   Track progress through analytics and reporting dashboards. Measure risk reduction, training effectiveness, and behavioral changes over time to continuously optimize your human-centric defense program.
                 </p>
               </div>

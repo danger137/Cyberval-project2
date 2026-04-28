@@ -12,7 +12,7 @@ export default function SOCaaSPage() {
             <span className="opacity-100 font-manrope font-semibold text-[14px] leading-none tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none whitespace-nowrap">MANAGED CYBERSECURITY AS A SERVICE</span>
           </div>
 
-          <h1 className="font-sora text-[40px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 leading-[1.3] text-center [text-wrap:balance] mx-auto max-[1454px]:h-auto max-[1454px]:text-[clamp(32px,5vw,40px)] max-[1454px]:leading-normal m-0">
+          <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 leading-[1.3] text-center [text-wrap:balance] mx-auto max-[1454px]:h-auto max-[1454px]:text-[32px] max-[1454px]:leading-normal m-0">
             Security Operations Center-as-a-Service (SOCaaS)
           </h1>
 
@@ -23,9 +23,9 @@ export default function SOCaaSPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="p-[120px_20px] bg-[#ffffff]">
+      <section className="p-[140px_20px_120px] bg-[#ffffff]">
         <div className="max-w-[1230px] mx-auto text-center">
-          <h2 className="font-sora text-[40px] font-bold text-[#212121] mb-[80px] max-[768px]:text-[32px]">
+          <h2 className="font-sora text-[32px] font-bold text-[#212121] mb-[30px] max-[768px]:text-[32px]">
             Why Choose <span className="text-[#212121]">(</span><span className="text-[#2E5A88]">SOCaaS</span><span className="text-[#212121]">)</span>
           </h2>
           
@@ -37,16 +37,16 @@ export default function SOCaaSPage() {
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
                    <img src="/images/pages/services/service-5/(SOCaaS)/left-colum-1.svg" alt="" className="w-full h-full" />
                  </div>
-                 <h3 className="font-sora text-[20px] font-bold text-[#212121] mb-[12px] mt-[40px]">What is SOCaaS?</h3>
-                 <p className="font-manrope text-[14px] leading-[1.6] text-[#585858]">A fully managed, 24/7 security service that delivers expert threat detection, and response.</p>
+                 <h3 className="font-sora text-[18px] font-bold text-[#212121] mb-[12px] mt-[40px]">What is SOCaaS?</h3>
+                 <p className="font-manrope text-[18px] leading-[1.6] text-[#585858]">A fully managed, 24/7 security service that delivers expert threat detection, and response.</p>
               </article>
               {/* Card 2 */}
               <article className="bg-[#F6F8FB] border-none rounded-[16px] p-[32px] text-left relative flex flex-col justify-center min-h-[250px] flex-1">
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
                    <img src="/images/pages/services/service-5/(SOCaaS)/left-colum-2.svg" alt="" className="w-full h-full" />
                  </div>
-                 <h3 className="font-sora text-[20px] font-bold text-[#212121] mb-[12px] mt-[40px]">Why organizations use it</h3>
-                 <p className="font-manrope text-[14px] leading-[1.6] text-[#585858]">To gain high-end security monitoring without the costs and complexity of building an in-house SOC.</p>
+                 <h3 className="font-sora text-[18px] font-bold text-[#212121] mb-[12px] mt-[40px]">Why organizations use it</h3>
+                 <p className="font-manrope text-[18px] leading-[1.6] text-[#585858]">To gain high-end security monitoring without the costs and complexity of building an in-house SOC.</p>
               </article>
             </div>
 
@@ -69,16 +69,16 @@ export default function SOCaaSPage() {
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
                    <img src="/images/pages/services/service-5/(SOCaaS)/right-colum-1.svg" alt="" className="w-full h-full" />
                  </div>
-                 <h3 className="font-sora text-[20px] font-bold text-[#212121] mb-[12px] mt-[40px]">How it works</h3>
-                 <p className="font-manrope text-[14px] leading-[1.6] text-[#585858]">We collect logs, analyze threats using AI and expert analysts, and provide actionable alerts and incident response.</p>
+                 <h3 className="font-sora text-[18px] font-bold text-[#212121] mb-[12px] mt-[40px]">How it works</h3>
+                 <p className="font-manrope text-[18px] leading-[1.6] text-[#585858]">We collect logs, analyze threats using AI and expert analysts, and provide actionable alerts and incident response.</p>
               </article>
               {/* Card 4 */}
               <article className="bg-[#F6F8FB] border-none rounded-[16px] p-[32px] text-left relative flex flex-col justify-center min-h-[250px] flex-1">
                  <div className="w-[52px] h-[52px] flex items-center justify-center absolute top-[24px] right-[24px]">
                    <img src="/images/pages/services/service-5/(SOCaaS)/right-cloum-2.svg" alt="" className="w-full h-full" />
                  </div>
-                 <h3 className="font-sora text-[20px] font-bold text-[#212121] mb-[12px] mt-[40px]">Who benefits</h3>
-                 <p className="font-manrope text-[14px] leading-[1.6] text-[#585858]">Ideal for companies needing round-the-clock protection, compliance assurance, and advanced threat hunting.</p>
+                 <h3 className="font-sora text-[18px] font-bold text-[#212121] mb-[12px] mt-[40px]">Who benefits</h3>
+                 <p className="font-manrope text-[18px] leading-[1.6] text-[#585858]">Ideal for companies needing round-the-clock protection, compliance assurance, and advanced threat hunting.</p>
               </article>
             </div>
           </div>

@@ -69,7 +69,7 @@ export default function BlogDetailPage() {
             {/* Header Section */}
             <div className="flex justify-between items-start mb-[30px] gap-[40px] max-[1024px]:flex-col max-[1024px]:gap-[20px]">
               <div className="flex-1">
-                <h1 className="font-sora text-[40px] font-semibold text-[#111827] leading-[1.3] m-0 antialiased max-[1024px]:text-[28px]">
+                <h1 className="font-sora text-[32px] font-semibold text-[#111827] leading-[1.3] m-0 antialiased max-[1024px]:text-[32px]">
                   {blog.title}
                 </h1>
                 <p className="font-manrope text-[14px] text-[#585858] mt-[15px] m-0 antialiased">
@@ -97,7 +97,7 @@ export default function BlogDetailPage() {
             {/* Blog Content Section */}
             <div className="max-w-[1000px] mx-auto pb-[100px] max-[1024px]:pb-[60px]">
               <div className="prose prose-lg max-w-none font-manrope text-[#585858] leading-[1.8] max-[1024px]:text-[16px]">
-                <p className="mb-[30px]">
+                <p className="mb-[30px] text-[18px]">
                   {blog.description} This article helps you understand the key developments so you can effectively protect your organization against modern threats.
                 </p>
                 
@@ -105,7 +105,7 @@ export default function BlogDetailPage() {
                   Cybersecurity in 2026 goes beyond just firewalls and passwords. It involves a holistic approach that combines technology, human behaviour, and processes to minimise risks.
                 </h3>
                 
-                <p className="mb-[30px]">
+                <p className="mb-[30px] text-[18px]">
                   In 2026, companies must consider various factors: the rise of sophisticated cyberattacks, the need for continuous monitoring, investment in staff training, and implementing robust security measures that can withstand future threats.
                 </p>
 
@@ -145,7 +145,7 @@ export default function BlogDetailPage() {
                 <h3 className="font-sora text-[24px] font-bold text-[#111827] mt-[20px] mb-[15px] max-[1024px]:text-[22px]">
                   Which cybersecurity trends will dominate in 2026?
                 </h3>
-                <p className="mb-[25px]">
+                <p className="mb-[25px] text-[18px]">
                   In 2026, we see companies increasingly investing in automated detection and response, using behavioural analysis to identify threats, and collaborating with external experts to strengthen their security.
                 </p>
 
@@ -176,7 +176,7 @@ export default function BlogDetailPage() {
                 <p className="font-sora text-[22px] font-bold text-[#111827] mb-[15px] max-[1024px]:text-[20px]">
                   Cybersecurity is an ongoing process — stay alert and adapt.
                 </p>
-                <p className="font-manrope text-[18px] leading-[1.8] text-[#585858] mb-[40px] antialiased max-[1024px]:text-[16px]">
+                <p className="font-manrope text-[18px] leading-[1.8] text-[#585858] mb-[40px] antialiased max-[1024px]:text-[18px]">
                   Just as negotiation is essential in business relationships, flexibility is key in cybersecurity. Use tools and knowledge to continually improve your defence and collaborate with experts. This ensures a secure and future-proof organisation.
                 </p>
 

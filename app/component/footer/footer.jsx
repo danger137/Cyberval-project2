@@ -173,9 +173,9 @@ export default function Footer() {
           </div>
           <div className="w-full">
             {/* Large Branding (Desktop Only) */}
-            <div className="hidden lg:block w-full text-center relative pt-[100px] pb-[40px] min-h-[164px]">
+            <div className="hidden lg:block w-full text-center mt-[-40px]">
               <h2 
-                className="font-sora font-bold m-0 tracking-[-5px] leading-none bg-clip-text text-transparent select-none mx-auto"
+                className="font-sora font-semibold font-weight-600 m-0 tracking-[-5px] leading-none bg-clip-text text-transparent select-none mx-auto relative z-[1]"
                 style={{ 
                   backgroundImage: "linear-gradient(171.02deg, #6F90B4 -36.59%, rgba(84, 122, 162, 0.27) 19.25%, rgba(46, 90, 136, 0) 98.42%)",
                   width: "908px",
@@ -189,15 +189,16 @@ export default function Footer() {
             {/* Small Branding (Mobile/Tablet Only) */}
             <div className="block lg:hidden w-full text-center pt-[40px] pb-[20px] min-h-[68px]">
               <h2 
-                className="font-sora font-bold m-0 tracking-[-2px] leading-none bg-clip-text text-transparent select-none mx-auto"
-                style={{ 
-                  backgroundImage: "linear-gradient(171.02deg, #6F90B4 -36.59%, rgba(84, 122, 162, 0.27) 19.25%, rgba(46, 90, 136, 0) 98.42%)",
-                  width: "380px",
-                  height: "68px",
+                className="font-sora font-bold m-0 tracking-[-2px] leading-none bg-clip-text text-transparent select-none mx-auto relative z-[1]"
+                style={{
+                  marginTop:"12px",
+                  backgroundImage:"linear-gradient(171.02deg, #6F90B4 -36.59%, rgba(84, 122, 162, 0.27) 19.25%, rgba(46, 90, 136, 0) 98.42%)",
+                  maxWidth: "100%",
+                  height: "auto",
                   fontSize: "64px"
                 }}
               >
-                Cybervol
+               Cybervol
               </h2>
             </div>
           </div>

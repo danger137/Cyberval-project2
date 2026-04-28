@@ -13,10 +13,10 @@ export default function ServiceSixPage() {
           </div>
 
           <div className="flex flex-col min-[1025px]:gap-[12px] gap-[9px] w-full max-w-[850px] items-center">
-            <h1 className="font-sora min-[1025px]:text-[48px] text-[40px] font-semibold text-[#ffffff] w-full max-w-[795px] opacity-100 min-[1025px]:leading-[62px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[16px] max-[320px]:!leading-[1.25] antialiased">
+            <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] w-full max-w-[795px] opacity-100 min-[1025px]:leading-[62px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.3] max-[480px]:!text-[32px] max-[480px]:!leading-[48px] max-[480px]:tracking-[-0.02em] max-[320px]:!text-[32px] max-[320px]:!leading-[1.25] antialiased">
               Training and Certifications
             </h1>
-            <p className="font-manrope font-normal min-[1025px]:text-[18px] text-[16px] min-[1025px]:leading-[30px] leading-[26px] text-[#EEEEEE] w-full max-w-[795px] opacity-100 text-center mx-auto m-0 max-[1024px]:!text-[16px] max-[1024px]:!leading-[1.6] max-[480px]:!text-[16px] max-[480px]:!leading-[28px] max-[320px]:!text-[14px] antialiased">
+            <p className="font-manrope font-normal text-[18px] min-[1025px]:leading-[30px] leading-[26px] text-[#EEEEEE] w-full max-w-[795px] opacity-100 text-center mx-auto m-0 max-[1024px]:!text-[18px] max-[1024px]:!leading-[1.6] max-[480px]:!text-[18px] max-[480px]:!leading-[28px] max-[320px]:!text-[18px] antialiased">
               Our training and certification programs span cybersecurity, AI, digital transformation, governance, compliance, and privacy, building the knowledge, confidence, and practical skills needed to tackle today's threats, meet industry standards, and drive measurable outcomes.
             </p>
           </div>
@@ -24,13 +24,13 @@ export default function ServiceSixPage() {
       </section>
 
       {/* Areas we cover Section */}
-      <section className="p-[80px_20px] bg-[#ffffff]">
+      <section className="p-[140px_20px_80px] bg-[#ffffff]">
         <div className="max-w-[1230px] max-[1024px]:max-w-[384px] mx-auto">
-          <div className="flex items-start justify-between mb-[40px] gap-[20px] max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:text-left">
+          <div className="flex items-start justify-between mb-[30px] gap-[20px] max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:text-left">
             <h2 className="font-sora text-[32px] font-semibold text-[#212121] leading-[49px] m-0 max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased">
               Areas <span className="text-[#2E5A88]">we cover</span>
             </h2>
-            <p className="font-manrope font-normal text-[16px] leading-[30px] text-[#585858] max-w-[643px] m-0 max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] max-[1024px]:text-left antialiased">
+            <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#585858] max-w-[643px] m-0 max-[1024px]:!text-[15px] max-[1024px]:!leading-[26px] max-[1024px]:text-left antialiased">
               For Training and Certifications, our catalog spans five portfolios designed to build capability across security, innovation, resilience, governance, and privacy.
             </p>
           </div>
@@ -40,7 +40,7 @@ export default function ServiceSixPage() {
             <article className="relative min-[1025px]:w-[727px] min-[1025px]:h-[334px] rounded-[14.38px] overflow-hidden p-[32px_40px_47px_29px] flex flex-row items-start justify-between bg-[linear-gradient(230.36deg,rgba(135,187,243,0.36)_3.31%,rgba(111,144,180,0.07)_49.84%,rgba(246,248,251,0.49)_95.24%)] group max-[1024px]:flex-col max-[1024px]:items-center max-[1024px]:min-h-[542px] max-[1024px]:max-w-[384px] max-[1024px]:w-full max-[1024px]:gap-[10px] service-card-anim card-entrance" style={{ animationDelay: '0s' }}>
               <div className="relative z-[2] w-full max-w-[380px] max-[1024px]:max-w-[329px] flex flex-col min-[1025px]:gap-[10px] gap-[2.74px] max-[1024px]:h-[192.74px]">
                 <h3 className="m-0 font-sora text-[18px] font-semibold text-[#212121] min-[1025px]:leading-[38px] max-[1024px]:max-w-[329px] antialiased">Cybersecurity</h3>
-                <p className="font-manrope font-normal text-[16px] leading-[28px] text-[#585858] w-full max-w-[347px] antialiased">
+                <p className="font-manrope font-normal text-[18px] leading-[28px] text-[#585858] w-full max-w-[347px] antialiased">
                   Training courses in this portfolio focus on safeguarding information systems, identifying and mitigating cyber threats, and building robust security strategies that ensure data protection and integrity.
                 </p>
               </div>
@@ -54,7 +54,7 @@ export default function ServiceSixPage() {
             <article className="relative min-[1025px]:w-[482px] min-[1025px]:h-[334px] rounded-[14.38px] overflow-hidden p-[40px] flex flex-col bg-[#F6F8FB] group max-[1024px]:w-[384px] max-[1024px]:h-[334px] max-[1024px]:p-[29px_19px_80px_19px] service-card-anim card-entrance" style={{ animationDelay: '0.1s' }}>
                <div className="flex flex-col gap-[10px] w-full max-w-[337px]">
                  <h3 className="font-sora text-[18px] font-semibold text-[#212121] leading-[38px] antialiased">AI and Digital Transformation</h3>
-                 <p className="font-manrope font-normal text-[16px] leading-[28px] text-[#585858] w-full antialiased">
+                 <p className="font-manrope font-normal text-[18px] leading-[28px] text-[#585858] w-full antialiased">
                    This portfolio focuses on the intersection of artificial intelligence and digital innovation. These courses help organizations harness AI technologies and navigate the challenges and opportunities posed by digital transformation.
                  </p>
                </div>
@@ -69,7 +69,7 @@ export default function ServiceSixPage() {
             <article className="relative bg-[#F6F8FB] rounded-[14.38px] p-[36px_18px_80px_18px] flex flex-col overflow-hidden group min-[1025px]:w-[394px] min-[1025px]:h-[334px] max-[1024px]:w-[384px] max-[1024px]:h-[334px] service-card-anim card-entrance" style={{ animationDelay: '0.2s' }}>
                <div className="flex flex-col gap-[10px] w-full">
                  <h3 className="m-0 font-sora text-[18px] font-semibold text-[#212121] leading-[30px] antialiased">Continuity, Resilience, and Recovery</h3>
-                 <p className="font-manrope font-normal text-[16px] leading-[28px] text-[#585858] w-full antialiased">
+                 <p className="font-manrope font-normal text-[18px] leading-[28px] text-[#585858] w-full antialiased">
                    Courses under this portfolio prepare professionals to develop and implement strategies that ensure business continuity, organizational resilience, and effective recovery in the face of disruptive events.
                  </p>
                </div>
@@ -82,7 +82,7 @@ export default function ServiceSixPage() {
             <article className="relative bg-[#F6F8FB] rounded-[14.38px] p-[36px_24px_24px_24px] flex flex-col overflow-hidden group min-[1025px]:w-[395px] min-[1025px]:h-[334px] max-[1024px]:w-[384px] max-[1024px]:h-[334px] max-[1024px]:p-[36px_18px_80px_18px] service-card-anim card-entrance" style={{ animationDelay: '0.3s' }}>
                <div className="flex flex-col gap-[10px] w-full">
                  <h3 className="m-0 font-sora text-[18px] font-semibold text-[#212121] leading-[30px] antialiased">Governance, Risk, and Compliance</h3>
-                 <p className="font-manrope font-normal text-[16px] leading-[28px] text-[#585858] w-full antialiased">
+                 <p className="font-manrope font-normal text-[18px] leading-[28px] text-[#585858] w-full antialiased">
                    This portfolio emphasizes governance frameworks, risk management, and compliance strategies, equipping participants to align organizational objectives with regulatory and business requirements.
                  </p>
                </div>
@@ -95,7 +95,7 @@ export default function ServiceSixPage() {
             <article className="relative bg-[#F6F8FB] rounded-[14.38px] p-[36px_24px_24px_24px] flex flex-col overflow-hidden group min-[1025px]:w-[394px] min-[1025px]:h-[334px] max-[1024px]:w-[384px] max-[1024px]:h-[334px] max-[1024px]:p-[36px_24px_80px_24px] service-card-anim card-entrance" style={{ animationDelay: '0.4s' }}>
                <div className="flex flex-col gap-[10px] w-full">
                  <h3 className="m-0 font-sora text-[18px] font-semibold text-[#212121] leading-[30px] antialiased">Privacy and Data Protection</h3>
-                 <p className="font-manrope font-normal text-[16px] leading-[28px] text-[#585858] w-full antialiased">
+                 <p className="font-manrope font-normal text-[18px] leading-[28px] text-[#585858] w-full antialiased">
                    This portfolio covers critical data protection laws and practices, including GDPR compliance and strategies for protecting personal and sensitive information in an increasingly data-driven world.
                  </p>
                </div>
@@ -114,19 +114,19 @@ export default function ServiceSixPage() {
             <h2 className="font-sora text-[32px] font-semibold text-[#212121] leading-[49px] m-0 max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased">
               Recognized by <span className="text-[#2E5A88]">Global Certifications</span>
             </h2>
-            <p className="font-manrope font-normal text-[16px] leading-[30px] text-[#585858] m-0 max-w-[422px] antialiased">
+            <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#585858] m-0 max-w-[422px] antialiased">
               Industry-recognized cybersecurity training and certification programs designed to help professionals lead, defend, and grow in a rapidly evolving digital world.
             </p>
             <ul className="flex flex-col gap-[17px] mt-[10px] min-[1025px]:w-[641px] min-[1025px]:h-[120px] max-[1024px]:items-center">
-               <li className="flex items-center gap-[12px] text-[16px] font-medium text-[#585858]">
+               <li className="flex items-center gap-[12px] text-[18px] font-medium text-[#585858]">
                  <img src="/images/pages/services/service-6/tick-icon.svg" alt="check" className="w-[22px] h-[22px]" />
                  ISO-Aligned Training
                </li>
-               <li className="flex items-center gap-[12px] text-[16px] font-medium text-[#585858]">
+               <li className="flex items-center gap-[12px] text-[18px] font-medium text-[#585858]">
                  <img src="/images/pages/services/service-6/tick-icon.svg" alt="check" className="w-[22px] h-[22px]" />
                  Practical Cybersecurity Programs
                </li>
-               <li className="flex items-center gap-[12px] text-[16px] font-medium text-[#585858]">
+               <li className="flex items-center gap-[12px] text-[18px] font-medium text-[#585858]">
                  <img src="/images/pages/services/service-6/tick-icon.svg" alt="check" className="w-[22px] h-[22px]" />
                  Globally Recognized Certifications
                </li>

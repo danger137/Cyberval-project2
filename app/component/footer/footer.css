@@ -6,8 +6,8 @@
 .footer-main-wrapper {
     width: 100%;
     height: fit-content;
-    padding: 160px 40px 120px;
-    background-color: #ebf0f5; 
+    padding: 200px 40px 0;
+    background-color: #F6F8FB;
     position: relative;
     overflow: hidden;
 }
@@ -33,10 +33,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Reduced gap */
+    gap: 20px;
+    /* Reduced gap */
     margin-bottom: 50px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
-    min-height: 380px; /* Adjusted to give more vertical space for centering */
+    min-height: 380px;
+    /* Adjusted to give more vertical space for centering */
     text-align: center;
 }
 
@@ -90,9 +92,9 @@
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1.4fr 0.9fr 1.1fr 1.2fr;
-    gap: 45px;
-    padding-bottom: 80px; /* Increased padding */
+    grid-template-columns: 1.5fr 0.6fr 1.3fr 1.2fr;
+    gap: 24px;
+    padding-bottom: 80px;
     align-items: start;
     position: relative;
     z-index: 5;
@@ -143,7 +145,7 @@
 .footer-logo-subtext {
     font-family: var(--font-manrope), sans-serif;
     font-size: 12px;
-    color: #7c8da3;
+    color: #585858;
     font-weight: 500;
     margin-top: 1px;
     margin-left: 1px;
@@ -153,7 +155,7 @@
 .social-links {
     display: flex;
     gap: 10px;
-   
+
 }
 
 .soc-link img {
@@ -195,7 +197,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-  
+
 }
 
 .contact-item {
@@ -219,13 +221,13 @@
 }
 
 .contact-text p,
-.contact-item  > p {
+.contact-item>p {
     font-family: var(--font-manrope), sans-serif;
     font-size: 13px;
     color: #7c8da3;
     margin: 0;
     line-height: 1.6;
-    
+
 }
 
 .office-title {
@@ -243,7 +245,8 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 80px; /* Positioned behind the bottom of content */
+    bottom: 80px;
+    /* Positioned behind the bottom of content */
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -270,7 +273,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0 35px;
+
+    padding: 5px 0 10px;
     position: relative;
     z-index: 10;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
@@ -279,7 +283,7 @@
 .footer-bottom p {
     font-family: var(--font-manrope), sans-serif;
     font-size: 13px;
-    color: #7c8da3;
+    color: #585858;
     margin: 0;
 }
 
@@ -292,7 +296,7 @@
 .footer-bottom-links a {
     font-family: var(--font-manrope), sans-serif;
     font-size: 13px;
-    color: #7c8da3;
+    color: #585858;
     text-decoration: none;
     transition: color 0.3s ease;
 }
