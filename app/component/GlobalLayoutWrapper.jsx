@@ -7,7 +7,7 @@ export default function GlobalLayoutWrapper({ children }) {
   const pathname = usePathname();
   
   // Check if current path is a service or resource sub-page
-  const isPillarboxed = pathname.startsWith("/services/") || pathname.startsWith("/resources/");
+  const isPillarboxed = pathname.startsWith("/services/") || pathname.startsWith("/resources/") || pathname.startsWith("/Contact");
 
   if (isPillarboxed) {
     return (

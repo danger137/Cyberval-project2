@@ -42,7 +42,7 @@ export default function Nav() {
         <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''} ${isBlogDetail ? 'blog-detail-nav' : ''}`}>
             <div className="nav-container max-[1024px]:max-w-[425px] max-[1024px]:mx-auto">
                 <div className="logo">
-                    <img src="/images/header-items/header-logo.svg" alt="Cybervol" />
+                    <img src={isBlogDetail ? "/images/header-items/nav/Group 1.svg" : "/images/header-items/header-logo.svg"} alt="Cybervol" />
                     <div className="logo-text">
                         <span className="brand-name">Cybervol</span>
                         <span className="tagline">by Rotvol Solutions</span>
@@ -50,14 +50,35 @@ export default function Nav() {
                 </div>
 
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+                    {/* Mobile Header - Logo and Close Icon */}
+                    <div className="mobile-menu-header">
+                        <div className="logo">
+                            <img src="/images/header-items/nav/Group 1.svg" alt="Cybervol" className="mobile-logo-img-full" />
+                        </div>
+                        <div className="close-menu-icon" onClick={closeAll}>
+                            <img src="/images/header-items/nav/Vector.svg" alt="Close" />
+                        </div>
+                    </div>
+
                     <li><Link href="/" className={isActive('/') ? 'active' : ''} onClick={closeAll}>Home</Link></li>
-                    <li><Link href="/About2" className={isActive('/about') ? 'active' : ''} onClick={closeAll}>About us</Link></li>
+                    <li><Link href="/About2" className={isActive('/About2') ? 'active' : ''} onClick={closeAll}>About us</Link></li>
                     <li className={`dropdown ${activeDropdown === 'services' ? 'open' : ''} ${pathname.startsWith('/services') ? 'active' : ''}`}>
                         <div className="dropdown-trigger" tabIndex="0" onClick={(e) => toggleDropdown(e, 'services')}>
-                            Services <span className="arrow">▾</span>
+                            Services <img src="/images/header-items/nav/dropdown-menu-icon.svg" alt="" className="arrow mobile-arrow" />
                         </div>
                         <div className="mega-menu">
-                            <div className="mega-left">
+                            {/* Mobile Simple List */}
+                            <div className="mobile-dropdown-content">
+                                <Link href="/services/service-1" onClick={closeAll}>CyberShield Solutions</Link>
+                                <Link href="/services/service-2" onClick={closeAll}>Governance, Risk & Compliance (GRC)</Link>
+                                <Link href="/services/service-3" onClick={closeAll}>Offensive Security</Link>
+                                <Link href="/services/service-4" onClick={closeAll}>Security Awareness & Training</Link>
+                                <Link href="/services/service-5" onClick={closeAll}>Managed Cybersecurity as a Service (MCaaS)</Link>
+                                <Link href="/services/service-6" onClick={closeAll}>Training and Certifications</Link>
+                            </div>
+                            
+                            {/* Desktop Mega Menu content */}
+                            <div className="mega-left desktop-only">
                                 <p className="mega-heading">OUR SERVICES</p>
                                 <div className="mega-grid">
                                     <Link href="/services/service-1" className="mega-item" onClick={closeAll}>
@@ -119,7 +140,7 @@ export default function Nav() {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="mega-right">
+                            <div className="mega-right desktop-only">
                                 <img src="/images/header-items/services-icons/nav-card-1.jpg" alt="" className="services-img" />
                                 <h3 className="services-title">Strengthen Your Cyber Resilience</h3>
                                 <ul className="services-bullets">
@@ -135,10 +156,17 @@ export default function Nav() {
                     </li>
                     <li className={`dropdown ${activeDropdown === 'resources' ? 'open' : ''} ${pathname.startsWith('/resources') ? 'active' : ''}`}>
                         <div className="dropdown-trigger" tabIndex="0" onClick={(e) => toggleDropdown(e, 'resources')}>
-                            Resources <span className="arrow">▾</span>
+                            Resources <img src="/images/header-items/nav/dropdown-menu-icon.svg" alt="" className="arrow mobile-arrow" />
                         </div>
                         <div className="mega-menu resources-menu">
-                            <div className="mega-left">
+                            <div className="mobile-dropdown-content">
+                                <Link href="/resources/Blog" onClick={closeAll}>Blogs</Link>
+                                <Link href="/resources/Webinars" onClick={closeAll}>Webinar</Link>
+                                <Link href="/resources/Ebooks" onClick={closeAll}>Ebooks</Link>
+                                <Link href="/resources/DataSheet" onClick={closeAll}>Data Sheets</Link>
+                            </div>
+
+                            <div className="mega-left desktop-only">
                                 <p className="mega-heading">RESOURCES</p>
                                 <div className="mega-grid resources-grid">
                                     <Link href="/resources/Blog" className="mega-item resource-item" onClick={closeAll}>
@@ -188,7 +216,7 @@ export default function Nav() {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="mega-right">
+                            <div className="mega-right desktop-only">
                                 <p className="mega-heading">UPCOMING WEBINAR</p>
                                 <div className="webinar-card">
                                     <div className="webinar-img-wrapper">
@@ -213,6 +241,13 @@ export default function Nav() {
                             </div>
                         </div>
                     </li>
+                    
+                    {/* Mobile Footer - Contact Button */}
+                    <div className="mobile-menu-footer">
+                        <Link href="/Contact" onClick={closeAll} className="mobile-contact-btn-link">
+                            <button className="mobile-contact-btn">Contact us</button>
+                        </Link>
+                    </div>
                 </ul>
 
                 <div className="nav-right">

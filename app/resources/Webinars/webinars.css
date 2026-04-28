@@ -1,0 +1,54 @@
+/* app/resources/Webinars/webinars.css */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-entrance {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.webinar-card-anim {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.webinar-card-anim:hover {
+    transform: translateY(-12px) scale(1.01);
+    border-color: rgba(46, 90, 136, 0.1) !important;
+    box-shadow: 0 25px 60px -15px rgba(46, 90, 136, 0.18) !important;
+    z-index: 10;
+}
+
+/* Subtle icon animation on hover */
+.webinar-card-anim img {
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Fluid Laptop Responsiveness (1026px - 1440px) */
+@media (min-width: 1026px) and (max-width: 1439px) {
+    .webinar-hero-fluid {
+        height: clamp(450px, 38vw, 556px) !important;
+        width: 100% !important;
+        max-width: 1440px !important;
+        padding: clamp(80px, 8vw, 120px) 20px clamp(40px, 5vw, 80px) !important;
+    }
+
+    .webinar-hero-title-fluid {
+        font-size: clamp(30px, 2.8vw, 40px) !important;
+        line-height: 1.3 !important;
+    }
+
+    .webinar-hero-desc-fluid {
+        font-size: clamp(14px, 1.2vw, 18px) !important;
+        line-height: 1.5 !important;
+        max-width: clamp(500px, 45vw, 687px) !important;
+    }
+}
