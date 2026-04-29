@@ -148,13 +148,15 @@
 .read-more-link {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 15px;
   font-family: var(--font-manrope), sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1; /* 100% */
+  letter-spacing: 0;
   color: #3B659C;
   text-decoration: none;
-  transition: gap 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .read-more-link:hover {
@@ -164,7 +166,6 @@
 .read-more-icon {
   width: 70px;
   height: 70px;
-  margin-top: -2px;
 }
 
 .insights-dots {

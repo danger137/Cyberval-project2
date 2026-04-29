@@ -73,12 +73,12 @@ export default function AboutPage() {
 
       {/* Commitment Section (Previously What We Offer) */}
       <section className="commitment-section">
-        <span className="commitment-label">WHAT WE OFFER</span>
+        <span className="commitment-label">OUR COMMITMENT</span>
         <h2 className="commitment-heading">
-          Our <span className="blue-text">Commitment</span>
+          Built on Trust. Driven by <span className="blue-text">Security.</span>
         </h2>
         <p className="commitment-subtext">
-          We evaluate your environment, design the right mix of services, and execute with accuracy.
+          Delivering secure, innovative, and trusted cybersecurity solutions you can rely on.
         </p>
         
         <div className="commitment-cards-container">
@@ -87,8 +87,8 @@ export default function AboutPage() {
               <img src="/group1.svg" alt="Needs" />
             </div>
             <div className="card-content">
-              <h4 className="card-title">We Understand Your Needs</h4>
-              <p className="card-desc">We take time to understand your environment, risk profile, and business goals.</p>
+              <h4 className="card-title">Security First</h4>
+              <p className="card-desc">Ensuring unwavering security at every level for robust digital asset protection.</p>
             </div>
           </div>
 
@@ -97,8 +97,8 @@ export default function AboutPage() {
               <img src="/group2.svg" alt="Precision" />
             </div>
             <div className="card-content">
-              <h4 className="card-title">We Build with Precision</h4>
-              <p className="card-desc">We combine proven methodologies with automation to reduce gaps and human error.</p>
+              <h4 className="card-title">Client Confidentiality</h4>
+              <p className="card-desc">Upholding strict confidentiality standards for trusted cybersecurity services.</p>
             </div>
           </div>
 
@@ -107,8 +107,8 @@ export default function AboutPage() {
               <img src="/group3.svg" alt="Excellence" />
             </div>
             <div className="card-content">
-              <h4 className="card-title">We Deliver Excellence</h4>
-              <p className="card-desc">We stay engaged after go-live—measuring outcomes and helping teams mature.</p>
+              <h4 className="card-title">Continuous Innovation</h4>
+              <p className="card-desc">Staying ahead with cutting-edge solutions to adapt and counter evolving threats.</p>
             </div>
           </div>
         </div>

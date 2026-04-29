@@ -327,7 +327,7 @@
     padding: 8.12px;
     color: #2b598d;
     font-family: var(--font-manrope), sans-serif;
-    font-size: 12.99px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 36.54px;
     letter-spacing: 0.09em; /* 9% of font size */
@@ -351,7 +351,7 @@
 .mission-section .mission-subheading {
     font-family: var(--font-manrope), sans-serif;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     color: #333333;
     margin-bottom: 16px;
     line-height: 30px;
@@ -726,7 +726,7 @@
     color: #ffffff;
     background: rgba(255, 255, 255, 0.05);
     font-family: var(--font-manrope), sans-serif;
-    font-size: 12.99px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 36.54px;
     letter-spacing: 0.09em;

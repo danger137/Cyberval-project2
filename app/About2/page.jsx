@@ -149,33 +149,33 @@ export default function About() {
           <div className="offer-cards-grid">
             <div className="offer-header">
               <h2 className="offer-title">
-                What We <span className="blue-text-offer">Offer</span>
+                Built on Trust. Driven by <span className="blue-text-offer">Security.</span>
               </h2>
               <p className="offer-subtitle">
-                We evaluate your environment, design the right mix of services, and execute with accuracy—delivering outcomes you can see and measure.
+                Delivering secure, innovative, and trusted cybersecurity solutions you can rely on.
               </p>
             </div>
 
             <div className="offer-card card-needs">
-              <h3 className="card-title">We Understand Your Needs</h3>
+              <h3 className="card-title">Security First</h3>
               <p className="card-description">
-                We take time to understand your environment, risk profile, and business goals before recommending any control or framework.
+                Ensuring unwavering security at every level for robust digital asset protection.
               </p>
             </div>
 
             {/* Card 2: Precision */}
             <div className="offer-card card-precision ">
-              <h3 className="card-title">We Build with Precision</h3>
+              <h3 className="card-title">Client Confidentiality</h3>
               <p className="card-description">
-                From architecture to implementation, we combine proven methodologies with automation to reduce gaps and human error.
+                Upholding strict confidentiality standards for trusted cybersecurity services.
               </p>
             </div>
 
             {/* Card 3: Excellence */}
             <div className="offer-card card-excellence">
-              <h3 className="card-title">We Deliver Excellence</h3>
+              <h3 className="card-title">Continuous Innovation</h3>
               <p className="card-description">
-                We stay engaged after go-live—measuring outcomes, tuning controls, and helping teams mature their security posture.
+                Staying ahead with cutting-edge solutions to adapt and counter evolving threats.
               </p>
             </div>
           </div>

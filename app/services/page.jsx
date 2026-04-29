@@ -31,7 +31,7 @@ export default function ServicesPage() {
     {
       id: 3,
       title: "Offensive Security",
-      desc: "Proactive Threat Simulation & Risk Mitigation",
+      desc: "Proactive Threat Simulation\n& Risk Mitigation",
       image: "/images/pages/services/card-image-3.png",
       defaultIcon: "/images/pages/services/icon-navy-blue.svg",
       hoverIcon: "/images/pages/services/icon-white (1).svg",
@@ -132,7 +132,7 @@ export default function ServicesPage() {
             
             <div className="services-header-right">
               <p className="services-description">
-                Comprehensive digital solutions designed to transform your <br className="services-br" /> business and accelerate growth through innovative technology.
+                We transform risk into resilience, delivering comprehensive <br className="services-br" /> cybersecurity that empowers and protects your organization.
               </p>
             </div>
           </div>
