@@ -78,7 +78,7 @@
 
 .about-description {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #666666;
   line-height: 1.75;
@@ -106,7 +106,7 @@
 
 .mission-subheading {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #212121;
   line-height: 34px;
@@ -116,7 +116,7 @@
 
 .mission-description {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #585858;
   line-height: 30px;
@@ -135,7 +135,7 @@
   border: 1px solid #333333;
   border-radius: 6px;
   font-family: var(--font-manrope), sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: #333333;
   background-color: transparent;
@@ -256,7 +256,7 @@
 
 .commitment-subtext {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #585858;
   line-height: 30px;
@@ -364,7 +364,7 @@
 
 .card-desc {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #585858;
   line-height: 1.4;
@@ -577,7 +577,7 @@
     text-align: center;
   }
   .commitment-subtext {
-    font-size: 18px !important;
+    font-size: 16px !important;
     line-height: 30px !important;
     max-width: 320px;
     margin: 0 auto 40px;

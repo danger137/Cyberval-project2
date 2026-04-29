@@ -120,7 +120,7 @@ export default function ServiceFivePage() {
         </div>
       </section>
       {/* Why Choose Section */}
-      <section className="p-[140px_0] max-[1024px]:p-[60px_0] bg-[#ffffff] text-center">
+      <section className="pt-[140px] px-0 pb-[0px] max-[1024px]:pt-[60px] max-[1024px]:px-[0px] max-[1024px]:pb-[0px] bg-[#ffffff] text-center">
         <h2 className="text-[32px] font-semibold text-[#212121] leading-[49px] mb-[30px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] antialiased font-sora">
           Why Choose <span className="text-[#2E5A88]">MCaaS</span>
         </h2>

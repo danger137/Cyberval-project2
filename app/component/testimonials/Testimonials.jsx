@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
+import ScrollReveal from '../ScrollReveal';
 import './Testimonials.css';
 
 const testimonialData = [
@@ -124,17 +125,19 @@ export default function Testimonials() {
   return (
     <section className="testimonials-section">
       <div className="testimonials-container">
-        <div className="testimonials-header">
-          <div className="testimonials-badge-wrapper">
-             <span className="testimonials-badge">TESTIMONIALS</span>
+        <ScrollReveal direction="up">
+          <div className="testimonials-header">
+            <div className="testimonials-badge-wrapper">
+              <span className="testimonials-badge">TESTIMONIALS</span>
+            </div>
+            <h2 className="testimonials-title">
+              Trusted by teams who <span className="highlight">lead people</span>
+            </h2>
+            <p className="testimonials-subtitle">
+              Real experiences from organizations benefiting from our cybersecurity expertise.
+            </p>
           </div>
-          <h2 className="testimonials-title">
-            Trusted by teams who <span className="highlight">lead people</span>
-          </h2>
-          <p className="testimonials-subtitle">
-            Real experiences from organizations benefiting from our cybersecurity expertise.
-          </p>
-        </div>
+        </ScrollReveal>
 
         <div className="testimonials-slider-viewport">
           <div 

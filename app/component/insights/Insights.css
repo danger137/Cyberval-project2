@@ -24,7 +24,7 @@
   border: 1px solid #E2E8F0;
   border-radius: 100px;
   font-family: var(--font-manrope), sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   color: #3B659C;
   letter-spacing: 0.1em;
@@ -51,7 +51,7 @@
   border: 1px solid #111827;
   border-radius: 8px;
   font-family: var(--font-manrope), sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   color: #111827;
   cursor: pointer;
@@ -126,7 +126,7 @@
 
 .insight-date {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   color: #9CA3AF;
   display: block;
   margin-bottom: 12px;

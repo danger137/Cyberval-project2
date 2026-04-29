@@ -58,7 +58,7 @@
 
 .footer-cta-desc {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     width: 100%;
     color: #EEEEEE;
     line-height: 30px;
@@ -136,7 +136,7 @@
 
 .branding-tagline {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: #7c8da3;
     line-height: 1.75;
     margin: 0;
@@ -165,7 +165,7 @@
 
 .footer-heading {
     font-family: var(--font-sora), sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     color: #0f172a;
     margin: 0 0 18px;
@@ -183,7 +183,7 @@
 .footer-links li a {
     text-decoration: none;
     font-family: var(--font-manrope), sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: #7c8da3;
     transition: color 0.3s ease;
 }
@@ -282,7 +282,7 @@
 
 .footer-bottom p {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     color: #585858;
     margin: 0;
 }

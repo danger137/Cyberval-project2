@@ -23,7 +23,7 @@ export default function VCISOPage() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="p-[140px_20px_120px] bg-[#ffffff]">
+      <section className="p-[140px_20px_0px] bg-[#ffffff]">
         <div className="max-w-[1300px] mx-auto text-center">
           <h2 className="font-sora text-[32px] font-bold text-[#212121] mb-[30px] max-[768px]:text-[32px]">
             Why Choose <span className="text-[#2E5A88]">Virtual CISO (vCISO)</span>

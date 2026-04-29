@@ -242,7 +242,7 @@
 
 .card-text {
   font-family: var(--font-manrope), sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #585858;
   line-height: 28px;
@@ -374,7 +374,7 @@
   }
 
   .card-text {
-    font-size: clamp(14px, 1.1vw, 18px);
+    font-size: clamp(14px, 1.1vw, 16px);
     line-height: 1.5;
     max-width: 100%;
     height: auto;
@@ -451,7 +451,7 @@
     width: 100% !important;
     max-width: 100% !important;
     height: auto;
-    font-size: 18px; /* Increased as requested */
+    font-size: 16px;
     line-height: 1.7;
     color: #4B5563;
   }

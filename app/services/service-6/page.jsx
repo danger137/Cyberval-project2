@@ -24,7 +24,7 @@ export default function ServiceSixPage() {
       </section>
 
       {/* Areas we cover Section */}
-      <section className="p-[140px_20px_80px] bg-[#ffffff]">
+      <section className="p-[140px_20px_0px] bg-[#ffffff]">
         <div className="max-w-[1230px] max-[1024px]:max-w-[384px] mx-auto">
           <div className="flex items-start justify-between mb-[30px] gap-[20px] max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:text-left">
             <h2 className="font-sora text-[32px] font-semibold text-[#212121] leading-[49px] m-0 max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased">

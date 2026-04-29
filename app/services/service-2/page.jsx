@@ -80,7 +80,7 @@ export default function ServiceTwoPage() {
         </section>
 
         {/* Capabilities Section */}
-        <section className="p-[140px_20px_120px] bg-[#ffffff] max-[1024px]:!p-[60px_24px_10px] max-[425px]:!p-[40px_20px_10px] max-[1024px]:!overflow-hidden">
+        <section className="p-[140px_20px_0px] bg-[#ffffff] max-[1024px]:!p-[60px_24px_10px] max-[425px]:!p-[40px_20px_10px] max-[1024px]:!overflow-hidden">
           <div className="w-[1230px] h-auto mx-auto flex flex-col gap-[30px] max-[1024px]:w-full max-[1024px]:max-w-[440px] max-[1024px]:px-0 max-[1024px]:mx-auto">
             <div className="flex justify-between items-start w-full min-[1025px]:w-[1230px] h-auto opacity-100 max-[1024px]:flex-col max-[1024px]:!w-full max-[1024px]:!gap-[12px] max-[1024px]:!mb-0">
               <h2 className="font-sora text-[32px] font-semibold text-[#212121] w-full min-[1025px]:w-[311px] h-auto leading-[49px] m-0 opacity-100 max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] antialiased max-[425px]:!text-[26px] max-[425px]:!leading-[36px] max-[375px]:!text-[24px] max-[375px]:!leading-[32px] max-[320px]:!text-[22px] max-[320px]:!leading-[30px]">

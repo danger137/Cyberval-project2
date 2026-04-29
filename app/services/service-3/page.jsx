@@ -27,7 +27,7 @@ export default function ServiceThreePage() {
 
       {/* Capabilities Section */}
 
-      <section className="p-[140px_20px_120px] bg-[#ffffff] max-[1024px]:p-[60px_20px_80px]">
+      <section className="p-[140px_20px_0px] bg-[#ffffff] max-[1024px]:p-[60px_20px_80px]">
         <div className="max-w-[1230px] mx-auto">
           <div className="flex justify-between items-start mb-[30px] gap-[40px] max-[1024px]:flex-col max-[1024px]:!w-full max-[1024px]:!gap-[12px] max-[1024px]:text-left max-[1024px]:mx-auto min-[1025px]:w-[1230px] min-[1025px]:h-[60px] min-[1025px]:mx-auto">
             <h2 className="font-sora text-[32px] font-semibold text-[#212121] leading-[49px] m-0 max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] min-[1025px]:w-[289px] min-[1025px]:h-[50px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased">

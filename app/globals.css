@@ -151,7 +151,67 @@ body {
   }
 }
 
-/* 
+/* ===== Scroll Reveal System (CSS + IntersectionObserver) ===== */
+.sr-el {
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.25, 0.4, 0.25, 1);
+  transition-duration: 0.7s;
+}
+.sr-up    { opacity: 0; transform: translateY(50px); }
+.sr-down  { opacity: 0; transform: translateY(-30px); }
+.sr-left  { opacity: 0; transform: translateX(-60px); }
+.sr-right { opacity: 0; transform: translateX(60px); }
+.sr-fade  { opacity: 0; transform: none; }
+.sr-scale { opacity: 0; transform: scale(0.88); }
+.sr-visible { opacity: 1 !important; transform: none !important; }
+
+/* ===== Hero Entrance Animations ===== */
+@keyframes anim-fade-down { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes anim-fade-up   { from { opacity: 0; transform: translateY(40px);  } to { opacity: 1; transform: translateY(0); } }
+@keyframes anim-fade-in   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes globe-float    { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-16px); } }
+
+.anim-pill    { animation: anim-fade-down 0.6s  cubic-bezier(0.25, 0.4, 0.25, 1) 0.1s  both; }
+.anim-title   { animation: anim-fade-up   0.75s cubic-bezier(0.25, 0.4, 0.25, 1) 0.25s both; }
+.anim-desc    { animation: anim-fade-up   0.7s  cubic-bezier(0.25, 0.4, 0.25, 1) 0.4s  both; }
+.anim-actions { animation: anim-fade-up   0.6s  cubic-bezier(0.25, 0.4, 0.25, 1) 0.55s both; }
+.anim-globe   { animation: anim-fade-in   1.2s  cubic-bezier(0.25, 0.4, 0.25, 1) 0.2s  both; }
+.anim-partner { animation: anim-fade-in   0.8s  cubic-bezier(0.25, 0.4, 0.25, 1) 0.7s  both; }
+.anim-float   { animation: globe-float    6s    ease-in-out 1.4s infinite; }
+
+/* ===== FAQ Accordion ===== */
+.faq-answer {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.38s cubic-bezier(0.25, 0.4, 0.25, 1), opacity 0.3s ease;
+}
+.faq-item.active .faq-answer { max-height: 200px; opacity: 1; }
+.faq-icon { transition: transform 0.3s cubic-bezier(0.25, 0.4, 0.25, 1); display: inline-flex; }
+.faq-item.active .faq-icon { transform: rotate(180deg); }
+
+/* ===== Hover Effects ===== */
+.commitment-card,
+.insight-card,
+.testimonial-card {
+  transition: transform 0.35s cubic-bezier(0.25, 0.4, 0.25, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 0.4, 0.25, 1);
+}
+.commitment-card:hover,
+.insight-card:hover,
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+.soc-link { transition: transform 0.3s ease, opacity 0.3s ease; display: inline-flex; }
+.soc-link:hover { transform: translateY(-3px); opacity: 0.8; }
+.mega-item { transition: transform 0.25s ease; }
+.mega-item:hover { transform: translateX(4px); }
+
+/* ===== Nav Scroll Effect ===== */
+.nav { transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease; }
+
+/*
   Mobile Centered Wrapper
   Used to lock the layout to 425px on mobile/tablet viewports (up to 1024px)
   to ensure visual consistency across all pages.

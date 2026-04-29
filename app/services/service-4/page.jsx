@@ -20,11 +20,11 @@ export default function ServiceFourPage() {
           </p>
         </div>
       </section>
-      <section className="w-full bg-[#ffffff] p-[140px_20px_120px] text-[#111827]" aria-labelledby="s4-defense-heading">
+      <section className="w-full bg-[#ffffff] p-[140px_20px_0px] text-[#111827]" aria-labelledby="s4-defense-heading">
         <div className="max-w-[1185px] mx-auto">
           <header className="flex flex-col min-[1025px]:flex-row justify-between items-start gap-[40px] mb-[40px] max-[1024px]:!gap-[12px]">
             <h2 id="s4-defense-heading" className="m-0 font-sora font-semibold text-[#212121] text-[32px] leading-[49px] text-left max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased">
-              Strengthening Your First Line of <br className="hidden min-[1025px]:block" /> <span className="text-[#2E5A88]">Defense</span>
+              Strengthening Your First <br className="hidden min-[1025px]:block" /> Line of <span className="text-[#2E5A88]">Defense</span>
             </h2>
             <p className="m-0 font-manrope font-normal text-[#585858] text-[18px] leading-[30px] max-w-[600px] min-[1025px]:text-right text-left max-[1024px]:!w-full max-[1024px]:!text-[18px] max-[1024px]:!leading-[26px] antialiased">
               Empowering Your Workforce with Essential Practical Skills to Effectively Detect, Prevent, and Respond to a Wide Range of Cyber Threats.

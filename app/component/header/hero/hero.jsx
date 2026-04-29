@@ -1,39 +1,39 @@
-import "./hero.css"
+import "./hero.css";
 
 export default function Hero() {
-    return(
+    return (
         <div className="hero-with-nav-wrapper">
             <section className="home-hero">
                 <div className="home-hero-bg-overlay"></div>
-                
+
                 <div className="home-hero-container">
                     <div className="home-hero-content">
-                        <div className="home-hero-pill-wrapper">
+                        <div className="home-hero-pill-wrapper anim-pill">
                             <span className="home-hero-pill">TRANSFORMING RISK INTO RESILIENT GROWTH</span>
                         </div>
-                        
-                        <h1 className="home-hero-title">
+
+                        <h1 className="home-hero-title anim-title">
                             Cybersecurity & Risk Transformation Strategy Company
                         </h1>
-                        
-                        <p className="home-hero-description">
-                            Welcome to Cybervol, where expertise drives innovation and 
-                            efficiency. We provide tailored solutions to protect your digital 
+
+                        <p className="home-hero-description anim-desc">
+                            Welcome to Cybervol, where expertise drives innovation and
+                            efficiency. We provide tailored solutions to protect your digital
                             assets and boost security.
                         </p>
-                        
-                        <div className="home-hero-actions">
+
+                        <div className="home-hero-actions anim-actions">
                             <button className="home-hero-primary-btn">Schedule a Free Consultation</button>
                             <button className="home-hero-secondary-btn">Learn More</button>
                         </div>
                     </div>
                 </div>
-                
-                <div className="home-hero-image">
-                    <img src="/1761bd936657d48867f66d0e2e338b4c010c4807-ezgif.com-gif-maker.gif" alt="Earth Globe" />
+
+                <div className="home-hero-image anim-globe">
+                    <img src="/globe.GIF" alt="Earth Globe" className="anim-float" />
                 </div>
 
-                <div className="hero-partners">
+                <div className="hero-partners anim-partner">
                     <p className="partners-title">Technology Partners</p>
                     <div className="partners-slider-container">
                         <div className="partners-slider">
@@ -46,5 +46,5 @@ export default function Hero() {
                 </div>
             </section>
         </div>
-    )
+    );
 }

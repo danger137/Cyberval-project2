@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
+import ScrollReveal from '../ScrollReveal';
 import Link from 'next/link';
 import './Insights.css';
 
@@ -100,17 +101,19 @@ export default function Insights() {
   return (
     <section className="insights-section">
       <div className="insights-container">
-        <div className="insights-header">
-          <div className="insights-header-left">
-            <span className="insights-badge">NEWS & INSIGHTS</span>
-            <h2 className="insights-title">
-              Stay Ahead with <span className="highlight">Expert Guidance</span>
-            </h2>
+        <ScrollReveal direction="up">
+          <div className="insights-header">
+            <div className="insights-header-left">
+              <span className="insights-badge">NEWS & INSIGHTS</span>
+              <h2 className="insights-title">
+                Stay Ahead with <span className="highlight">Expert Guidance</span>
+              </h2>
+            </div>
+            <div className="insights-header-right">
+              <Link href="/resources/Blog"><button className="view-all-btn">View all news</button></Link>
+            </div>
           </div>
-          <div className="insights-header-right">
-           <Link href="/resources/Blog"><button className="view-all-btn">View all news</button></Link> 
-          </div>
-        </div>
+        </ScrollReveal>
 
         <div className="insights-slider-viewport">
           <div 
