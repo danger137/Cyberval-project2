@@ -8,6 +8,13 @@ export default function GlobalLayoutWrapper({ children }) {
   
   // Check if current path should be pillarboxed (locked to 1440px desktop / 425px mobile)
   const isPillarboxed = pathname === "/" || pathname.startsWith("/services/") || pathname.startsWith("/resources/") || pathname.startsWith("/Contact") || pathname === "/About2";
+  
+  // Dashboard and Auth pages should be excluded from global layout
+  const isDashboard = pathname.startsWith("/dashboard") || pathname.startsWith("/login");
+
+  if (isDashboard) {
+    return <>{children}</>;
+  }
 
   if (isPillarboxed) {
     return (

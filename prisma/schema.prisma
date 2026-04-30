@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  EDITOR
+  VIEWER
+}
+
+enum JobStatus {
+  OPEN
+  CLOSED
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  password  String
+  role      Role     @default(VIEWER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Job {
+  id           String        @id @default(cuid())
+  title        String
+  description  String
+  department   String
+  location     String
+  status       JobStatus     @default(OPEN)
+  applications Application[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model Application {
+  id            String   @id @default(cuid())
+  candidateName String
+  email         String
+  resumeUrl     String
+  jobId         String
+  job           Job      @relation(fields: [jobId], references: [id])
+  createdAt     DateTime @default(now())
+}
+
+model CaseStudy {
+  id           String   @id @default(cuid())
+  title        String
+  client       String
+  description  String
+  images       String[] // Cloudinary URLs
+  testimonial  String?
+  results      String?
+  category     String?
+  date         DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Resource {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  category    String?
+  fileUrl     String
+  type        String   // e.g., PDF, Whitepaper
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model TeamMember {
+  id          String   @id @default(cuid())
+  name        String
+  designation String
+  imageUrl    String
+  bio         String?
+  linkedin    String?
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model CustomForm {
+  id          String       @id @default(cuid())
+  name        String
+  description String?
+  fields      Json         // Dynamic form structure
+  submissions Submission[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+}
+
+model Submission {
+  id        String     @id @default(cuid())
+  formId    String
+  form      CustomForm @relation(fields: [formId], references: [id])
+  data      Json       // Dynamic submission data
+  createdAt DateTime   @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  title     String
+  message   String
+  type      String   // e.g., JOB_APPLICATION, FORM_SUBMISSION
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Analytics {
+  id        String   @id @default(cuid())
+  event     String   // e.g., PAGE_VIEW, FORM_SUBMIT
+  path      String?
+  metadata  Json?
+  createdAt DateTime @default(now())
+}

@@ -8,19 +8,32 @@
     "start": "next start"
   },
   "dependencies": {
+    "@prisma/client": "^5.10.2",
     "@tailwindcss/postcss": "^4.2.4",
+    "bcryptjs": "^2.4.3",
+    "chart.js": "^4.4.1",
+    "cloudinary": "^2.0.1",
+    "clsx": "^2.1.0",
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.38.0",
+    "lucide-react": "^0.344.0",
     "manrope": "^2.0.0",
     "motion": "^12.38.0",
     "next": "16.2.4",
+    "next-auth": "^4.24.6",
+    "next-cloudinary": "^6.3.0",
     "react": "19.2.4",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "19.2.4",
-    "sora": "^0.0.2"
+    "recharts": "^3.8.1",
+    "sora": "^0.0.2",
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.5.0",
     "babel-plugin-react-compiler": "1.0.0",
     "postcss": "^8.5.10",
+    "prisma": "^5.10.2",
     "tailwindcss": "^4.2.2"
   }
 }
