@@ -9,7 +9,7 @@ export default function FooterCTA({
   buttonLink = "/Contact"
 }) {
   return (
-    <div className="w-full pt-[60px] max-[1024px]:pt-0 pb-[20px] px-0">
+    <div className="w-full pt-[60px] max-[1024px]:pt-0 pb-[20px] max-[1024px]:pb-0 px-0">
       <div className="max-w-[1440px] mx-auto px-[20px] md:px-[40px] lg:px-[80px]">
         <ScrollReveal direction="up">
           <div className="bg-[#000F2E] bg-[url('/bgcardFot.svg')] bg-cover bg-center w-full max-w-[1230px] h-auto md:min-h-[380px] mx-auto text-center text-[#ffffff] flex flex-col items-center justify-center gap-[12px] relative overflow-hidden p-[40px] md:p-[60px] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05)_0%,transparent_70%)] before:pointer-events-none footer-cta-banner">
