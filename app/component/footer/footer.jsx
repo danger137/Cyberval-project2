@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import ScrollReveal from "../ScrollReveal";
+import FooterCTA from "./FooterCTA";
 import "./footer.css";
 
 export default function Footer() {
@@ -32,36 +33,25 @@ export default function Footer() {
         pathname.toLowerCase().startsWith("/contact")
     );
     
+    const isService1 = pathname && pathname.includes("service-1");
     const isService2 = pathname && pathname.includes("service-2");
 
     return (
         <footer className="footer w-full relative">
         {showBanner && (
-            <div className="w-full pt-[20px] max-[1024px]:pt-0 pb-[20px] px-0">
-            <div className="max-w-[1440px] mx-auto px-[20px] md:px-[40px] lg:px-[80px]">
-                <div className="bg-[#000F2E] bg-[url('/bgcardFot.svg')] bg-cover bg-center w-full max-w-[1230px] h-auto md:min-h-[380px] mx-auto text-center text-[#ffffff] flex flex-col items-center justify-center gap-[12px] relative overflow-hidden p-[40px] md:p-[60px] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05)_0%,transparent_70%)] before:pointer-events-none footer-cta-banner">
-                <div className="z-10 relative">
-                    <h2 className="font-sora text-[28px] md:text-[32px] font-semibold leading-[1.2] md:leading-[49px] m-0 max-w-[650px] mx-auto footer-cta-title">
-                    {isService2 ? (
-                        <>Ready to talk about your <br /> security goals?</>
-                    ) : (
-                        "Ready to Secure Your Business?"
-                    )}
-                    </h2>
-                    <p className="font-manrope text-[15px] md:text-[16px] font-normal leading-[30px] text-white my-[2px] mb-[12px] max-w-[600px] mx-auto footer-cta-desc">
-                    {isService2 ? (
-                        <>Share where you are today and where you'd like to be, <br className="hidden md:block" /> we'll help you plan the next steps.</>
-                    ) : (
-                        <>Protect your digital assets with expert-driven <br className="hidden md:block" /> cybersecurity solutions tailored to your needs.</>
-                    )}
-                    </p>
-                </div>
-                <Link href="/Contact" style={{ color: '#000000' }} className="z-10 relative inline-flex justify-center items-center w-auto min-w-[236px] h-[48px] py-[13px] px-[40px] bg-[#ffffff] rounded-[8px] !text-black font-manrope font-semibold text-[16px] leading-none no-underline border-none cursor-pointer transition-all duration-200 ease-in-out mt-[10px] whitespace-nowrap hover:-translate-y-[2px] hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-[#f8fafc] footer-cta-btn">
-                    Talk to Our Experts
-                </Link>
-                </div>
-            </div>
-            </div>
+          <FooterCTA 
+            title={
+              isService1 ? "Contact Us Today" :
+              isService2 ? <>Ready to talk about your <br /> security goals?</> :
+              "Ready to Secure Your Business?"
+            }
+            subtitle={
+              isService1 ? "Ready to strengthen your cybersecurity posture? Get in touch and we'll help you find the right solution." :
+              isService2 ? <>Share where you are today and where you'd like to be, <br className="hidden md:block" /> we'll help you plan the next steps.</> :
+              <>Protect your digital assets with expert-driven <br className="hidden md:block" /> cybersecurity solutions tailored to your needs.</>
+            }
+            buttonText={isService1 ? "Contact Us" : "Talk to Our Experts"}
+          />
         )}
 
         <div className="footer-main-wrapper">

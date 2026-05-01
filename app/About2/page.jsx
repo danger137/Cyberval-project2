@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Faq from '../component/faq/Faq';
 import Stats from '../component/stats/Stats';
 import ScrollReveal from '../component/ScrollReveal';
+import FooterCTA from '../component/footer/FooterCTA';
 
 export default function About() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -1031,20 +1032,10 @@ export default function About() {
       </ScrollReveal>
       {/* CTA Section */}
       <section className="cta-section" style={{ marginTop: '60px' }}>
-        <ScrollReveal direction="up">
-          <div className="footer-cta-banner">
-            <div className="footer-cta-content">
-              <h2 className="footer-cta-title">Ready to talk about your <br /> security goals?</h2>
-              <p className="footer-cta-desc">
-                Share where you are today and where you'd like to be, <br />
-                we'll help you plan the next steps.
-              </p>
-            </div>
-            <Link href="/contact" className="footer-cta-btn">
-              Talk to Our Experts
-            </Link>
-          </div>
-        </ScrollReveal>
+        <FooterCTA 
+          title={<>Ready to talk about your <br /> security goals?</>}
+          subtitle={<>Share where you are today and where you'd like to be, <br /> we'll help you plan the next steps.</>}
+        />
       </section>
     </div>
   );
