@@ -17,49 +17,71 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <ScrollReveal direction="right" delay={0.15} style={{ flex: 1, maxWidth: "710px", paddingTop: "20px" }}>
-            <h1 className="about-title">
-              Protecting What Matters,<br />
-              <span className="hero-title-blue">Advancing What&apos;s Next.</span>
-            </h1>
-            <p className="about-description">
-              At Cyberval, we don&apos;t just secure; we innovate. Our unique approach blends
-              cutting-edge cybersecurity solutions with a forward-thinking mindset.
-            </p>
-            <div className="mission-block">
-              <h2 className="mission-heading">Our Mission</h2>
-              <h3 className="mission-subheading">Fortifying Excellence through Advanced Cybersecurity Solutions</h3>
-              <p className="mission-description">
-                At the crux of our mission is a dedication to empowering organizations with
-                transformative solutions, enhancing performance, optimizing operations, and
-                fortifying the security of their digital assets.
+            <div className="about-hero-right">
+              <h2 className="about-title">
+                Empowering Your <span className="hero-title-blue">Cyber</span> <br />
+                Defense Strategy
+              </h2>
+              <p className="about-description">
+                At Cybervol, we go beyond standard security. We provide elite cybersecurity solutions 
+                designed to protect your most critical assets. Our expert team leverages advanced 
+                intelligence and cutting-edge technology to stay ahead of emerging threats.
               </p>
+              
+              <div className="mission-block">
+                <h3 className="mission-heading">Our Mission</h3>
+                <p className="mission-subheading">Securing Your Future In The Digital Landscape</p>
+                <p className="mission-description">
+                  Our mission is to provide businesses with the peace of mind they need to thrive 
+                  securely in an increasingly complex digital world. We believe that security is 
+                  not just a service—it's a foundation for innovation and growth.
+                </p>
+              </div>
+              
+              <button className="btn-read-more">Read More</button>
             </div>
-            <Link href="/About2"><button className="btn-read-more">Read More</button></Link>
           </ScrollReveal>
         </div>
       </section>
 
       <ScrollReveal direction="up">
         <section className="stats-section">
-          <div className="stats-container">
-            <div className="stat-box">
-              <div className="stat-value">10<span className="stat-plus">+</span> <span className="stat-unit">Years</span></div>
-              <div className="stat-label">Professional Experience</div>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-box">
-              <div className="stat-value">25<span className="stat-plus">+</span></div>
-              <div className="stat-label">Enterprise Clients</div>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-box">
-              <div className="stat-value">99.9<span className="stat-plus">%</span></div>
-              <div className="stat-label">Threat Detection Accuracy</div>
-            </div>
-            <div className="stat-divider"></div>
-            <div className="stat-box">
-              <div className="stat-value">24/7</div>
-              <div className="stat-label">Security Monitoring</div>
+          <div className="stats-outer-container">
+            <div className="stats-container">
+              <div className="stat-box">
+                <div className="stat-value">
+                  10<span className="stat-plus">+</span>
+                  <span className="stat-unit">Years</span>
+                </div>
+                <p className="stat-label">Of Proven Experience</p>
+              </div>
+              
+              <div className="stat-divider"></div>
+              
+              <div className="stat-box">
+                <div className="stat-value">
+                  200<span className="stat-plus">+</span>
+                </div>
+                <p className="stat-label">Successful Projects</p>
+              </div>
+              
+              <div className="stat-divider"></div>
+              
+              <div className="stat-box">
+                <div className="stat-value">
+                  100<span className="stat-plus">%</span>
+                </div>
+                <p className="stat-label">Client Satisfaction</p>
+              </div>
+              
+              <div className="stat-divider"></div>
+              
+              <div className="stat-box">
+                <div className="stat-value">
+                  24<span className="stat-plus">/</span>7
+                </div>
+                <p className="stat-label">Expert Support</p>
+              </div>
             </div>
           </div>
         </section>
@@ -67,40 +89,53 @@ export default function AboutPage() {
 
       <section className="commitment-section">
         <ScrollReveal direction="up">
-          <span className="commitment-label">OUR COMMITMENT</span>
-          <h2 className="commitment-heading">Built on Trust. Driven by <span className="blue-text">Security.</span></h2>
-          <p className="commitment-subtext">Delivering secure, innovative, and trusted cybersecurity solutions you can rely on.</p>
-        </ScrollReveal>
+          <div className="commitment-container">
+            <span className="commitment-label">OUR COMMITMENT</span>
+            <h2 className="commitment-heading">
+              Your Trust is <span className="blue-text">Our Core</span> <br /> Priority
+            </h2>
+            <p className="commitment-subtext">
+              We are dedicated to maintaining the highest levels of security, 
+              transparency, and excellence in everything we do.
+            </p>
 
-        <div className="commitment-cards-container">
-          <ScrollReveal direction="up" delay={0}>
-            <div className="commitment-card first">
-              <div className="card-icon-wrapper"><img src="/group1.svg" alt="Needs" /></div>
-              <div className="card-content">
-                <h4 className="card-title">Security First</h4>
-                <p className="card-desc">Ensuring unwavering security at every level for robust digital asset protection.</p>
-              </div>
+            <div className="commitment-cards-container">
+              <ScrollReveal direction="up" delay={0}>
+                <div className="commitment-card first">
+                  <div className="card-icon-wrapper">
+                    <img src="/group1.svg" alt="Elite Security" />
+                  </div>
+                  <div className="card-content">
+                    <h3 className="card-title">Elite Security Experts</h3>
+                    <p className="card-desc">Our team consists of industry veterans and certified security researchers.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal direction="up" delay={0.15}>
+                <div className="commitment-card central">
+                  <div className="card-icon-wrapper">
+                    <img src="/group2.svg" alt="Advanced Defense" />
+                  </div>
+                  <div className="card-content">
+                    <h3 className="card-title">Advanced Defense Tech</h3>
+                    <p className="card-desc">We utilize the latest AI-driven platforms and proprietary tools to ensure 24/7 protection.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal direction="up" delay={0.3}>
+                <div className="commitment-card third">
+                  <div className="card-icon-wrapper">
+                    <img src="/group3.svg" alt="Compliance Ready" />
+                  </div>
+                  <div className="card-content">
+                    <h3 className="card-title">Compliance Ready</h3>
+                    <p className="card-desc">We help your business meet global data protection and regulatory standards effortlessly.</p>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.15}>
-            <div className="commitment-card central">
-              <div className="card-icon-wrapper"><img src="/group2.svg" alt="Precision" /></div>
-              <div className="card-content">
-                <h4 className="card-title">Client Confidentiality</h4>
-                <p className="card-desc">Upholding strict confidentiality standards for trusted cybersecurity services.</p>
-              </div>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.3}>
-            <div className="commitment-card third">
-              <div className="card-icon-wrapper"><img src="/group3.svg" alt="Excellence" /></div>
-              <div className="card-content">
-                <h4 className="card-title">Continuous Innovation</h4>
-                <p className="card-desc">Staying ahead with cutting-edge solutions to adapt and counter evolving threats.</p>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
+          </div>
+        </ScrollReveal>
       </section>
     </div>
   );

@@ -7,12 +7,15 @@
 
 /* ===== Hero Section ===== */
 .about-hero {
-  padding: 80px 80px 40px;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
+  padding: 120px 0;
+  background-color: #ffffff;
 }
 
 .about-hero-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -154,9 +157,14 @@
 
 /* ===== Stats Section ===== */
 .stats-section {
-  padding: 50px 80px;
-  max-width: 1400px;
+  padding: 60px 0;
+  width: 100%;
+}
+
+.stats-outer-container {
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 0 80px;
 }
 
 .stats-container {
@@ -219,10 +227,15 @@
 
 /* ===== Commitment Section ===== */
 .commitment-section {
-  padding: 60px 80px 120px;
-  text-align: center;
-  max-width: 1400px;
+  padding: 120px 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.commitment-container {
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 0 80px;
 }
 
 .commitment-label {
@@ -404,12 +417,15 @@
 
 @media (max-width: 1024px) {
   .about-hero {
-    padding: 60px 20px 60px 30px; /* 30px left padding */
+    padding: 60px 0;
+    width: 100%;
   }
   .about-hero-container {
     flex-direction: column;
-    align-items: center; /* Center the icon and text column */
+    align-items: center;
     text-align: center;
+    padding: 0 20px;
+    gap: 40px;
   }
   .about-hero-left {
     display: flex;
@@ -418,167 +434,189 @@
     width: 100%;
   }
   .radar-wrapper {
-    position: relative; /* Base for absolute badge */
+    position: relative;
     width: 100% !important;
-    max-width: 380px !important;
-    margin-top: 20px !important;
-    margin-left: 0 !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
     display: flex;
     justify-content: center;
   }
   .about-badge {
     position: absolute !important;
-    top: -15px !important; /* Move higher up */
-    left: 15px !important; /* Move slightly left */
+    top: -10px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     margin-bottom: 0;
     z-index: 5;
+    white-space: nowrap;
   }
   .about-hero-right {
     max-width: 100%;
-    text-align: left;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .about-title {
     font-family: var(--font-sora), sans-serif;
-    font-size: 32px !important;
+    font-size: 26px !important;
     font-weight: 600 !important;
-    line-height: 50px !important;
+    line-height: 1.3 !important;
     color: #212121 !important;
-    text-align: left;
+    text-align: center;
+    margin-bottom: 16px;
   }
   .hero-title-blue {
     color: #2E5A88 !important;
   }
   .about-description {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 18px !important;
+    font-size: 15px !important;
     font-weight: 400 !important;
-    line-height: 30px !important;
+    line-height: 1.6 !important;
     color: #585858 !important;
-    text-align: left;
-    margin-top: 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 320px;
   }
   .mission-block {
-    text-align: left;
-    margin-top: 30px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .mission-heading {
     font-family: var(--font-sora), sans-serif;
-    font-size: 24px !important;
+    font-size: 20px !important;
     font-weight: 600 !important;
-    line-height: 1.4 !important;
+    line-height: 1.3 !important;
     color: #2E5A88 !important;
     margin-bottom: 8px;
-    align-self: stretch;
+    text-align: center;
   }
   .mission-subheading {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 18px !important;
-    font-weight: 400 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
     line-height: 1.4 !important;
     color: #212121 !important;
     margin-bottom: 12px;
+    text-align: center;
   }
   .mission-description {
     font-family: var(--font-manrope), sans-serif;
-    font-size: 18px !important;
+    font-size: 14px !important;
     font-weight: 400 !important;
-    line-height: 30px !important;
+    line-height: 1.6 !important;
     color: #585858 !important;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    text-align: center;
+    max-width: 320px;
   }
   .btn-read-more {
     width: auto !important;
     height: 48px !important;
-    padding: 13px 47px !important;
+    padding: 0 40px !important;
     border-radius: 8px !important;
-    border: 1px solid #000F2E !important;
-    background: transparent;
-    color: #212121;
-    font-family: var(--font-manrope), sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 24px;
+    margin-top: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
   }
+  
+  .stats-section {
+    padding: 30px 0 !important;
+  }
+  
   .stats-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 40px 30px;
-    border-top: 1px solid #e5e7eb;
-    border-bottom: 1px solid #e5e7eb;
+    gap: 16px 0;
+    padding: 10px 20px;
   }
-  .stat-divider { display: none; }
+  
+  .stats-outer-container {
+    padding: 0 20px;
+  }
+  
   .stat-box {
-    align-items: flex-start;
-    text-align: left;
-    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
   }
+  
   .stat-value {
-    font-family: var(--font-sora), sans-serif;
     font-size: 24px !important;
-    font-weight: 600 !important;
-    line-height: 122.5% !important;
-    color: #0F0F0F !important;
-    justify-content: flex-start;
-    text-align: left;
-    height: 36px;
-    align-self: stretch;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    justify-content: center;
   }
-  .stat-label {
-    font-family: var(--font-manrope), sans-serif;
+  
+  .stat-plus {
+    font-size: 20px !important;
+    color: #111827 !important;
+  }
+
+  .stat-unit {
     font-size: 14px !important;
-    font-weight: 500 !important;
-    line-height: 133% !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+    margin-left: 4px;
+  }
+  
+  .stat-label {
+    font-size: 13px !important;
     color: #585858 !important;
-    text-align: left;
-    white-space: nowrap !important;
-    height: auto;
-    align-self: stretch;
+    margin-top: 4px;
+    font-weight: 400 !important;
   }
-  .stat-box:nth-child(1), .stat-box:nth-child(3) {
-    border-bottom: 1px solid #e5e7eb;
-  }
-  .stat-box:nth-child(1), .stat-box:nth-child(5) {
-    padding-right: 20px;
-    border-right: 1px solid #e5e7eb;
-  }
-  .stat-box:nth-child(3), .stat-box:nth-child(7) {
-    padding-left: 20px;
+  
+  .stat-divider {
+    display: none;
   }
 
   /* ===== Commitment Section Mobile ===== */
   .commitment-section {
-    padding: 60px 30px;
+    padding: 80px 0;
     text-align: center;
+    background-color: #ffffff;
+  }
+  .commitment-container {
+    padding: 0 20px;
   }
   .commitment-label {
+    display: inline-block;
     padding: 8px 24px;
-    font-size: 14px;
-    letter-spacing: 1.2px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #3B659C;
+    background: #F1F5F9;
+    border-radius: 30px;
     margin-bottom: 24px;
+    text-transform: uppercase;
   }
   .commitment-heading {
-    font-size: 26px !important;
-    line-height: 1.3 !important;
+    font-family: var(--font-sora), sans-serif;
+    font-size: 28px !important;
+    line-height: 1.2 !important;
     margin-bottom: 16px;
     text-align: center;
+    color: #111827 !important;
+  }
+  .blue-text {
+    color: #3B659C !important;
   }
   .commitment-subtext {
-    font-size: 16px !important;
-    line-height: 30px !important;
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
     max-width: 320px;
     margin: 0 auto 40px;
     text-align: center;
@@ -586,30 +624,40 @@
   }
 
   /* Reset commitment cards for mobile */
+  .commitment-cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
   .commitment-card, 
   .commitment-card.central {
     width: 100% !important;
     max-width: 380px !important;
-    height: 400px !important;
+    height: auto !important;
+    min-height: 420px !important;
     flex: 0 0 auto !important;
-    padding: 20px !important;
+    padding: 0 !important; /* Remove padding to let image cover */
+    overflow: hidden;
   }
 
-  .card-icon-wrapper,
-  .commitment-card:nth-child(1) .card-icon-wrapper,
-  .commitment-card:nth-child(2) .card-icon-wrapper,
-  .commitment-card:nth-child(3) .card-icon-wrapper {
-    height: 160px !important;
-    padding-top: 0 !important;
-    margin-bottom: 15px !important;
+  .card-icon-wrapper {
+    width: 100% !important;
+    height: 220px !important;
+    margin-bottom: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
   }
 
-  .card-icon-wrapper img,
-  .commitment-card:nth-child(1) .card-icon-wrapper img,
-  .commitment-card:nth-child(2) .card-icon-wrapper img,
-  .commitment-card:nth-child(3) .card-icon-wrapper img {
-    max-height: 160px !important;
-    max-width: 100% !important;
-    width: auto !important;
+  .card-icon-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .card-content {
+    padding: 0 24px 24px !important;
+    text-align: left;
   }
 }

@@ -251,7 +251,8 @@
 }
 
 @media (max-width: 1023px) {
-  .testimonials-section { padding: 60px 20px; }
+  .testimonials-section { padding: 80px 0; }
+  .testimonials-container { padding: 0 40px; }
   .testimonials-cards-row {
     display: grid;
     grid-auto-flow: column;
@@ -299,7 +300,8 @@
 }
 
 @media (max-width: 425px) {
-  .testimonials-section { padding: 40px 15px; }
+  .testimonials-section { padding: 60px 0; }
+  .testimonials-container { padding: 0 20px; }
   .testimonials-title, .testimonials-title .highlight { font-size: 26px; line-height: 36px; }
   .testimonials-badge { width: 150px; height: 34px; font-size: 12px; }
 }
