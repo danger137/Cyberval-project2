@@ -19,6 +19,7 @@ export default function Credentials() {
                 Our team has global certifications, guaranteeing top cybersecurity standards and excellent data protection.
               </p>
               <div className="company-cert-wrapper">
+                <span className="company-cert-label">COMPANY CERTIFICATION</span>
                 <div className="credentials-left-visual">
                   <img src="/images/pages/left-colun.svg" alt="Company Certifications" className="credentials-svg desktop-visual" />
                   <img src="/cards5.svg" alt="Company Certifications Mobile" className="credentials-svg mobile-visual" />

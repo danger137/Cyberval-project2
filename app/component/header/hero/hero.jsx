@@ -27,10 +27,10 @@ export default function Hero() {
                             <button className="home-hero-secondary-btn">Learn More</button>
                         </div>
                     </div>
-                </div>
 
-                <div className="home-hero-image anim-globe">
-                    <img src="/globe.GIF" alt="Earth Globe" className="anim-float" />
+                    <div className="home-hero-image anim-globe">
+                        <img src="/globe.GIF" alt="Earth Globe" className="anim-float" />
+                    </div>
                 </div>
 
                 <div className="hero-partners anim-partner">

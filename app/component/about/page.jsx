@@ -73,8 +73,8 @@ export default function AboutPage() {
         </ScrollReveal>
 
         <div className="commitment-cards-container">
-          <ScrollReveal direction="up" delay={0} style={{ flex: 1 }}>
-            <div className="commitment-card">
+          <ScrollReveal direction="up" delay={0}>
+            <div className="commitment-card first">
               <div className="card-icon-wrapper"><img src="/group1.svg" alt="Needs" /></div>
               <div className="card-content">
                 <h4 className="card-title">Security First</h4>
@@ -82,8 +82,8 @@ export default function AboutPage() {
               </div>
             </div>
           </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.15} style={{ flex: 1 }}>
-            <div className="commitment-card">
+          <ScrollReveal direction="up" delay={0.15}>
+            <div className="commitment-card central">
               <div className="card-icon-wrapper"><img src="/group2.svg" alt="Precision" /></div>
               <div className="card-content">
                 <h4 className="card-title">Client Confidentiality</h4>
@@ -91,8 +91,8 @@ export default function AboutPage() {
               </div>
             </div>
           </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.3} style={{ flex: 1 }}>
-            <div className="commitment-card">
+          <ScrollReveal direction="up" delay={0.3}>
+            <div className="commitment-card third">
               <div className="card-icon-wrapper"><img src="/group3.svg" alt="Excellence" /></div>
               <div className="card-content">
                 <h4 className="card-title">Continuous Innovation</h4>

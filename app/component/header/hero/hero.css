@@ -1,9 +1,7 @@
 .hero-with-nav-wrapper {
     position: relative;
     width: 100%;
-    max-width: 1534px;
     height: 864px;
-    margin: 0 auto;
     background-color: #000F2E;
     background-image: url('/images/header-items/Frame%209.svg');
     background-size: cover;
@@ -163,8 +161,8 @@
 
 .home-hero-image {
     position: absolute;
-    width: 650px;
-    height: 650px;
+    width: 500px;
+    height: 500px;
     top: 50%;
     right: 40px;
     transform: translateY(-50%);
@@ -259,8 +257,8 @@
     }
 
     .home-hero-image {
-        width: clamp(350px, 40vw, 650px);
-        height: clamp(350px, 40vw, 650px);
+        width: clamp(350px, 40vw, 500px);
+        height: clamp(350px, 40vw, 500px);
         right: clamp(10px, 2vw, 40px);
     }
 
@@ -385,7 +383,7 @@
 
     .home-hero-image {
         width: 100% !important;
-        max-width: 320px !important;
+        max-width: 100% !important;
         height: auto !important;
         aspect-ratio: 1/1;
         margin-top: 40px !important;
@@ -457,6 +455,6 @@
     }
 
     .home-hero-image {
-        max-width: 280px !important;
+        max-width: 100% !important;
     }
 }

@@ -6,7 +6,7 @@ export default function ServiceSixPage() {
   return (
     <div className="w-full min-h-screen bg-[#ffffff]">
       {/* Hero Section */}
-      <section className="relative min-[1025px]:w-[1440px] min-[1025px]:h-[556px] h-[733px] max-[1024px]:w-[440px] mx-auto flex flex-col items-center overflow-hidden bg-[url('/images/pages/services/service-6/Frame%202147225646%20(3).svg')] min-[1025px]:bg-[url('/images/pages/services/service-6/hero-bg.svg')] bg-cover bg-center bg-no-repeat bg-[#030D1A] opacity-100 p-[20px] text-center">
+      <section className="relative w-full min-[1025px]:h-[556px] h-[733px] max-[1024px]:w-[440px] mx-auto flex flex-col items-center overflow-hidden bg-[url('/images/pages/services/service-6/Frame%202147225646%20(3).svg')] min-[1025px]:bg-[url('/images/pages/services/service-6/hero-bg.svg')] bg-cover bg-center bg-no-repeat bg-[#030D1A] opacity-100 p-[20px] text-center">
         <div className="relative w-full max-w-[850px] min-[1025px]:h-auto flex flex-col items-center min-[1025px]:gap-[24px] gap-[23px] text-center z-[5] px-[20px] mx-auto min-[1025px]:mt-[160px] mt-[200px] hero-reveal">
           <div className="flex justify-center items-center min-[1025px]:w-auto min-[1025px]:min-w-[128px] max-[1024px]:w-[106px] h-[38px] gap-[8.12px] rounded-[27.61px] p-[8.12px_24px] bg-[#FFFFFF12] border-[0.81px] border-[#FFFFFF26] m-0">
             <span className="opacity-100 font-manrope font-semibold min-[1025px]:text-[14px] text-[12px] min-[1025px]:leading-none max-[1024px]:leading-[36.54px] tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none whitespace-nowrap antialiased">SERVICES</span>

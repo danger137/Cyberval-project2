@@ -20,16 +20,18 @@ export default function Home() {
       <Insights />
       <Faq />
       <Credentials />
-          <div className="footer-cta-banner">
-        <div className="footer-cta-content">
-          <h2 className="footer-cta-title">Ready to Secure Your Business?</h2>
-          <p className="footer-cta-desc">
-            Protect your digital assets with expert-driven cybersecurity
-            solutions <br /> tailored to your needs.
-          </p>
+      <section className="cta-section">
+        <div className="footer-cta-banner">
+          <div className="footer-cta-content">
+            <h2 className="footer-cta-title">Ready to Secure Your Business?</h2>
+            <p className="footer-cta-desc">
+              Protect your digital assets with expert-driven cybersecurity
+              solutions <br /> tailored to your needs.
+            </p>
+          </div>
+          <button className="footer-cta-btn">Talk to Our Experts</button>
         </div>
-        <button className="footer-cta-btn">Talk to Our Experts</button>
-      </div>
+      </section>
     </>
   );
 }

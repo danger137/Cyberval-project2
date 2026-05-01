@@ -20,7 +20,7 @@ export default function Faq() {
           <div className="faq-left">
             <div className="faq-header-group">
               <div className="faq-badge-wrapper">
-                <span className="faq-badge">faq&apos;s</span>
+                <span className="faq-badge">FAQ&apos;S</span>
               </div>
               <h2 className="faq-title">
                 Frequently Asked <br />
@@ -44,7 +44,17 @@ export default function Faq() {
                   <div className="faq-question">
                     <h4>{item.question}</h4>
                     <span className="faq-icon">
-                      <img src="/Arrow 6.svg" alt="Toggle" />
+                      {openFaq === index ? (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                          <polyline points="19 12 12 19 5 12"></polyline>
+                        </svg>
+                      ) : (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                      )}
                     </span>
                   </div>
                   <div className="faq-answer">

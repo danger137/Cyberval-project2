@@ -7,7 +7,7 @@ export default function ServiceFivePage() {
   return (
     <main className="w-full min-h-screen bg-[#ffffff] mt-[-10px]">
       {/* Hero Section */}
-      <section className="relative mx-auto flex flex-col justify-center items-center overflow-hidden bg-[url('/images/pages/services/service-5/hero-bg.svg')] max-[1024px]:bg-[url('/images/pages/services/service-5/her-bg-mobile.svg')] bg-cover bg-top bg-no-repeat opacity-100 p-[120px_20px_60px] text-center min-[1025px]:w-[1440px] min-[1025px]:h-[556px] h-[733px] max-[1024px]:w-[440px] flex">
+      <section className="relative w-full mx-auto flex flex-col justify-center items-center overflow-hidden bg-[url('/images/pages/services/service-5/hero-bg.svg')] max-[1024px]:bg-[url('/images/pages/services/service-5/her-bg-mobile.svg')] bg-cover bg-top bg-no-repeat opacity-100 p-[120px_20px_60px] text-center min-[1025px]:h-[556px] h-[733px] max-[1024px]:w-[440px] flex">
         <div className="flex flex-col items-center z-[5] opacity-100 w-full max-w-[850px] relative mx-auto hero-reveal">
           <div className="flex justify-center items-center w-[128px] h-[38px] gap-[8.12px] rounded-[27.61px] p-[8.12px] bg-[#FFFFFF12] border-[0.81px] border-[#FFFFFF26] opacity-100 mb-[20px]">
             <span className="flex justify-center items-center w-[75px] h-[37px] opacity-100 font-manrope font-semibold text-[14px] leading-[36.54px] tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none">SERVICES</span>

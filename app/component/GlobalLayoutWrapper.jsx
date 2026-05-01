@@ -18,18 +18,16 @@ export default function GlobalLayoutWrapper({ children }) {
 
   if (isPillarboxed) {
     return (
-      <div className="w-full min-h-screen bg-[#030814] flex justify-center items-start">
-        <div className="w-full max-w-[1440px] bg-white relative overflow-hidden max-[1024px]:max-w-[440px] max-[1024px]:mx-auto">
-          <Header />
-          {children}
-          <FooterWrapper />
-        </div>
+      <div className="w-full min-h-screen relative overflow-x-hidden">
+        <Header />
+        {children}
+        <FooterWrapper />
       </div>
     );
   }
 
   return (
-    <div className="global-wrapper relative">
+    <div className="w-full min-h-screen relative overflow-x-hidden">
       <Header />
       {children}
       <FooterWrapper />

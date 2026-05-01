@@ -2,13 +2,14 @@
 
 .testimonials-section {
   width: 100%;
-  padding: 100px 0 100px 102px; /* Standard left-aligned padding */
+  padding: 100px 0;
   background-color: #F8FAFC;
 }
 
 .testimonials-container {
-  max-width: 1400px;
-  margin: 0; /* Removed auto-centering */
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
 }
 
 .testimonials-header {
@@ -218,21 +219,21 @@
   .testimonials-container {
     margin: 0 auto;
     width: 100%;
-    max-width: 1206px; /* (3 * 386) + (2 * 24) = 1206 */
+    max-width: 1440px;
   }
   .testimonials-cards-row {
     justify-content: flex-start;
     overflow-x: auto;
-    gap: 24px;
+    gap: 25px;
     padding: 20px 0;
   }
   .testimonial-card-wrapper {
-    flex: 0 0 386px;
-    width: 386px;
+    flex: 0 0 410px;
+    width: 410px;
   }
   .testimonial-card {
-    width: 386px;
-    height: 368px;
+    width: 410px;
+    height: 380px;
     border-radius: 20px;
     border-width: 1px;
   }

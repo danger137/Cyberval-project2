@@ -6,7 +6,7 @@ export default function VMPTaaSPage() {
   return (
     <div className="w-full min-h-screen bg-[#ffffff]">
       {/* Hero Section */}
-      <section className="relative min-[1025px]:w-[1440px] min-[1025px]:h-[556px] h-[733px] max-[1024px]:w-[440px] mx-auto flex flex-col justify-center items-center overflow-hidden bg-[url('/images/pages/services/service-5/(VMPTaaS)/hero-bg.svg')] max-[1024px]:bg-[url('/images/pages/services/service-5/(VMPTaaS)/Frame%202147225646.svg')] bg-cover bg-top bg-no-repeat opacity-100 p-[120px_20px_60px] text-center">
+      <section className="relative w-full min-[1025px]:h-[556px] h-[733px] max-[1024px]:w-[440px] mx-auto flex flex-col justify-center items-center overflow-hidden bg-[url('/images/pages/services/service-5/(VMPTaaS)/hero-bg.svg')] max-[1024px]:bg-[url('/images/pages/services/service-5/(VMPTaaS)/Frame%202147225646.svg')] bg-cover bg-top bg-no-repeat opacity-100 p-[120px_20px_60px] text-center">
         <div className="relative w-full max-w-[850px] flex flex-col items-center gap-[21px] text-center z-[5] px-[20px] mx-auto">
           <div className="flex justify-center items-center w-auto max-w-[90%] min-h-[38px] gap-[8.12px] rounded-[27.61px] p-[8px_16px] bg-[#FFFFFF12] border-[0.81px] border-[#FFFFFF26] m-0">
             <span className="opacity-100 font-manrope font-semibold text-[12px] sm:text-[14px] leading-[1.5] tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none text-center">MANAGED CYBERSECURITY AS A SERVICE</span>

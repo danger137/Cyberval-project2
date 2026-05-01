@@ -278,8 +278,8 @@
 .commitment-card {
   display: flex;
   flex-direction: column;
-  flex: 0 0 356px;
-  width: 356px;
+  flex: 0 1 340px;
+  width: 340px;
   height: 414px;
   min-width: 0;
   background: #F6F8FB;
@@ -290,35 +290,35 @@
   border: 1px solid transparent;
 }
 
-.commitment-card:nth-child(1) .card-icon-wrapper {
+.commitment-card.first .card-icon-wrapper {
   height: 220px;
 }
 
-.commitment-card:nth-child(1) .card-icon-wrapper img {
+.commitment-card.first .card-icon-wrapper img {
   max-width: 126%;
   max-height: 234px;
 }
 
-.commitment-card:nth-child(2) {
-  flex: 0 0 478px;
-  width: 478px;
+.commitment-card.central {
+  flex: 0 1 520px;
+  width: 520px;
 }
 
-.commitment-card:nth-child(2) .card-icon-wrapper {
+.commitment-card.central .card-icon-wrapper {
   height: 260px;
 }
 
-.commitment-card:nth-child(2) .card-icon-wrapper img {
+.commitment-card.central .card-icon-wrapper img {
   max-width: 142%;
   max-height: 260px;
 }
 
-.commitment-card:nth-child(3) .card-icon-wrapper {
+.commitment-card.third .card-icon-wrapper {
   height: 220px;
   padding-top: 50px;
 }
 
-.commitment-card:nth-child(3) .card-icon-wrapper img {
+.commitment-card.third .card-icon-wrapper img {
   max-width: 233%;
   max-height: 270px;
 }
@@ -587,7 +587,7 @@
 
   /* Reset commitment cards for mobile */
   .commitment-card, 
-  .commitment-card:nth-child(2) {
+  .commitment-card.central {
     width: 100% !important;
     max-width: 380px !important;
     height: 400px !important;

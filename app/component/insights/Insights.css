@@ -2,13 +2,14 @@
 
 .insights-section {
   width: 100%;
-  padding: 120px 0 120px 102px; /* Standard left-aligned padding */
+  padding: 120px 0;
   background-color: #ffffff;
 }
 
 .insights-container {
-  max-width: 1400px;
-  margin: 0; /* Removed auto-centering */
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
 }
 
 .insights-header {
@@ -208,25 +209,25 @@
   .insights-container {
     margin: 0 auto;
     width: 100%;
-    max-width: 1200px; /* 3 * 378 + 2 * 19 = 1172 */
+    max-width: 1440px;
   }
   .insight-card-wrapper {
-    flex: 0 0 378px;
-    width: 378px;
+    flex: 0 0 410px;
+    width: 410px;
     padding: 0;
   }
   .insight-card-wrapper:nth-child(n+4) {
     display: none; /* Remove 4th card and beyond */
   }
   .insights-grid {
-    gap: 19px;
+    gap: 25px;
     padding-right: 0;
     overflow: visible;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .insight-card {
-    width: 378px;
-    height: 429px;
+    width: 410px;
+    height: 450px;
   }
   .insights-dots {
     display: none;

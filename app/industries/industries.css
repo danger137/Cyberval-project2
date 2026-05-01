@@ -2,41 +2,24 @@
 
 .industries-section {
   width: 100%;
-  padding: 80px 0 80px 102px; /* Fixed left alignment as per user request */
+  padding: 80px 0;
   background-color: #ffffff;
   overflow-x: hidden;
 }
 
-@media (min-width: 1024px) {
-  .industries-section {
-    padding-left: 102px;
-  }
-}
-
-@media (min-width: 2160px) {
-  .industries-section {
-    padding-left: 102px;
-  }
-}
-
-@media (min-width: 2560px) {
-  .industries-section {
-    padding-left: 112px;
-  }
-}
-
 .industries-container {
-  max-width: none;
-  margin: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
 }
 
 .industries-header {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 70px;
-  gap: 20px;
-  max-width: 1400px; /* Prevent header from stretching too far on 2160px */
+  gap: 40px;
+  width: 100%;
 }
 
 .industries-header-left {
@@ -76,19 +59,14 @@
 }
 
 .industries-header-right {
-  flex: 0 0 45%;
-  padding-top: 20px; /* Moved lower */
-  padding-left: 30px; /* Moved further left */
+  flex: 0 1 600px;
+  padding-top: 20px;
   margin-bottom: 0;
   position: relative;
   top: 15px;
 }
 
-@media (min-width: 1440px) {
-  .industries-header-right {
-    flex: 0 0 62%;
-  }
-}
+/* Removed specific flex for large screens to maintain balance */
 
 
 .industries-description {
@@ -233,9 +211,8 @@
 /* Slider indicator thumb style */
 .industries-dots {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding-top: 40px;
-  padding-right: 80px;
   width: 100%;
 }
 
