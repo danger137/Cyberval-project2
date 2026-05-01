@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import ScrollReveal from "../../component/ScrollReveal";
 
-const blogData = [
+const blogData =[
   {
     id: 1,
     title: "Top Cybersecurity Trends Every Business Should Know in 2026",
@@ -54,7 +54,7 @@ export default function BlogPage() {
 
   const filteredBlogs = blogData.filter((blog) =>
     blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.description.toLowerCase().includes(searchTerm.toLowerCase())
+    (blog.description && blog.description.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (
@@ -68,7 +68,7 @@ export default function BlogPage() {
                 <span className="opacity-100 font-manrope font-semibold text-[14px] leading-none tracking-[0.09em] uppercase text-[#FFFFFF] bg-transparent border-none whitespace-nowrap max-[1024px]:!text-[12px]">NEWS & INSIGHTS</span>
               </div>
 
-              <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.4] antialiased blog-hero-title-fluid">
+              <h1 className="font-sora text-[32px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 min-[1025px]:leading-[57px] text-center[text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.4] antialiased blog-hero-title-fluid">
                 Blog
               </h1>
 
@@ -120,16 +120,19 @@ export default function BlogPage() {
                         <h3 className="text-[18px] font-semibold text-[#030D1A] mb-[12px] leading-[1.3] line-clamp-2 group-hover:text-[#2E5A88] transition-colors font-sora antialiased">
                           {blog.title}
                         </h3>
-                        <div className="flex items-center">
-                          <Link href={`/resources/Blog/${blog.id}`} className="w-auto h-auto text-[14px] font-bold text-[#2E5A88] flex items-center gap-[6px] cursor-pointer group/link font-manrope whitespace-nowrap">
-                            <span className="read-more-text">Read More</span>
+                        
+                        {/* Adjusted alignment wrapper here */}
+                        <div className="mt-auto pt-[10px] flex items-center">
+                          <Link href={`/resources/Blog/${blog.id}`} className="inline-flex items-center gap-[4px] cursor-pointer group/link">
+                            <span className="text-[14px] font-bold text-[#2E5A88] font-manrope whitespace-nowrap leading-none">Read More</span>
                             <img 
                               src="/images/pages/resources/Blog/all-cards-airow-iconicons.svg" 
-                              alt="" 
-                              className="!w-[28px] !h-[28px] no-zoom" 
+                              alt="arrow" 
+                              className="w-[42px] h-[42px] min-w-[42px] min-h-[42px] mt-1 shrink-0 object-contain transition-transform duration-300 group-hover/link:translate-x-1" 
                             />
                           </Link>
                         </div>
+                        
                       </div>
                     </article>
                   ))
