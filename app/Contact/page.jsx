@@ -92,7 +92,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Content Section */}
-        <section className="p-[100px_20px_0px] bg-[#ffffff] max-[1024px]:!p-[60px_24px_40px]">
+        <section className="p-[100px_20px_20px] bg-[#ffffff] max-[1024px]:!p-[60px_24px_40px]">
           <div className="max-w-[1230px] mx-auto flex flex-col min-[1025px]:flex-row gap-[60px] min-[1440px]:max-[2560px]:gap-[100px]">
             
             {/* Form Column - Reordered for Mobile */}

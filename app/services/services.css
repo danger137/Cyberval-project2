@@ -134,7 +134,7 @@
   height: 396px;
   background-color: #ffffff;
   border-radius: 20px;
-  padding: 40px 10px 20px 10px;
+  padding: 40px 23px 23px 23px;
   box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
   border: 1px solid #eef2f7;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -419,7 +419,7 @@
     max-width: 450px;
     height: 396px;
     margin: 0;
-    padding: 40px 20px 20px;
+    padding: 40px 24px 24px;
   }
 
   .card-text {
@@ -459,7 +459,7 @@
   }
 
   .service-card {
-    padding: 40px 20px 20px;
+    padding: 40px 24px 24px;
   }
 }
 
@@ -489,7 +489,7 @@
 
   .service-card {
     height: 396px;
-    padding: 10px 20px 20px;
+    padding: 40px 24px 24px;
   }
 }
 

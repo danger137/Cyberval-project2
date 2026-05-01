@@ -216,13 +216,11 @@ body {
 
 /* ===== Hover Effects ===== */
 .commitment-card,
-.insight-card,
 .testimonial-card {
   transition: transform 0.35s cubic-bezier(0.25, 0.4, 0.25, 1),
               box-shadow 0.35s cubic-bezier(0.25, 0.4, 0.25, 1);
 }
 .commitment-card:hover,
-.insight-card:hover,
 .testimonial-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);

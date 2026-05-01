@@ -75,7 +75,7 @@
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding: 0 0 20px 0; /* Removed top padding */
+  padding: 20px 0 20px 0; /* Added 20px top padding to prevent hover clipping */
 }
 
 .insights-grid::-webkit-scrollbar {
@@ -91,14 +91,14 @@
 }
 
 .insight-card {
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
   height: 396px;
   background: #ffffff;
   border-radius: 20px;
 }
 
 .insight-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
 }
 
 .insight-image-wrapper {
