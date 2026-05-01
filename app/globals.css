@@ -69,11 +69,10 @@ body {
 .footer-cta-banner {
   min-height: 380px;
   margin: -40px auto -160px auto; /* Pull up to reduce gap and pull down to overlap footer */
-  background-image: url('/images/Footer/footer-cta-bg.jpg');
+  background-image: url('/images/Footer/footer-cta-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #0b1b33;
   border-radius: 16px;
   position: relative;
   z-index: 20;

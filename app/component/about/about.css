@@ -157,7 +157,6 @@
 
 /* ===== Stats Section ===== */
 .stats-section {
-  padding: 60px 0;
   width: 100%;
 }
 
@@ -236,6 +235,7 @@
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 80px;
+  text-align: center;
 }
 
 .commitment-label {

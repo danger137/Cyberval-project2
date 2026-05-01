@@ -11,7 +11,7 @@ import Credentials from "./component/credentials/Credentials";
 export default function Home() {
   return (
     <>
-       <Hero />
+      <Hero />
       <About />
       <Services />
       <Elite />

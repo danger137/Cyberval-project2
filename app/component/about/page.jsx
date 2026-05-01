@@ -92,7 +92,7 @@ export default function AboutPage() {
           <div className="commitment-container">
             <span className="commitment-label">OUR COMMITMENT</span>
             <h2 className="commitment-heading">
-              Your Trust is <span className="blue-text">Our Core</span> <br /> Priority
+              Built on Trust. Driven by<span className="blue-text"> Security.</span>
             </h2>
             <p className="commitment-subtext">
               We are dedicated to maintaining the highest levels of security, 

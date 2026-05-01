@@ -29,7 +29,7 @@ export default function ElitePage() {
             <div className="elite-right">
               {/* Desktop version still shows the SVG if preferred, or we can use cards for all */}
               <img src="/images/pages/elite/right-colun.svg" alt="Elite Security Features" className="features-svg" />
-              
+
               {/* Mobile Features Cards (Visible on 480px and below) */}
               <div className="elite-features-mobile">
                 {[

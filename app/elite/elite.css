@@ -1,7 +1,10 @@
 /* app/elite/elite.css */
 
 .elite-page-wrapper {
-  background-color: #000F2E; /* Exact dark blue from Figma */
+  background-image: url('/elite-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
 }
 
