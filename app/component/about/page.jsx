@@ -1,5 +1,6 @@
 import ScrollReveal from "../ScrollReveal";
 import Link from "next/link";
+import Stats from "../stats/Stats";
 import "./about.css";
 
 export default function AboutPage() {
@@ -44,48 +45,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ScrollReveal direction="up">
-        <section className="stats-section">
-          <div className="stats-outer-container">
-            <div className="stats-container">
-              <div className="stat-box">
-                <div className="stat-value">
-                  10<span className="stat-plus">+</span>
-                  <span className="stat-unit">Years</span>
-                </div>
-                <p className="stat-label">Of Proven Experience</p>
-              </div>
-              
-              <div className="stat-divider"></div>
-              
-              <div className="stat-box">
-                <div className="stat-value">
-                  200<span className="stat-plus">+</span>
-                </div>
-                <p className="stat-label">Successful Projects</p>
-              </div>
-              
-              <div className="stat-divider"></div>
-              
-              <div className="stat-box">
-                <div className="stat-value">
-                  100<span className="stat-plus">%</span>
-                </div>
-                <p className="stat-label">Client Satisfaction</p>
-              </div>
-              
-              <div className="stat-divider"></div>
-              
-              <div className="stat-box">
-                <div className="stat-value">
-                  24<span className="stat-plus">/</span>7
-                </div>
-                <p className="stat-label">Expert Support</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
+      <Stats />
 
       <section className="commitment-section">
         <ScrollReveal direction="up">

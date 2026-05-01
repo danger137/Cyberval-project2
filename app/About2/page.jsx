@@ -4,11 +4,12 @@ import './about-page.css';
 import '../component/about/about.css'; // Original styles for stats/commitment
 import Link from 'next/link';
 import Faq from '../component/faq/Faq';
+import Stats from '../component/stats/Stats';
 
 export default function About() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const [openFaq, setOpenFaq] = useState(0); // First FAQ open by default
+
 
   const scrollRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -34,7 +35,7 @@ export default function About() {
 
 
 
-  const totalSlides = 3;
+  const totalSlides = 4;
   return (
     <div className="about-page-container">
       {/* Hero Section of About Page (Custom Dark Style from Screenshot) */}
@@ -62,30 +63,13 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats Section (Restored from original component) */}
-      <section className="stats-section">
-        <div className="stats-container">
-          <div className="stat-box">
-            <div className="stat-value">10<span className="stat-plus">+</span> <span className="stat-unit">Years</span></div>
-            <div className="stat-label">Professional Experience</div>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat-box">
-            <div className="stat-value">25<span className="stat-plus">+</span></div>
-            <div className="stat-label">Enterprise Clients</div>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat-box">
-            <div className="stat-value">99.9<span className="stat-plus">%</span></div>
-            <div className="stat-label">Threat Detection Accuracy</div>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat-box">
-            <div className="stat-value">24/7</div>
-            <div className="stat-label">Security Monitoring</div>
-          </div>
-        </div>
-      </section>
+      {/* Stats Section */}
+      <Stats data={[
+        { value: "10", plus: "+", unit: "Years", label: "Professional Experience" },
+        { value: "25", plus: "+", label: "Enterprise Clients" },
+        { value: "99.9", plus: "%", label: "Threat Detection Accuracy" },
+        { value: "24/7", plus: "", label: "Security Monitoring" }
+      ]} />
 
       {/* Our Journey Section */}
       <section className="journey-section">
@@ -149,33 +133,33 @@ export default function About() {
           <div className="offer-cards-grid">
             <div className="offer-header">
               <h2 className="offer-title">
-                Built on Trust. Driven by <span className="blue-text-offer">Security.</span>
+                What We <span className="blue-text-offer">Offer</span>
               </h2>
               <p className="offer-subtitle">
-                Delivering secure, innovative, and trusted cybersecurity solutions you can rely on.
+                We evaluate your environment, design the right mix of services, and execute with accuracy—delivering outcomes you can see and measure.
               </p>
             </div>
 
             <div className="offer-card card-needs">
-              <h3 className="card-title">Security First</h3>
+              <h3 className="card-title">We Understand Your Needs</h3>
               <p className="card-description">
-                Ensuring unwavering security at every level for robust digital asset protection.
+                We take time to understand your environment, risk profile, and business goals before recommending any control or framework.
               </p>
             </div>
 
             {/* Card 2: Precision */}
             <div className="offer-card card-precision ">
-              <h3 className="card-title">Client Confidentiality</h3>
+              <h3 className="card-title">We Build with Precision</h3>
               <p className="card-description">
-                Upholding strict confidentiality standards for trusted cybersecurity services.
+                From architecture to implementation, we combine proven methodologies with automation to reduce gaps and human error.
               </p>
             </div>
 
             {/* Card 3: Excellence */}
             <div className="offer-card card-excellence">
-              <h3 className="card-title">Continuous Innovation</h3>
+              <h3 className="card-title">We Deliver Excellence</h3>
               <p className="card-description">
-                Staying ahead with cutting-edge solutions to adapt and counter evolving threats.
+                We stay engaged after go-live—measuring outcomes, tuning controls, and helping teams mature their security posture.
               </p>
             </div>
           </div>
@@ -1031,20 +1015,18 @@ export default function About() {
 
       <Faq />
       {/* CTA Section */}
-      <section className="cta-section">
-        <div className="cta-container">
-          <div className="cta-card">
-            <h2 className="cta-title">Ready to talk about your <br /> security goals?</h2>
-            <p className="cta-description">
+      <section className="cta-section" style={{ marginTop: '60px' }}>
+        <div className="footer-cta-banner">
+          <div className="footer-cta-content">
+            <h2 className="footer-cta-title">Ready to talk about your <br /> security goals?</h2>
+            <p className="footer-cta-desc">
               Share where you are today and where you'd like to be, <br />
               we'll help you plan the next steps.
             </p>
-            <div className="cta-button-wrapper">
-              <Link href="/contact" className="cta-button">
-                Contact Us
-              </Link>
-            </div>
           </div>
+          <Link href="/contact" className="footer-cta-btn">
+            Talk to Our Experts
+          </Link>
         </div>
       </section>
     </div>
