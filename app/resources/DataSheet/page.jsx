@@ -2,6 +2,7 @@
 import "./datasheet.css";
 import React, { useState } from "react";
 import Link from "next/link";
+import ScrollReveal from "../../component/ScrollReveal";
 
 const datasheetsData = [
   {
@@ -88,73 +89,74 @@ export default function DataSheetPage() {
         </section>
 
         {/* Datasheets Cards Section */}
-        <section className="p-[100px_20px_20px] bg-[#ffffff] max-[1024px]:!p-[60px_24px_20px]">
-          <div className="max-w-[1230px] mx-auto">
+        <section className="p-[140px_20px_100px] bg-[#ffffff] max-[1024px]:!p-[80px_24px_60px] max-[425px]:!p-[60px_16px_40px]">
+          <ScrollReveal direction="up">
+            <div className="max-w-[1230px] mx-auto">
+              <div className="grid grid-cols-3 gap-[30px] max-[1220px]:grid-cols-2 max-[1024px]:grid-cols-1">
+                {filteredDatasheets.length > 0 ? (
+                  filteredDatasheets.map((item, index) => (
+                    <article 
+                      key={item.id} 
+                      className="bg-[#F6F8FB] border border-transparent rounded-[16px] p-[40px] flex flex-col h-full transition-all duration-300 datasheet-card-anim max-[1024px]:p-[30px]"
+                      style={{ animationDelay: `${index * 0.1}s` }}
+                    >
+                      {/* Icon */}
+                      <div className="mb-[24px]">
+                        <img 
+                          src="/images/pages/resources/DataSheet/all-cards-icons.svg" 
+                          alt="icon" 
+                          className="w-[48px] h-[48px] object-contain" 
+                        />
+                      </div>
 
-            <div className="grid grid-cols-3 gap-[30px] max-[1220px]:grid-cols-2 max-[1024px]:grid-cols-1">
-              {filteredDatasheets.length > 0 ? (
-                filteredDatasheets.map((item, index) => (
-                  <article 
-                    key={item.id} 
-                    className="bg-white border border-[#E5E7EB] rounded-[16px] p-[40px] flex flex-col h-full transition-all duration-300 datasheet-card-anim card-entrance max-[1024px]:p-[30px]"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    {/* Icon */}
-                    <div className="mb-[24px]">
-                      <img 
-                        src="/images/pages/resources/DataSheet/all-cards-icons.svg" 
-                        alt="icon" 
-                        className="w-[48px] h-[48px] object-contain" 
-                      />
-                    </div>
+                      {/* Content */}
+                      <h3 className="text-[18px] font-semibold text-[#030D1A] mb-[16px] leading-[1.3] font-sora antialiased group-hover:text-[#2E5A88] transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-[18px] leading-[28px] text-[#4A5568] mb-[24px] font-manrope flex-grow antialiased">
+                        {item.description}
+                      </p>
 
-                    {/* Content */}
-                    <h3 className="text-[18px] font-semibold text-[#030D1A] mb-[16px] leading-[1.3] font-sora antialiased">
-                      {item.title}
-                    </h3>
-                    <p className="text-[18px] leading-[28px] text-[#4A5568] mb-[24px] font-manrope flex-grow antialiased">
-                      {item.description}
-                    </p>
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-[10px] mb-[32px]">
+                        {item.tags.map((tag, idx) => (
+                          <span key={idx} className="px-[16px] py-[6px] bg-[#E6F0FA] text-[#2E5A88] text-[12px] font-bold rounded-full uppercase tracking-wider font-manrope">{tag}</span>
+                        ))}
+                      </div>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-[10px] mb-[32px]">
-                      {item.tags.map((tag, idx) => (
-                        <span key={idx} className="px-[16px] py-[6px] bg-[#E6F0FA] text-[#2E5A88] text-[12px] font-bold rounded-full uppercase tracking-wider font-manrope">{tag}</span>
-                      ))}
-                    </div>
+                      {/* Buttons */}
+                      <div className="flex items-center gap-[12px] mt-auto">
+                        <button className="flex-1 h-[52px] bg-white border border-[#030D1A] text-[#030D1A] text-[15px] font-bold rounded-[8px] transition-all duration-300 hover:bg-[#030D1A] hover:text-white font-manrope">
+                          Read Online
+                        </button>
+                        <button className="flex-1 h-[52px] bg-[#2E5A88] text-white text-[15px] font-bold rounded-[8px] flex justify-center items-center gap-2 transition-all duration-300 hover:bg-[#1A3F66] font-manrope">
+                          Download
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                          </svg>
+                        </button>
+                      </div>
+                    </article>
+                  ))
+                ) : (
+                  <div className="col-span-full py-20 text-center">
+                    <p className="text-[20px] font-manrope text-gray-500">No datasheets found matching your search.</p>
+                  </div>
+                )}
+              </div>
 
-                    {/* Buttons */}
-                    <div className="flex items-center gap-[12px] mt-auto">
-                      <button className="flex-1 h-[52px] bg-white border border-[#030D1A] text-[#030D1A] text-[15px] font-bold rounded-[8px] transition-all duration-300 hover:bg-[#030D1A] hover:text-white font-manrope">
-                        Read Online
-                      </button>
-                      <button className="flex-1 h-[52px] bg-[#2E5A88] text-white text-[15px] font-bold rounded-[8px] flex justify-center items-center gap-2 transition-all duration-300 hover:bg-[#1A3F66] font-manrope">
-                        Download
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                          <polyline points="7 10 12 15 17 10"></polyline>
-                          <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                      </button>
-                    </div>
-                  </article>
-                ))
-              ) : (
-                <div className="col-span-full py-20 text-center">
-                  <p className="text-[20px] font-manrope text-gray-500">No datasheets found matching your search.</p>
+              {/* Load More Button */}
+              {filteredDatasheets.length > 0 && (
+                <div className="mt-[60px] flex justify-center max-[1024px]:mt-[40px]">
+                  <button className="p-[14px_40px] bg-transparent border border-[#030D1A] text-[#030D1A] text-[16px] font-bold rounded-[8px] cursor-pointer transition-all duration-300 hover:bg-[#030D1A] hover:text-[#FFFFFF] font-manrope max-[1024px]:p-[12px_30px] max-[1024px]:text-[14px]">
+                    Load more
+                  </button>
                 </div>
               )}
             </div>
-
-            {/* Load More Button */}
-            {filteredDatasheets.length > 0 && (
-              <div className="mt-[60px] flex justify-center max-[1024px]:mt-[40px]">
-                <button className="p-[14px_40px] bg-transparent border border-[#030D1A] text-[#030D1A] text-[16px] font-bold rounded-[8px] cursor-pointer transition-all duration-300 hover:bg-[#030D1A] hover:text-[#FFFFFF] font-manrope max-[1024px]:p-[12px_30px] max-[1024px]:text-[14px]">
-                  Load more
-                </button>
-              </div>
-            )}
-          </div>
+          </ScrollReveal>
         </section>
       </div>
     </div>
