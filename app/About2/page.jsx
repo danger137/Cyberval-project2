@@ -5,6 +5,7 @@ import '../component/about/about.css'; // Original styles for stats/commitment
 import Link from 'next/link';
 import Faq from '../component/faq/Faq';
 import Stats from '../component/stats/Stats';
+import ScrollReveal from '../component/ScrollReveal';
 
 export default function About() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -48,18 +49,20 @@ export default function About() {
         </div>
 
         <div className="about-hero-content">
-          <div className="about-badge-wrapper">
-            <span className="about-badge-pill">ABOUT US</span>
-          </div>
+          <ScrollReveal direction="up">
+            <div className="about-badge-wrapper">
+              <span className="about-badge-pill">ABOUT US</span>
+            </div>
 
-          <h1 className="about-hero-title">
-            Reliable Cybersecurity, Exceptional Service
-          </h1>
+            <h1 className="about-hero-title">
+              Reliable Cybersecurity, Exceptional Service
+            </h1>
 
-          <p className="about-hero-desc">
-            We partner with organizations to design, implement, and sustain
-            security programs that are practical, measurable, and resilient.
-          </p>
+            <p className="about-hero-desc">
+              We partner with organizations to design, implement, and sustain
+              security programs that are practical, measurable, and resilient.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -73,109 +76,118 @@ export default function About() {
 
       {/* Our Journey Section */}
       <section className="journey-section">
-        <div className="journey-container">
-          <h2 className="journey-title">
-            Our <span className="blue-text-journey">Journey</span>
-          </h2>
+        <ScrollReveal direction="up">
+          <div className="journey-container">
+            <h2 className="journey-title">
+              Our <span className="blue-text-journey">Journey</span>
+            </h2>
 
-          <div className="journey-content">
-            <p>
-              Cybervol was founded on a simple idea: modern businesses need security partners
-              who understand both technology and strategy. We bridge that gap—helping teams
-              protect what matters without slowing innovation.
-            </p>
-            <p>
-              From advisory to implementation, we focus on clarity, speed, and measurable impact—
-              so boards, executives, and technical teams can move forward with confidence.
-            </p>
+            <div className="journey-content">
+              <p>
+                Cybervol was founded on a simple idea: modern businesses need security partners
+                who understand both technology and strategy. We bridge that gap—helping teams
+                protect what matters without slowing innovation.
+              </p>
+              <p>
+                From advisory to implementation, we focus on clarity, speed, and measurable impact—
+                so boards, executives, and technical teams can move forward with confidence.
+              </p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Our Mission Section */}
       <section className="mission-section">
         <div className="mission-container">
           <div className="mission-left">
-            <div className="radar-graphic-wrapper">
-              <img
-                src="/images/radar-graphic.svg"
-                alt="Security Radar"
-                className="radar-graphic"
-              />
-            </div>
+            <ScrollReveal direction="left">
+              <div className="radar-graphic-wrapper">
+                <img
+                  src="/images/radar-graphic.svg"
+                  alt="Security Radar"
+                  className="radar-graphic"
+                />
+              </div>
+            </ScrollReveal>
           </div>
 
           <div className="mission-right">
-            <div className="mission-badge-wrapper">
-              <span className="mission-badge">OUR MISSION</span>
-            </div>
+            <ScrollReveal direction="right">
+              <div className="mission-badge-wrapper">
+                <span className="mission-badge">OUR MISSION</span>
+              </div>
 
-            <h2 className="mission-heading">
-              Safeguarding Your Business with Advanced <span className="blue-text-mission">Cyber Solutions</span>
-            </h2>
+              <h2 className="mission-heading">
+                Safeguarding Your Business with Advanced <span className="blue-text-mission">Cyber Solutions</span>
+              </h2>
 
-            <h3 className="mission-subheading">
-              Fortifying Excellence through Advanced Cybersecurity Solutions
-            </h3>
+              <h3 className="mission-subheading">
+                Fortifying Excellence through Advanced Cybersecurity Solutions
+              </h3>
 
-            <p className="mission-description">
-              At the crux of our mission is a dedication to empowering organizations with
-              transformative solutions, enhancing performance, optimizing operations, and
-              fortifying the security of their digital assets.
-            </p>
+              <p className="mission-description">
+                At the crux of our mission is a dedication to empowering organizations with
+                transformative solutions, enhancing performance, optimizing operations, and
+                fortifying the security of their digital assets.
+              </p>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* What We Offer Section */}
       <section className="offer-section">
-        <div className="offer-container">
-          <div className="offer-cards-grid">
-            <div className="offer-header">
-              <h2 className="offer-title">
-                What We <span className="blue-text-offer">Offer</span>
-              </h2>
-              <p className="offer-subtitle">
-                We evaluate your environment, design the right mix of services, and execute with accuracy—delivering outcomes you can see and measure.
-              </p>
-            </div>
+        <ScrollReveal direction="up">
+          <div className="offer-container">
+            <div className="offer-cards-grid">
+              <div className="offer-header">
+                <h2 className="offer-title">
+                  What We <span className="blue-text-offer">Offer</span>
+                </h2>
+                <p className="offer-subtitle">
+                  We evaluate your environment, design the right mix of services, and execute with accuracy—delivering outcomes you can see and measure.
+                </p>
+              </div>
 
-            <div className="offer-card card-needs">
-              <h3 className="card-title">We Understand Your Needs</h3>
-              <p className="card-description">
-                We take time to understand your environment, risk profile, and business goals before recommending any control or framework.
-              </p>
-            </div>
+              <div className="offer-card card-needs">
+                <h3 className="card-title">We Understand Your Needs</h3>
+                <p className="card-description">
+                  We take time to understand your environment, risk profile, and business goals before recommending any control or framework.
+                </p>
+              </div>
 
-            {/* Card 2: Precision */}
-            <div className="offer-card card-precision ">
-              <h3 className="card-title">We Build with Precision</h3>
-              <p className="card-description">
-                From architecture to implementation, we combine proven methodologies with automation to reduce gaps and human error.
-              </p>
-            </div>
+              {/* Card 2: Precision */}
+              <div className="offer-card card-precision ">
+                <h3 className="card-title">We Build with Precision</h3>
+                <p className="card-description">
+                  From architecture to implementation, we combine proven methodologies with automation to reduce gaps and human error.
+                </p>
+              </div>
 
-            {/* Card 3: Excellence */}
-            <div className="offer-card card-excellence">
-              <h3 className="card-title">We Deliver Excellence</h3>
-              <p className="card-description">
-                We stay engaged after go-live—measuring outcomes, tuning controls, and helping teams mature their security posture.
-              </p>
+              {/* Card 3: Excellence */}
+              <div className="offer-card card-excellence">
+                <h3 className="card-title">We Deliver Excellence</h3>
+                <p className="card-description">
+                  We stay engaged after go-live—measuring outcomes, tuning controls, and helping teams mature their security posture.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Team Section */}
       <section className="team-section">
-        <div className="team-container">
-          <div className="team-header">
-            <div className="team-badge-wrapper">
-              <span className="team-badge">OUR TEAM</span>
+        <ScrollReveal direction="up">
+          <div className="team-container">
+            <div className="team-header">
+              <div className="team-badge-wrapper">
+                <span className="team-badge">OUR TEAM</span>
+              </div>
+              <h2 className="team-title">Meet the Minds</h2>
+              <h3 className="team-subtitle">Behind Our Mission</h3>
             </div>
-            <h2 className="team-title">Meet the Minds</h2>
-            <h3 className="team-subtitle">Behind Our Mission</h3>
-          </div>
 
           <div 
             className="team-slider-viewport" 
@@ -1010,24 +1022,29 @@ export default function About() {
             ))}
           </div>
 
-        </div>
+          </div>
+        </ScrollReveal>
       </section>
 
-      <Faq />
+      <ScrollReveal direction="up">
+        <Faq />
+      </ScrollReveal>
       {/* CTA Section */}
       <section className="cta-section" style={{ marginTop: '60px' }}>
-        <div className="footer-cta-banner">
-          <div className="footer-cta-content">
-            <h2 className="footer-cta-title">Ready to talk about your <br /> security goals?</h2>
-            <p className="footer-cta-desc">
-              Share where you are today and where you'd like to be, <br />
-              we'll help you plan the next steps.
-            </p>
+        <ScrollReveal direction="up">
+          <div className="footer-cta-banner">
+            <div className="footer-cta-content">
+              <h2 className="footer-cta-title">Ready to talk about your <br /> security goals?</h2>
+              <p className="footer-cta-desc">
+                Share where you are today and where you'd like to be, <br />
+                we'll help you plan the next steps.
+              </p>
+            </div>
+            <Link href="/contact" className="footer-cta-btn">
+              Talk to Our Experts
+            </Link>
           </div>
-          <Link href="/contact" className="footer-cta-btn">
-            Talk to Our Experts
-          </Link>
-        </div>
+        </ScrollReveal>
       </section>
     </div>
   );
