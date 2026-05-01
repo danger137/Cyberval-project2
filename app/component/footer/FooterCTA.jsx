@@ -3,9 +3,9 @@ import Link from "next/link";
 import ScrollReveal from "../ScrollReveal";
 
 export default function FooterCTA({ 
-  title = "Ready to Secure Your Business?", 
-  subtitle = "Protect your digital assets with expert-driven cybersecurity solutions tailored to your needs.",
-  buttonText = "Talk to Our Experts",
+  title = "Contact Us Today", 
+  subtitle = "Ready to strengthen your cybersecurity posture? Get in touch and we'll help you find the right solution.",
+  buttonText = "Contact Us",
   buttonLink = "/Contact"
 }) {
   return (

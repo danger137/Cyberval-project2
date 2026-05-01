@@ -41,16 +41,14 @@ export default function Footer() {
         {showBanner && (
           <FooterCTA 
             title={
-              isService1 ? "Contact Us Today" :
               isService2 ? <>Ready to talk about your <br /> security goals?</> :
-              "Ready to Secure Your Business?"
+              "Contact Us Today"
             }
             subtitle={
-              isService1 ? "Ready to strengthen your cybersecurity posture? Get in touch and we'll help you find the right solution." :
               isService2 ? <>Share where you are today and where you'd like to be, <br className="hidden md:block" /> we'll help you plan the next steps.</> :
-              <>Protect your digital assets with expert-driven <br className="hidden md:block" /> cybersecurity solutions tailored to your needs.</>
+              "Ready to strengthen your cybersecurity posture? Get in touch and we'll help you find the right solution."
             }
-            buttonText={isService1 ? "Contact Us" : "Talk to Our Experts"}
+            buttonText={isService2 ? "Talk to Our Experts" : "Contact Us"}
           />
         )}
 
