@@ -9,10 +9,10 @@ export default function FooterCTA({
   buttonLink = "/Contact"
 }) {
   return (
-    <div className="w-full pt-[100px] max-[1024px]:pt-[40px] pb-[20px] max-[1024px]:pb-0 px-0">
-      <div className="max-w-[1440px] mx-auto px-[20px] md:px-[40px] lg:px-[80px]">
+    <div className="w-full pt-[100px] max-[1024px]:pt-[40px] pb-[20px] max-[1024px]:pb-0 px-0 cta-section">
+      <div className="max-w-[1440px] mx-auto px-[20px] md:px-[40px] lg:px-[80px] max-[1024px]:px-0">
         <ScrollReveal direction="up">
-          <div className="bg-[#000F2E] bg-[url('/bgcardFot.svg')] bg-cover bg-center w-full max-w-[1230px] h-auto md:min-h-[380px] mx-auto text-center text-[#ffffff] flex flex-col items-center justify-center gap-[12px] relative overflow-hidden p-[40px] md:p-[60px] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05)_0%,transparent_70%)] before:pointer-events-none footer-cta-banner">
+          <div className="bg-[#000F2E] bg-[url('/bgcardFot.svg')] bg-cover bg-center w-full max-w-[1230px] max-[1024px]:max-w-full h-auto md:min-h-[380px] mx-auto text-center text-[#ffffff] flex flex-col items-center justify-center gap-[12px] relative overflow-hidden p-[40px] md:p-[60px] before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05)_0%,transparent_70%)] before:pointer-events-none footer-cta-banner">
             <div className="z-10 relative">
               <h2 className="font-sora text-[28px] md:text-[32px] font-semibold leading-[1.2] md:leading-[49px] m-0 max-w-[650px] mx-auto footer-cta-title">
                 {title}
