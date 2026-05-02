@@ -44,14 +44,14 @@ export default function ServiceSixPage() {
                 {/* Row 1 */}
                 <div className="flex flex-row items-stretch justify-center gap-[24px] w-full max-[1220px]:flex-col max-[1220px]:items-center min-[1025px]:min-h-[334px]">
                   {/* Card 1 - Cybersecurity */}
-                  <article className="relative bg-[linear-gradient(230.36deg,rgba(135,187,243,0.36)_3.31%,rgba(111,144,180,0.07)_49.84%,rgba(246,248,251,0.49)_95.24%)] rounded-[20px] p-[40px] flex flex-row items-start justify-between overflow-hidden flex-[1.5] group service-card-anim" style={{ animationDelay: '0s' }}>
+                  <article className="relative bg-[linear-gradient(230.36deg,rgba(135,187,243,0.36)_3.31%,rgba(111,144,180,0.07)_49.84%,rgba(246,248,251,0.49)_95.24%)] rounded-[20px] p-[40px] max-[425px]:p-[32px] flex flex-row max-[1024px]:flex-col items-start justify-between overflow-hidden flex-[1.5] group service-card-anim" style={{ animationDelay: '0s' }}>
                     <div className="relative z-[2] flex flex-col gap-[12px] max-w-[400px]">
                       <h3 className="m-0 font-sora text-[18px] font-semibold text-[#212121] leading-[38px] antialiased">Cybersecurity</h3>
-                      <p className="font-manrope font-normal text-[18px] leading-[28px] text-[#585858] antialiased">
+                      <p className="font-manrope font-normal text-[18px] max-[1024px]:text-[16px] leading-[28px] text-[#585858] antialiased">
                         Training courses in this portfolio focus on safeguarding information systems, identifying and mitigating cyber threats, and building robust security strategies that ensure data protection and integrity.
                       </p>
                     </div>
-                    <div className="relative z-[1] w-[220px] h-[220px] self-center ml-[20px] max-[1024px]:hidden">
+                    <div className="relative z-[1] w-[220px] h-[220px] max-[1024px]:w-[180px] max-[1024px]:h-[180px] self-center ml-[20px] max-[1024px]:ml-0 max-[1024px]:mt-[20px]">
                       <img src="/images/pages/services/service-6/card-1-icon.svg" alt="Cybersecurity" className="w-full h-full object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                   </article>
