@@ -8,51 +8,51 @@ const capabilityCards = [
     title: "Cybersecurity Program",
     desc: "Establish and manage a strategic cybersecurity program aligned with business goals, risk tolerance, and regulatory expectations to ensure continuous protection and improvement",
     icon: "/images/pages/services/service-2/icon-1.svg",
-    cardClass: "min-[1025px]:!w-[379px] max-[1024px]:!w-[384px] max-[1024px]:!rounded-[20px]",
-    contentClass: "min-[1025px]:w-[323px] max-[1024px]:!w-[328px]",
-    innerParentClass: "min-[1025px]:w-[323px] flex flex-col justify-between max-[1024px]:!w-[328px]"
+    cardClass: "min-[1025px]:!w-[379px] max-[1024px]:w-full max-[1024px]:max-w-[420px] max-[1024px]:!rounded-[20px]",
+    contentClass: "min-[1025px]:w-[323px] max-[1024px]:w-full",
+    innerParentClass: "min-[1025px]:w-[323px] flex flex-col justify-between w-full"
   },
   {
     id: "compliance",
     title: "Security & Privacy Compliance",
     desc: "Achieve and sustain compliance with key standards and frameworks including NIST, ISO 27001, HITRUST, SOC 2, GDPR, NDPR, and PCI-DSS, through well-defined security and privacy controls.",
     icon: "/images/pages/services/service-2/icon-3.svg",
-    cardClass: "min-[1025px]:!w-[379px] max-[1024px]:!w-[384px] max-[1024px]:!rounded-[20px]",
-    contentClass: "max-[1024px]:!w-[328px]",
-    innerParentClass: "min-[1025px]:w-[323px] flex flex-col justify-between max-[1024px]:!w-[328px]"
+    cardClass: "min-[1025px]:!w-[379px] max-[1024px]:w-full max-[1024px]:max-w-[420px] max-[1024px]:!rounded-[20px]",
+    contentClass: "max-[1024px]:w-full",
+    innerParentClass: "min-[1025px]:w-[323px] flex flex-col justify-between w-full"
   },
   {
     id: "continuity",
     title: "Business Continuity",
     desc: "Develop and implement continuity plans that ensure mission-critical operations remain functional during disruptions with recovery strategies that minimize downtime and data loss.",
     icon: "/images/pages/services/service-2/icon-2.svg",
-    cardClass: "min-[1025px]:!w-[379px] max-[1024px]:!w-[384px] max-[1024px]:!rounded-[20px]",
-    contentClass: "max-[1024px]:!w-[328px]",
-    innerParentClass: "min-[1025px]:w-[323px] flex flex-col justify-between max-[1024px]:!w-[328px]"
+    cardClass: "min-[1025px]:!w-[379px] max-[1024px]:w-full max-[1024px]:max-w-[420px] max-[1024px]:!rounded-[20px]",
+    contentClass: "max-[1024px]:w-full",
+    innerParentClass: "min-[1025px]:w-[323px] flex flex-col justify-between w-full"
   },
   {
     id: "maturity",
     title: "Cyber Maturity & Risk Assessment",
     desc: "Evaluate your organization's cybersecurity maturity, identify control gaps, and prioritize risk mitigation strategies to enhance resilience and reduce exposure.",
     icon: "/images/pages/services/service-2/icon-4.svg",
-    cardClass: "min-[1025px]:!w-[379px] max-[1024px]:!w-[384px] max-[1024px]:!rounded-[20px]",
-    contentClass: "max-[1024px]:!w-[328px]",
-    innerParentClass: "min-[1025px]:w-[323px] flex flex-col justify-between max-[1024px]:!w-[328px]"
+    cardClass: "min-[1025px]:!w-[379px] max-[1024px]:w-full max-[1024px]:max-w-[420px] max-[1024px]:!rounded-[20px]",
+    contentClass: "max-[1024px]:w-full",
+    innerParentClass: "min-[1025px]:w-[323px] flex flex-col justify-between w-full"
   },
   {
     id: "third-party",
     title: "Third Party Risk Assessment",
     desc: "Assess, monitor, and mitigate risks associated with vendors, suppliers, and other third parties to ensure security and compliance across your extended ecosystem.",
     icon: "/images/pages/services/service-1/icon-1.svg", 
-    cardClass: "min-[1025px]:!w-[428px] min-[1025px]:!h-[608px] min-[1025px]:!rounded-[20px] bg-[url('/images/pages/services/service-2/right-card-image.svg')] bg-cover bg-center !p-0 !border-none max-[1024px]:!w-[384px] max-[1024px]:!h-[608px] max-[1024px]:!rounded-[20px] max-[1024px]:!p-0", 
-    contentClass: "absolute bottom-[15px] left-[15px] min-[1025px]:w-[397px] min-[1025px]:h-auto p-[24px_16px] min-[1025px]:!p-[28px_24px] bg-[#FFFFFF1A] backdrop-blur-[16px] rounded-[20px] flex items-start justify-start max-[1024px]:!w-[calc(100%-30px)] max-[1024px]:!p-[24px] max-[1024px]:!gap-[10px]",
-    innerParentClass: "min-[1025px]:w-[341px] min-[1025px]:h-auto flex flex-col min-[1025px]:gap-[4px] items-start justify-start text-left max-[1024px]:!w-[317px] max-[1024px]:!h-[150px]",
+    cardClass: "min-[1025px]:!w-[428px] min-[1025px]:!h-[608px] min-[1025px]:!rounded-[20px] bg-[url('/images/pages/services/service-2/right-card-image.svg')] bg-cover bg-center !p-0 !border-none max-[1024px]:w-full max-[1024px]:max-w-[420px] max-[1024px]:!min-h-[550px] max-[1024px]:!h-auto max-[1024px]:!rounded-[20px] max-[1024px]:!p-0", 
+    contentClass: "absolute bottom-[15px] left-[15px] min-[1025px]:w-[397px] min-[1025px]:h-auto p-[24px_16px] min-[1025px]:!p-[28px_24px] bg-[#FFFFFF1A] backdrop-blur-[16px] rounded-[20px] flex items-start justify-start max-[1024px]:!w-[calc(100%-30px)] max-[1024px]:!p-[20px] max-[1024px]:!gap-[10px]",
+    innerParentClass: "min-[1025px]:w-[341px] min-[1025px]:h-auto flex flex-col min-[1025px]:gap-[4px] items-start justify-start text-left max-[1024px]:w-full max-[1024px]:!h-auto",
     titleClass: "!text-white",
     descClass: "!text-white"
   }
 ];
 
-const baseCardClass = "bg-[#F6F8FB] rounded-[12px] p-[32px_24px_100px] min-[1025px]:!p-[34px_28px_70px_28px] min-[1025px]:!rounded-[20px] relative overflow-hidden transition-all duration-300 hover:shadow-lg w-full max-w-full min-[1025px]:max-w-none max-[1024px]:mx-auto max-[425px]:!px-[20px] max-[375px]:!p-[24px_16px_80px]";
+const baseCardClass = "bg-[#F6F8FB] rounded-[12px] p-[32px_24px_100px] min-[1025px]:!p-[34px_28px_70px_28px] min-[1025px]:!rounded-[20px] relative overflow-hidden transition-all duration-300 hover:shadow-lg w-full max-w-full min-[1025px]:max-w-none max-[1024px]:mx-auto max-[1024px]:!pb-[40px] max-[425px]:!px-[20px] max-[375px]:!p-[24px_16px_40px]";
 const baseContentClass = "flex flex-col gap-[12px] min-[1025px]:!gap-[10px] z-[5] max-[425px]:!gap-[8px]";
 const baseTitleClass = "font-sora text-[18px] font-semibold leading-[38px] text-[#212121] max-[1024px]:leading-normal max-[425px]:!text-[18px] max-[375px]:!text-[16px] max-[320px]:!text-[15px] antialiased";
 const baseDescClass = "font-manrope text-[18px] font-normal leading-[28px] text-[#585858] max-[1024px]:text-[18px] max-[1024px]:leading-[1.7] max-[425px]:!text-[18px] max-[425px]:!leading-[24px] max-[375px]:!text-[18px] max-[320px]:!text-[18px] antialiased";
@@ -110,7 +110,7 @@ export default function ServiceTwoPage() {
                         <p className={`${baseDescClass} ${card.descClass || ""}`}>{card.desc}</p>
                       </div>
 
-                      <div className="absolute bottom-[24px] right-[24px] w-[52px] h-[52px] flex items-center justify-center z-[10] max-[1024px]:bottom-[24px] max-[1024px]:right-[24px] max-[425px]:bottom-[16px] max-[425px]:right-[16px]">
+                      <div className="absolute bottom-[24px] right-[24px] w-[52px] h-[52px] flex items-center justify-center z-[10] max-[1024px]:relative max-[1024px]:bottom-0 max-[1024px]:right-0 max-[1024px]:mt-[20px] max-[1024px]:self-end">
                         <img
                           src={card.icon}
                           alt={card.title}
@@ -136,7 +136,7 @@ export default function ServiceTwoPage() {
                         <p className={`${baseDescClass} ${card.descClass || ""}`}>{card.desc}</p>
                       </div>
 
-                      <div className="absolute bottom-[24px] right-[24px] w-[52px] h-[52px] flex items-center justify-center z-[10] max-[1024px]:bottom-[24px] max-[1024px]:right-[24px] max-[425px]:bottom-[16px] max-[425px]:right-[16px]">
+                      <div className="absolute bottom-[24px] right-[24px] w-[52px] h-[52px] flex items-center justify-center z-[10] max-[1024px]:relative max-[1024px]:bottom-0 max-[1024px]:right-0 max-[1024px]:mt-[20px] max-[1024px]:self-end">
                         <img
                           src={card.icon}
                           alt={card.title}
