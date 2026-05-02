@@ -8,43 +8,43 @@ import './Insights.css';
 const insightsData = [
   {
     id: 1,
-    date: "Jan 10, 2024",
-    title: "Top Cybersecurity Trends Every Business Should Know in 2024",
+    date: "Jun 10, 2026",
+    title: "Top Cybersecurity Trends Every Business Should Know in 2026",
     image: "/images/pages/news-insights/image-1.jpg",
     link: "/resources/Blog/1"
   },
   {
     id: 2,
-    date: "Jan 10, 2024",
-    title: "Top Cybersecurity Trends Every Business Should Know in 2024",
+    date: "Jun 10, 2026",
+    title: "Top Cybersecurity Trends Every Business Should Know in 2026",
     image: "/images/pages/news-insights/image-2.jpg",
     link: "/resources/Blog/2"
   },
   {
     id: 3,
-    date: "Jan 10, 2024",
+    date: "Jun 10, 2026",
     title: "The Future of Cloud Security: Best Practices for Organizations",
     image: "/images/pages/news-insights/image 3.jpg",
     link: "/resources/Blog/3"
   },
   {
     id: 4,
-    date: "Feb 05, 2024",
-    title: "Protecting Your Assets: A Guide to Modern Data Encryption",
+    date: "Jan 15, 2026",
+    title: "Navigating AI Regulations: What Companies Need to Watch",
     image: "/images/pages/news-insights/image-1.jpg",
     link: "/resources/Blog/4"
   },
   {
     id: 5,
-    date: "Feb 12, 2024",
-    title: "Zero Trust Architecture: Why Your Network Needs a New Approach",
+    date: "Jan 15, 2026",
+    title: "Navigating AI Regulations: What Companies Need to Watch",
     image: "/images/pages/news-insights/image-2.jpg",
     link: "/resources/Blog/5"
   },
   {
     id: 6,
-    date: "Mar 01, 2024",
-    title: "The Role of AI in Proactive Threat Detection and Response",
+    date: "Jan 15, 2026",
+    title: "Enhancing Data Privacy: Techniques for Modern Enterprises",
     image: "/images/pages/news-insights/image 3.jpg",
     link: "/resources/Blog/6"
   }
@@ -131,8 +131,23 @@ export default function Insights() {
                     <span className="insight-date">{item.date}</span>
                     <h3 className="insight-card-title">{item.title}</h3>
                     <Link href={item.link} className="read-more-link">
-                      Read More
-                      <img src="/images/pages/news-insights/icon.svg" alt="Arrow" className="read-more-icon" />
+                      <span>Read More</span>
+                      <div className="read-more-icon-box">
+                        <svg 
+                          width="12" 
+                          height="12" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="3.5" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          className="read-more-icon-svg"
+                        >
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                      </div>
                     </Link>
                   </div>
                 </div>

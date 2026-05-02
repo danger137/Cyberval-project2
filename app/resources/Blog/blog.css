@@ -21,9 +21,7 @@
 }
 
 .blog-card-anim:hover {
-    transform: translateY(-12px) scale(1.01);
-    border-color: rgba(46, 90, 136, 0.1) !important;
-    box-shadow: 0 25px 60px -15px rgba(46, 90, 136, 0.18) !important;
+    transform: translateY(-8px);
     z-index: 10;
 }
 

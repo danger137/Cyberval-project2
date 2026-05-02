@@ -105,34 +105,42 @@ export default function BlogPage() {
                   filteredBlogs.map((blog, index) => (
                     <article 
                       key={blog.id} 
-                      className="bg-[#FFFFFF] border border-[#E5E7EB] rounded-[16px] overflow-hidden flex flex-col group transition-all duration-300 w-full min-[1025px]:w-[378px] min-[1025px]:h-[350px] max-[1024px]:max-w-[378px] max-[1024px]:mx-auto blog-card-fluid service-card-anim"
+                      className="bg-transparent overflow-visible flex flex-col group transition-all duration-300 w-full min-[1025px]:w-[378px] max-[1024px]:max-w-[378px] max-[1024px]:mx-auto blog-card-fluid service-card-anim"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                      <div className="relative h-[220px] overflow-hidden">
+                      <div className="relative h-[220px] rounded-[24px] overflow-hidden mb-[20px]">
                         <img 
                           src={blog.image} 
                           alt={blog.title} 
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                       </div>
-                      <div className="p-[20px] flex flex-col flex-1">
-                        <span className="text-[14px] text-[#718096] mb-[8px] font-manrope">{blog.date}</span>
-                        <h3 className="text-[18px] font-semibold text-[#030D1A] mb-[12px] leading-[1.3] line-clamp-2 group-hover:text-[#2E5A88] transition-colors font-sora antialiased">
+                      <div className="flex flex-col flex-1">
+                        <span className="text-[14px] text-[#585858] mb-[8px] font-medium font-manrope">{blog.date}</span>
+                        <h3 className="text-[18px] font-bold text-[#030D1A] mb-[12px] leading-[1.3] line-clamp-2 group-hover:text-[#2E5A88] transition-colors font-sora antialiased">
                           {blog.title}
                         </h3>
                         
-                        {/* Adjusted alignment wrapper here */}
                         <div className="mt-auto pt-[10px] flex items-center">
-                          <Link href={`/resources/Blog/${blog.id}`} className="inline-flex items-center gap-[4px] cursor-pointer group/link">
-                            <span className="text-[14px] font-bold text-[#2E5A88] font-manrope whitespace-nowrap leading-none">Read More</span>
-                            <img 
-                              src="/images/pages/resources/Blog/all-cards-airow-iconicons.svg" 
-                              alt="arrow" 
-                              className="w-[42px] h-[42px] min-w-[42px] min-h-[42px] mt-1 shrink-0 object-contain transition-transform duration-300 group-hover/link:translate-x-1" 
-                            />
+                          <Link href={`/resources/Blog/${blog.id}`} className="inline-flex items-center gap-[10px] cursor-pointer group/link">
+                            <span className="text-[15px] font-bold text-[#2E5A88] font-manrope whitespace-nowrap leading-none border-b border-transparent group-hover/link:border-[#2E5A88] transition-all">Read More</span>
+                            <div className="w-[24px] h-[24px] bg-gradient-to-br from-[#4A7DB8] to-[#2E5A88] rounded-[6px] flex items-center justify-center shadow-[0px_4px_10px_rgba(46,90,136,0.2)] group-hover/link:scale-110 transition-all">
+                              <svg 
+                                width="12" 
+                                height="12" 
+                                viewBox="0 0 24 24" 
+                                fill="none" 
+                                stroke="#ffffff" 
+                                strokeWidth="3.5" 
+                                strokeLinecap="round" 
+                                strokeLinejoin="round"
+                              >
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                              </svg>
+                            </div>
                           </Link>
                         </div>
-                        
                       </div>
                     </article>
                   ))
@@ -145,7 +153,7 @@ export default function BlogPage() {
 
               {/* Load More Button */}
               {filteredBlogs.length > 0 && (
-                <div className="mt-[60px] flex justify-center max-[1024px]:mt-[40px]">
+                <div className="mt-[60px] mb-[40px] flex justify-center max-[1024px]:mt-[40px] max-[1024px]:mb-[20px]">
                   <button className="p-[14px_40px] bg-transparent border border-[#030D1A] text-[#030D1A] text-[16px] font-bold rounded-[8px] cursor-pointer transition-all duration-300 hover:bg-[#030D1A] hover:text-[#FFFFFF] font-manrope max-[1024px]:p-[12px_30px] max-[1024px]:text-[14px]">
                     Load more
                   </button>
