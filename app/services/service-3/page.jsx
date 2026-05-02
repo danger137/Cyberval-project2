@@ -47,28 +47,18 @@ export default function ServiceThreePage() {
             <div className="flex gap-[19px] w-full max-w-[1230px] max-[1024px]:!flex-col max-[1024px]:items-center">
               {/* Card 1: Web Application VAPT */}
               <article 
-                className={`${commonCardClass} large-card !rounded-[14.38px] !border-none max-[1024px]:!p-[37px_40px_100px_29px] max-[1024px]:bg-[linear-gradient(230.36deg,rgba(135,187,243,0.36)_3.31%,rgba(111,144,180,0.07)_49.84%,rgba(246,248,251,0.49)_95.24%)] max-[1024px]:relative min-[1025px]:w-[727px] min-[1025px]:h-[334px] min-[1025px]:bg-[url('/images/pages/services/serivce-3/lerger-bg-1.svg')] min-[1025px]:bg-cover min-[1025px]:bg-center min-[1025px]:p-[37px_40px_47px_29px]`}
+                className={`${commonCardClass} large-card !rounded-[14.38px] !border-none max-[1024px]:!p-[32px_24px_40px] max-[1024px]:bg-[linear-gradient(230.36deg,rgba(135,187,243,0.36)_3.31%,rgba(111,144,180,0.07)_49.84%,rgba(246,248,251,0.49)_95.24%)] max-[1024px]:relative min-[1025px]:w-[727px] min-[1025px]:h-[334px] min-[1025px]:bg-[url('/images/pages/services/serivce-3/lerger-bg-1.svg')] min-[1025px]:bg-cover min-[1025px]:bg-center min-[1025px]:p-[37px_40px_47px_29px]`}
                 style={{ animationDelay: '0s' }}
               >
-
-                {/* Mobile Icon (Absolute positioned to match Figma exactly) */}
-                <div className="hidden max-[1024px]:block absolute !top-[207.74px] !left-[54.91px] !w-[305.09px] !h-[235px] z-[1]">
-                  <img
-                    src="/images/pages/services/serivce-3/icon-1.svg"
-                    alt="Web Application VAPT"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-
                 {/* Content Wrapper */}
-                <div className="relative z-[2] w-full h-full max-[1024px]:flex max-[1024px]:flex-col max-[1024px]:items-start min-[1025px]:flex min-[1025px]:flex-row min-[1025px]:justify-between min-[1025px]:items-start min-[1025px]:w-[670.09px] min-[1025px]:h-[235px] min-[1025px]:gap-[35px]">
+                <div className="relative z-[2] w-full h-full max-[1024px]:flex max-[1024px]:flex-col max-[1024px]:items-center min-[1025px]:flex min-[1025px]:flex-row min-[1025px]:justify-between min-[1025px]:items-start min-[1025px]:w-[670.09px] min-[1025px]:h-[235px] min-[1025px]:gap-[35px]">
                   <div className="flex flex-col items-start w-full h-auto gap-[10px]">
                     <h3 className="m-0 !font-sora font-semibold text-left text-[18px] leading-[38px] text-[#212121] antialiased">Web Application VAPT</h3>
                     <p className="m-0 font-manrope font-normal text-left text-[#585858] text-[18px] leading-[28px] antialiased">Identifies security flaws in web applications, including authentication, session management, and injection vulnerabilities.</p>
                   </div>
 
-                  {/* Desktop Icon (Preserved for 1440px) */}
-                  <div className="hidden min-[1025px]:block min-[1025px]:w-[305.09px] min-[1025px]:h-[235px] relative">
+                  {/* Icon (Responsive for both mobile and desktop) */}
+                  <div className="w-full max-w-[305.09px] min-[1025px]:w-[305.09px] h-[235px] relative mt-[20px] min-[1025px]:mt-0 flex justify-center">
                     <img
                       src="/images/pages/services/serivce-3/icon-1.svg"
                       alt="Web Application VAPT"
@@ -80,14 +70,14 @@ export default function ServiceThreePage() {
 
               {/* Card 2: Mobile Application VAPT */}
               <article 
-                className={`${commonCardClass} ${notLargeCardResponsiveClass} w-full max-w-[482px] h-[334px] rounded-[14.38px] !bg-[#F6F8FB] max-[1024px]:!bg-[#F6F8FB] min-[1025px]:w-[482px] min-[1025px]:h-[334px]`}
+                className={`${commonCardClass} ${notLargeCardResponsiveClass} w-full max-w-[482px] h-[334px] rounded-[14.38px] !bg-[#F6F8FB] max-[1024px]:!bg-[#F6F8FB] max-[1024px]:!pb-[40px] min-[1025px]:w-[482px] min-[1025px]:h-[334px]`}
                 style={{ animationDelay: '0.15s' }}
               >
                 <div className="relative z-[2] flex flex-col gap-[10px] w-full h-auto">
                   <h3 className="m-0 font-sora font-semibold text-[18px] leading-[38px] text-[#212121] antialiased">Mobile Application VAPT</h3>
                   <p className="m-0 font-manrope font-normal text-[#585858] text-[18px] leading-[28px] antialiased">Assesses mobile apps for weaknesses in authentication, data storage, and API security to prevent exploitation.</p>
                 </div>
-                <div className={`${commonIconBoxClass} ${notLargeIconBoxResponsiveClass}`}>
+                <div className={`${commonIconBoxClass} ${notLargeIconBoxResponsiveClass} max-[1024px]:relative max-[1024px]:bottom-0 max-[1024px]:right-0 max-[1024px]:left-0 max-[1024px]:mt-[20px] max-[1024px]:self-end`}>
                   <img
                     src="/images/pages/services/serivce-3/icon-2.svg"
                     alt="Mobile Application VAPT"
@@ -101,14 +91,14 @@ export default function ServiceThreePage() {
             <div className="flex gap-[19px] w-full max-w-[1230px] max-[1024px]:!flex-col max-[1024px]:items-center min-[1025px]:w-[1230px] min-[1025px]:h-[334px]">
               {/* Card 3: Network VAPT */}
               <article 
-                className={`${commonCardClass} ${notLargeCardResponsiveClass} w-full max-w-[482px] h-[334px] rounded-[14.38px] !bg-[#F6F8FB] max-[1024px]:!bg-[#F6F8FB] min-[1025px]:w-[482px] min-[1025px]:h-[334px]`}
+                className={`${commonCardClass} ${notLargeCardResponsiveClass} w-full max-w-[482px] h-[334px] rounded-[14.38px] !bg-[#F6F8FB] max-[1024px]:!bg-[#F6F8FB] max-[1024px]:!pb-[40px] min-[1025px]:w-[482px] min-[1025px]:h-[334px]`}
                 style={{ animationDelay: '0.2s' }}
               >
                 <div className="relative z-[2] flex flex-col gap-[10px] w-full h-auto">
                   <h3 className="m-0 !font-sora font-semibold text-[18px] leading-[38px] text-[#212121] antialiased">Network VAPT</h3>
                   <p className="m-0 !font-manrope font-normal text-[#585858] text-[18px] leading-[30px] antialiased">Evaluates internal and external networks for vulnerabilities, misconfigurations, and unauthorized access points.</p>
                 </div>
-                <div className={`${commonIconBoxClass} ${notLargeIconBoxResponsiveClass}`}>
+                <div className={`${commonIconBoxClass} ${notLargeIconBoxResponsiveClass} max-[1024px]:relative max-[1024px]:bottom-0 max-[1024px]:right-0 max-[1024px]:left-0 max-[1024px]:mt-[20px] max-[1024px]:self-end`}>
                   <img
                     src="/images/pages/services/serivce-3/icon-3.svg"
                     alt="Network VAPT"
@@ -119,21 +109,23 @@ export default function ServiceThreePage() {
 
               {/* Card 4: Cloud VAPT */}
               <article 
-                className={`${commonCardClass} large-card !rounded-[14.38px] w-full max-w-[727px] h-[334px] bg-[linear-gradient(230.36deg,rgba(135,187,243,0.36)_3.31%,rgba(111,144,180,0.07)_49.84%,rgba(246,248,251,0.49)_95.24%)] !border-none min-[1025px]:!p-[48px] max-[1024px]:!p-[61px_26px_100px] max-[1024px]:!bg-[linear-gradient(230.36deg,rgba(135,187,243,0.36)_3.31%,rgba(111,144,180,0.07)_49.84%,rgba(246,248,251,0.49)_95.24%)] max-[1024px]:!relative min-[1025px]:w-[727px] min-[1025px]:h-[334px]`}
+                className={`${commonCardClass} large-card !rounded-[14.38px] w-full max-w-[727px] h-[334px] bg-[linear-gradient(230.36deg,rgba(135,187,243,0.36)_3.31%,rgba(111,144,180,0.07)_49.84%,rgba(246,248,251,0.49)_95.24%)] !border-none min-[1025px]:!p-[48px] max-[1024px]:!p-[32px_24px_40px] max-[1024px]:!bg-[linear-gradient(230.36deg,rgba(135,187,243,0.36)_3.31%,rgba(111,144,180,0.07)_49.84%,rgba(246,248,251,0.49)_95.24%)] max-[1024px]:!relative min-[1025px]:w-[727px] min-[1025px]:h-[334px]`}
                 style={{ animationDelay: '0.3s' }}
               >
-                <div className="z-[2] flex flex-col gap-[10px] w-full h-auto min-[1025px]:max-w-[303px]">
-                  <h3 className="m-0 font-sora font-semibold text-[#212121] text-[18px] leading-[38px] antialiased">Cloud VAPT</h3>
-                  <p className="m-0 font-manrope font-normal text-[18px] leading-[28px] text-[#585858] antialiased">Tests cloud environments for misconfigurations, identity weaknesses, and compliance risks to secure cloud workloads.</p>
-                </div>
+                <div className="z-[2] flex flex-col min-[1025px]:flex-row items-center justify-between gap-[10px] w-full h-full min-[1025px]:max-w-none">
+                  <div className="flex flex-col gap-[10px] w-full min-[1025px]:max-w-[303px]">
+                    <h3 className="m-0 font-sora font-semibold text-[#212121] text-[18px] leading-[38px] antialiased">Cloud VAPT</h3>
+                    <p className="m-0 font-manrope font-normal text-[18px] leading-[28px] text-[#585858] antialiased">Tests cloud environments for misconfigurations, identity weaknesses, and compliance risks to secure cloud workloads.</p>
+                  </div>
 
-                {/* Desktop only icon box placement (Centered) */}
-                <div className="hidden min-[1025px]:flex absolute top-0 right-0 w-[380px] h-full items-center justify-center p-[20px]">
-                  <img
-                    src="/images/pages/services/serivce-3/icon-4.svg"
-                    alt="Cloud VAPT"
-                    className="w-[322px] h-[198px] object-contain"
-                  />
+                  {/* Icon Box (Now visible on mobile and desktop) */}
+                  <div className="w-full max-w-[322px] min-[1025px]:w-[322px] h-[198px] flex items-center justify-center mt-[20px] min-[1025px]:mt-0">
+                    <img
+                      src="/images/pages/services/serivce-3/icon-4.svg"
+                      alt="Cloud VAPT"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
               </article>
             </div>
@@ -200,14 +192,14 @@ export default function ServiceThreePage() {
         </section>
 
       {/* Methodology Section */}
-      <section className="w-full flex flex-col items-center relative z-[10] mt-[60px] mb-[0] pb-[0] max-[1024px]:!h-[642px] max-[1024px]:!bg-[linear-gradient(216.84deg,rgba(135,187,243,0.36)_-14.36%,rgba(111,144,180,0.07)_30.97%,rgba(253,253,253,0)_90.28%)] min-[1025px]:-mt-[50px] min-[1025px]:w-full min-[1025px]:h-auto min-[1025px]:pt-[80px] min-[1025px]:pb-[40px] min-[1025px]:bg-[linear-gradient(216.84deg,rgba(135,187,243,0.36)_-14.36%,rgba(111,144,180,0.07)_30.97%,rgba(253,253,253,0)_43.28%)]">
-        <div className="flex flex-col items-center min-[1025px]:w-[976.01px] min-[1025px]:h-[586.91px] min-[1025px]:gap-[10px]">
-          <div className="flex justify-center min-[1025px]:w-[976.01px] min-[1025px]:h-[49px]">
-            <h2 className="font-sora font-semibold text-[#212121] text-center m-0 max-[1024px]:!absolute max-[1024px]:!top-[58px] max-[1024px]:!left-[85px] max-[1024px]:!w-[260px] max-[1024px]:!h-[86px] max-[1024px]:!text-[28px] max-[1024px]:!leading-[40px] min-[1025px]:w-[976.01px] min-[1025px]:h-[49px] min-[1025px]:text-[32px] min-[1025px]:leading-[49px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased">
+      <section className="w-full flex flex-col items-center relative z-[10] mt-[40px] max-[1024px]:mt-[20px] mb-[0] pb-[40px] max-[1024px]:pb-[60px] max-[1024px]:pt-[60px] max-[1024px]:!bg-[linear-gradient(216.84deg,rgba(135,187,243,0.36)_-14.36%,rgba(111,144,180,0.07)_30.97%,rgba(253,253,253,0)_90.28%)] min-[1025px]:-mt-[50px] min-[1025px]:w-full min-[1025px]:h-auto min-[1025px]:pt-[80px] min-[1025px]:pb-[40px] min-[1025px]:bg-[linear-gradient(216.84deg,rgba(135,187,243,0.36)_-14.36%,rgba(111,144,180,0.07)_30.97%,rgba(253,253,253,0)_43.28%)]">
+        <div className="flex flex-col items-center w-full max-w-[1230px] px-[20px] gap-[30px] min-[1025px]:gap-[10px]">
+          <div className="flex justify-center w-full min-[1025px]:w-[976.01px] h-auto">
+            <h2 className="font-sora font-semibold text-[#212121] text-center m-0 text-[28px] leading-[40px] min-[1025px]:w-[976.01px] min-[1025px]:h-[49px] min-[1025px]:text-[32px] min-[1025px]:leading-[49px] max-[425px]:!text-[26px] max-[425px]:!leading-[36px] antialiased">
               Offensive Security <span className="text-[#2E5A88]">Methodology</span>
             </h2>
           </div>
-          <div className="">
+          <div className="w-full flex justify-center">
             <img
               src="/images/pages/services/serivce-3/OF-S-M/full-icon.svg"
               alt="Offensive Security Methodology"
@@ -216,7 +208,7 @@ export default function ServiceThreePage() {
             <img
               src="/images/pages/services/serivce-3/OF-S-M/section-2-mobile-icon.svg"
               alt="Offensive Security Methodology Mobile"
-              className="block min-[1025px]:hidden max-[1024px]:!absolute max-[1024px]:!top-[183px] max-[1024px]:!left-[18px] max-[1024px]:!w-[394px] max-[1024px]:!h-[356.47px] object-contain"
+              className="block min-[1025px]:hidden w-full max-w-[394px] h-auto object-contain"
             />
           </div>
         </div>
