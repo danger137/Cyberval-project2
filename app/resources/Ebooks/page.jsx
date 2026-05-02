@@ -145,7 +145,7 @@ export default function EbooksPage() {
 
               {/* Load More Button */}
               {filteredEbooks.length > 0 && (
-                <div className="mt-[60px] flex justify-center max-[1024px]:mt-[40px]">
+                <div className="mt-[60px] mb-[40px] flex justify-center max-[1024px]:mt-[40px] max-[1024px]:mb-[20px]">
                   <button className="p-[14px_40px] bg-transparent border border-[#030D1A] text-[#030D1A] text-[16px] font-bold rounded-[8px] cursor-pointer transition-all duration-300 hover:bg-[#030D1A] hover:text-[#FFFFFF] font-manrope max-[1024px]:p-[12px_30px] max-[1024px]:text-[14px]">
                     Load more
                   </button>
