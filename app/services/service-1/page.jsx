@@ -68,7 +68,7 @@ const capabilityCards = [
   }
 ];
 
-const baseCardClass = "bg-[#F6F8FB] rounded-[12px] p-[32px_24px_100px] relative overflow-hidden transition-all duration-300 hover:shadow-lg w-full max-w-full min-[1025px]:max-w-none max-[1024px]:mx-auto max-[425px]:!px-[20px] max-[375px]:!p-[24px_16px_80px]";
+const baseCardClass = "bg-[#F6F8FB] rounded-[12px] p-[32px_24px_100px] relative overflow-hidden transition-all duration-300 hover:shadow-lg w-full max-w-full min-[1025px]:max-w-none max-[1024px]:mx-auto max-[1024px]:!pb-[40px] max-[425px]:!px-[20px] max-[375px]:!p-[24px_16px_40px]";
 const baseContentClass = "flex flex-col gap-[12px] z-[5] max-[425px]:!gap-[8px]";
 const baseTitleClass = "font-sora text-[18px] font-semibold leading-[38px] text-[#212121] max-[1024px]:leading-normal max-[425px]:!text-[18px] max-[375px]:!text-[16px] max-[320px]:!text-[15px] antialiased";
 const baseDescClass = "font-manrope text-[18px] font-normal leading-[28px] text-[#585858] max-[1024px]:text-[18px] max-[1024px]:leading-[1.7] max-[425px]:!text-[18px] max-[425px]:!leading-[24px] max-[375px]:!text-[18px] max-[320px]:!text-[18px] antialiased";
@@ -118,7 +118,7 @@ export default function ServiceOnePage() {
                   {capabilityCards.slice(0, 2).map((card, idx) => (
                     <article
                       key={card.id}
-                      className={`${baseCardClass} ${card.cardClass || ""} ${idx === 0 ? "min-[1025px]:!p-[32px_40px_47px_29px] max-[1024px]:!min-h-[460px]" : "min-[1025px]:!p-[32px_32px_32px_30px] max-[1024px]:!min-h-[306px]"} service-card-anim card-entrance`}
+                      className={`${baseCardClass} ${card.cardClass || ""} ${idx === 0 ? "min-[1025px]:!p-[32px_40px_47px_29px] max-[1024px]:!min-h-0" : "min-[1025px]:!p-[32px_32px_32px_30px] max-[1024px]:!min-h-0"} service-card-anim card-entrance`}
                       style={{ 
                         ...(idx === 0 ? { background: "linear-gradient(230.36deg, rgba(135, 187, 243, 0.36) 3.31%, rgba(111, 144, 180, 0.07) 49.84%, rgba(246, 248, 251, 0.49) 95.24%)" } : {}),
                         animationDelay: `${idx * 0.15}s`
@@ -131,11 +131,11 @@ export default function ServiceOnePage() {
                               <p className={`${baseDescClass} ${card.descClass || ""}`}>{card.desc}</p>
                             </div>
 
-                            <div className="relative w-full min-[1025px]:w-[282px] h-auto min-[1025px]:h-[255px] max-[1024px]:absolute max-[1024px]:right-[20px] max-[1024px]:bottom-[20px]">
+                            <div className="relative w-full min-[1025px]:w-[282px] h-auto min-[1025px]:h-[255px] max-[1024px]:flex max-[1024px]:justify-center max-[1024px]:mt-[0px]">
                               <img
                                 src={card.icon}
                                 alt={card.title}
-                                className="absolute left-[11.39px] top-0 w-[270.62px] h-[255px] object-contain max-[1024px]:!static max-[1024px]:!w-[282px] max-[1024px]:!h-[255px] max-[1024px]:!float-right"
+                                className="absolute left-[11.39px] top-0 w-[270.62px] h-[255px] object-contain max-[1024px]:!static max-[1024px]:!w-full max-[1024px]:!max-w-[282px] max-[1024px]:!h-auto"
                               />
                             </div>
                           </div>
