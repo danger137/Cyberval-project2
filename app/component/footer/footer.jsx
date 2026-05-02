@@ -29,8 +29,7 @@ export default function Footer() {
     // Check if current route is services, resources, or contact
     const showBanner = pathname && (
         pathname.startsWith("/services") || 
-        pathname.startsWith("/resources") || 
-        pathname.toLowerCase().startsWith("/contact")
+        pathname.startsWith("/resources")
     );
     
     const isService1 = pathname && pathname.includes("service-1");
