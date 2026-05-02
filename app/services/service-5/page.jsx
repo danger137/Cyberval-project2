@@ -97,7 +97,7 @@ export default function ServiceFivePage() {
         {/* SOCaaS Section */}
         <section className="p-[140px_20px_80px] max-[1024px]:!p-[80px_24px_60px] max-[425px]:!p-[60px_16px_40px] bg-[#ffffff]">
           <ScrollReveal direction="up">
-            <div className="w-full max-w-[1230px] mx-auto flex items-center justify-between gap-[80px] max-[1024px]:flex-col max-[1024px]:gap-[40px] max-[1024px]:text-left">
+            <div className="w-full max-w-[1230px] mx-auto flex items-center justify-between gap-[80px] max-[1024px]:flex-col-reverse max-[1024px]:gap-[40px] max-[1024px]:text-left">
               <div className="flex-1 flex justify-center w-full">
                 <picture className="w-full max-w-[550px]">
                   <source media="(max-width: 1024px)" srcSet="/images/pages/services/service-5/mobile-icon-3.svg" />
@@ -142,31 +142,31 @@ export default function ServiceFivePage() {
                 
                 {/* Left Column */}
                 <div className="flex flex-col gap-[24px] max-[1024px]:order-1">
-                  <div className="bg-[#F6F8FB] rounded-[24px] p-[32px] text-left flex flex-col justify-center flex-1 relative service-card-anim group" style={{ animationDelay: '0.4s' }}>
-                    <div className="w-[56px] h-[56px] flex items-center justify-center absolute top-[32px] right-[32px]">
+                  <div className="bg-[#F6F8FB] rounded-[24px] p-[32px] max-[425px]:p-[24px] text-left flex flex-col justify-start min-h-[200px] flex-1 relative service-card-anim group" style={{ animationDelay: '0.4s' }}>
+                    <div className="w-[56px] h-[56px] max-[425px]:w-[48px] max-[425px]:h-[48px] flex items-center justify-center absolute top-[32px] right-[32px] max-[425px]:top-[24px] max-[425px]:right-[24px]">
                       <img
                         src="/images/pages/services/service-5/section-4-left-colum-icon-1.svg"
                         alt="Trust"
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div className="flex flex-col gap-[10px] mt-[20px] pr-[50px]">
-                      <h3 className="text-[22px] font-semibold text-[#212121] leading-[30px] antialiased font-sora m-0">Unparalleled trust</h3>
-                      <p className="text-[16px] leading-[26px] text-[#585858] antialiased font-manrope m-0">Build next level security & customer trust</p>
+                    <div className="flex flex-col gap-[10px] mt-[40px] pr-[20px]">
+                      <h3 className="text-[22px] max-[425px]:text-[18px] font-semibold text-[#212121] leading-[30px] antialiased font-sora m-0">Unparalleled trust</h3>
+                      <p className="text-[16px] max-[425px]:text-[15px] leading-[26px] text-[#585858] antialiased font-manrope m-0">Build next level security & customer trust</p>
                     </div>
                   </div>
                   
-                  <div className="bg-[#F6F8FB] rounded-[24px] p-[32px] text-left flex flex-col justify-center flex-1 relative service-card-anim group" style={{ animationDelay: '0.5s' }}>
-                    <div className="w-[56px] h-[56px] flex items-center justify-center absolute top-[32px] right-[32px]">
+                  <div className="bg-[#F6F8FB] rounded-[24px] p-[32px] max-[425px]:p-[24px] text-left flex flex-col justify-start min-h-[200px] flex-1 relative service-card-anim group" style={{ animationDelay: '0.5s' }}>
+                    <div className="w-[56px] h-[56px] max-[425px]:w-[48px] max-[425px]:h-[48px] flex items-center justify-center absolute top-[32px] right-[32px] max-[425px]:top-[24px] max-[425px]:right-[24px]">
                       <img
                         src="/images/pages/services/service-5/section-4-left-colum-icon-.svg"
                         alt="Innovation"
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div className="flex flex-col gap-[10px] mt-[20px] pr-[50px]">
-                      <h3 className="text-[22px] font-semibold text-[#212121] leading-[30px] antialiased font-sora m-0">Focus on business innovation</h3>
-                      <p className="text-[16px] leading-[26px] text-[#585858] antialiased font-manrope m-0">
+                    <div className="flex flex-col gap-[10px] mt-[40px] pr-[20px]">
+                      <h3 className="text-[22px] max-[425px]:text-[18px] font-semibold text-[#212121] leading-[30px] antialiased font-sora m-0">Focus on business innovation</h3>
+                      <p className="text-[16px] max-[425px]:text-[15px] leading-[26px] text-[#585858] antialiased font-manrope m-0">
                         Offload the burden of managing compel security issues and focus on business growth and innovation
                       </p>
                     </div>
@@ -174,7 +174,7 @@ export default function ServiceFivePage() {
                 </div>
 
                 {/* Center Column */}
-                <div className="relative flex w-full h-full max-[1024px]:min-h-[520px] max-[1024px]:order-2 service-card-anim rounded-[24px] overflow-hidden bg-[#0a111a]" style={{ animationDelay: '0.6s' }}>
+                <div className="relative flex w-full h-full max-[1024px]:min-h-[480px] max-[425px]:min-h-[420px] max-[1024px]:order-2 service-card-anim rounded-[24px] overflow-hidden bg-[#0a111a]" style={{ animationDelay: '0.6s' }}>
                   <picture className="absolute inset-0 w-full h-full block z-0">
                     <source media="(max-width: 1024px)" srcSet="/images/pages/services/service-5/mobile-last section image.svg" />
                     <img
@@ -187,13 +187,13 @@ export default function ServiceFivePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#000000B3] via-[#00000000] to-transparent pointer-events-none z-[1]"></div>
                   
                   {/* Glassmorphism Panel */}
-                  <div className="absolute bottom-[24px] left-[24px] right-[24px] bg-[#16161640] backdrop-blur-[24px] border border-[#FFFFFF26] rounded-[20px] p-[28px] max-[425px]:p-[24px] text-left z-[10] shadow-[0px_10px_40px_rgba(0,0,0,0.2)]">
-                    <div className="absolute top-[28px] right-[28px] max-[425px]:top-[24px] max-[425px]:right-[24px] w-[48px] h-[48px]">
+                  <div className="absolute bottom-[24px] left-[24px] right-[24px] max-[425px]:bottom-[16px] max-[425px]:left-[16px] max-[425px]:right-[16px] bg-[#16161640] backdrop-blur-[24px] border border-[#FFFFFF26] rounded-[20px] p-[28px] max-[425px]:p-[20px] text-left z-[10] shadow-[0px_10px_40px_rgba(0,0,0,0.2)]">
+                    <div className="absolute top-[28px] right-[28px] max-[425px]:top-[20px] max-[425px]:right-[20px] w-[48px] h-[48px] max-[425px]:w-[40px] max-[425px]:h-[40px]">
                       <img src="/images/pages/services/service-5/Frame 12.svg" alt="Security Icon" className="w-full h-full object-contain" />
                     </div>
                     <div className="pr-[56px] flex flex-col gap-[8px]">
-                      <h3 className="font-sora text-[22px] max-[425px]:text-[20px] font-semibold text-[#FFFFFF] leading-[1.4] m-0 antialiased">Expert led cyber defense</h3>
-                      <p className="font-manrope text-[16px] max-[425px]:text-[15px] leading-[1.6] text-[#EBEBEB] m-0 antialiased">
+                      <h3 className="font-sora text-[22px] max-[425px]:text-[18px] font-semibold text-[#FFFFFF] leading-[1.4] m-0 antialiased">Expert led cyber defense</h3>
+                      <p className="font-manrope text-[16px] max-[425px]:text-[14px] leading-[1.6] text-[#EBEBEB] m-0 antialiased">
                         Access to top tier cybersecurity professional who leverage advanced tools and frameworks to safeguard your digital assets
                       </p>
                     </div>
@@ -202,33 +202,33 @@ export default function ServiceFivePage() {
 
                 {/* Right Column */}
                 <div className="flex flex-col gap-[24px] max-[1024px]:order-3">
-                  <div className="bg-[#F6F8FB] rounded-[24px] p-[32px] text-left flex flex-col justify-center flex-1 relative service-card-anim group" style={{ animationDelay: '0.7s' }}>
-                    <div className="w-[56px] h-[56px] flex items-center justify-center absolute top-[32px] right-[32px]">
+                  <div className="bg-[#F6F8FB] rounded-[24px] p-[32px] max-[425px]:p-[24px] text-left flex flex-col justify-start min-h-[200px] flex-1 relative service-card-anim group" style={{ animationDelay: '0.7s' }}>
+                    <div className="w-[56px] h-[56px] max-[425px]:w-[48px] max-[425px]:h-[48px] flex items-center justify-center absolute top-[32px] right-[32px] max-[425px]:top-[24px] max-[425px]:right-[24px]">
                       <img
                         src="/images/pages/services/service-5/section-4-right-cloum-icon-1.svg"
                         alt="Proactive"
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div className="flex flex-col gap-[10px] mt-[20px] pr-[50px]">
-                      <h3 className="text-[22px] font-semibold text-[#212121] leading-[30px] antialiased font-sora m-0">Proactive threat management</h3>
-                      <p className="text-[16px] leading-[26px] text-[#585858] antialiased font-manrope m-0">
+                    <div className="flex flex-col gap-[10px] mt-[40px] pr-[20px]">
+                      <h3 className="text-[22px] max-[425px]:text-[18px] font-semibold text-[#212121] leading-[30px] antialiased font-sora m-0">Proactive threat management</h3>
+                      <p className="text-[16px] max-[425px]:text-[15px] leading-[26px] text-[#585858] antialiased font-manrope m-0">
                         Continuous monitoring, real-time threat detection, and rapid incident response to keep your business secure.
                       </p>
                     </div>
                   </div>
                   
-                  <div className="bg-[#F6F8FB] rounded-[24px] p-[32px] text-left flex flex-col justify-center flex-1 relative service-card-anim group" style={{ animationDelay: '0.8s' }}>
-                    <div className="w-[56px] h-[56px] flex items-center justify-center absolute top-[32px] right-[32px]">
+                  <div className="bg-[#F6F8FB] rounded-[24px] p-[32px] max-[425px]:p-[24px] text-left flex flex-col justify-start min-h-[200px] flex-1 relative service-card-anim group" style={{ animationDelay: '0.8s' }}>
+                    <div className="w-[56px] h-[56px] max-[425px]:w-[48px] max-[425px]:h-[48px] flex items-center justify-center absolute top-[32px] right-[32px] max-[425px]:top-[24px] max-[425px]:right-[24px]">
                       <img
                         src="/images/pages/services/service-5/section-4-right-colum-icon-2.svg"
                         alt="Solutions"
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <div className="flex flex-col gap-[10px] mt-[20px] pr-[50px]">
-                      <h3 className="text-[22px] font-semibold text-[#212121] leading-[30px] antialiased font-sora m-0">Tailored security solutions</h3>
-                      <p className="text-[16px] leading-[26px] text-[#585858] antialiased font-manrope m-0">
+                    <div className="flex flex-col gap-[10px] mt-[40px] pr-[20px]">
+                      <h3 className="text-[22px] max-[425px]:text-[18px] font-semibold text-[#212121] leading-[30px] antialiased font-sora m-0">Tailored security solutions</h3>
+                      <p className="text-[16px] max-[425px]:text-[15px] leading-[26px] text-[#585858] antialiased font-manrope m-0">
                         Customized to fit your unique security needs, leveraging a risk-based approach to build resilience against evolving threats.
                       </p>
                     </div>
