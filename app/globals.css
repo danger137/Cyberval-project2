@@ -139,39 +139,57 @@ body {
 }
 @media (max-width: 1024px) {
   .cta-section {
-    padding: 0 20px !important;
-    margin-bottom: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
   }
   .footer-cta-banner {
     width: 100% !important;
     max-width: 100% !important;
-    border-radius: 16px !important;
-    padding: 40px 24px !important;
-    margin: 0 auto !important; /* Force reset of negative margins */
-    transform: none !important; /* Force remove overlap */
+    border-radius: 0 !important;
+    padding: 60px 24px !important;
+    margin: 0 !important;
     min-height: auto !important;
     position: relative !important;
     display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    background: linear-gradient(135deg, #030814 0%, #0a1931 100%) !important;
+    background-image: url('/images/Footer/footer-cta-bg.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
   }
   .footer-cta-title {
-    font-size: 26px !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
     max-width: 100% !important;
-    margin: 0 auto 12px auto !important;
+    margin: 0 auto 16px auto !important;
     line-height: 1.2 !important;
+    color: #ffffff !important;
+  }
+  .footer-cta-content {
+    margin-bottom: 0 !important;
   }
   .footer-cta-desc {
-    font-size: 14px !important;
-    max-width: 280px !important;
-    margin: 0 auto 24px auto !important;
-    line-height: 1.5 !important;
+    font-size: 16px !important;
+    max-width: 320px !important;
+    margin: 0 auto 10px auto !important;
+    line-height: 1.6 !important;
+    color: #cedbed !important;
   }
   .footer-cta-btn {
     width: 100% !important;
-    max-width: 260px !important;
-    padding: 14px !important;
-    font-size: 15px !important;
+    max-width: 280px !important;
+    padding: 16px 32px !important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+    background: #ffffff !important;
+    color: #030814 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
+    border: none !important;
   }
 }
 

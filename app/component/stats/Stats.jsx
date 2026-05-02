@@ -3,10 +3,10 @@ import "./Stats.css";
 import ScrollReveal from "../ScrollReveal";
 
 const defaultStats = [
-  { value: "10", plus: "+", unit: "Years", label: "Of Proven Experience" },
-  { value: "200", plus: "+", label: "Successful Projects" },
-  { value: "100", plus: "%", label: "Client Satisfaction" },
-  { value: "24", plus: "/7", label: "Expert Support" }
+  { value: "10", plus: "+", unit: "Years", label: "Professional Experience" },
+  { value: "25", plus: "+", label: "Enterprise Clients" },
+  { value: "99.9", plus: "%", label: "Threat Detection Accuracy" },
+  { value: "24", plus: "/7", label: "Security Monitoring" }
 ];
 
 export default function Stats({ data = defaultStats, className = "" }) {

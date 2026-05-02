@@ -20,22 +20,18 @@ export default function AboutPage() {
           <ScrollReveal direction="right" delay={0.15} style={{ flex: 1, maxWidth: "710px", paddingTop: "20px" }}>
             <div className="about-hero-right">
               <h2 className="about-title">
-                Empowering Your <span className="hero-title-blue">Cyber</span> <br />
-                Defense Strategy
+                Protecting What Matters, <br />
+                <span className="hero-title-blue">Advancing What’s Next.</span>
               </h2>
               <p className="about-description">
-                At Cybervol, we go beyond standard security. We provide elite cybersecurity solutions 
-                designed to protect your most critical assets. Our expert team leverages advanced 
-                intelligence and cutting-edge technology to stay ahead of emerging threats.
+                At Cybervol, we don't just secure; we innovate. Our unique approach blends cutting-edge cybersecurity solutions with a forward-thinking mindset. Trust us to safeguard your digital assets while propelling your technological resilience.
               </p>
               
               <div className="mission-block">
                 <h3 className="mission-heading">Our Mission</h3>
-                <p className="mission-subheading">Securing Your Future In The Digital Landscape</p>
+                <p className="mission-subheading">Fortifying Excellence through Advanced Cybersecurity Solutions</p>
                 <p className="mission-description">
-                  Our mission is to provide businesses with the peace of mind they need to thrive 
-                  securely in an increasingly complex digital world. We believe that security is 
-                  not just a service—it's a foundation for innovation and growth.
+                  At the crux of our mission is a dedication to empowering organizations with transformative solutions, enhancing performance, optimizing operations, and fortifying the security of their digital assets.
                 </p>
               </div>
               
@@ -52,11 +48,10 @@ export default function AboutPage() {
           <div className="commitment-container">
             <span className="commitment-label">OUR COMMITMENT</span>
             <h2 className="commitment-heading">
-              Built on Trust. Driven by<span className="blue-text"> Security.</span>
+              Built on Trust. <br className="block md:hidden" /> Driven by<span className="blue-text"> Security.</span>
             </h2>
             <p className="commitment-subtext">
-              We are dedicated to maintaining the highest levels of security, 
-              transparency, and excellence in everything we do.
+              Delivering secure, innovative, and trusted <br className="hidden md:block" /> cybersecurity solutions you can rely on.
             </p>
 
             <div className="commitment-cards-container">

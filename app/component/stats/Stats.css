@@ -116,6 +116,6 @@
 
 @media (max-width: 480px) {
   .stat-group {
-    flex: 0 0 100%;
+    flex: 0 0 45%;
   }
 }

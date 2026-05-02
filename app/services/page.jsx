@@ -132,7 +132,7 @@ export default function ServicesPage() {
             
             <div className="services-header-right">
               <p className="services-description">
-                We transform risk into resilience, delivering comprehensive <br className="services-br" /> cybersecurity that empowers and protects your organization.
+                Comprehensive digital solutions designed to transform your business and accelerate growth through innovative technology.
               </p>
             </div>
           </div>

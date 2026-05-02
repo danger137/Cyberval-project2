@@ -21,10 +21,10 @@ export default function Footer() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-    const toggleSection = (section) => {
-        // Dropdown functionality disabled as per request
-        return;
-    };
+  const toggleSection = (section) => {
+    if (!isMobile) return;
+    setActiveSection(activeSection === section ? null : section);
+  };
 
     // Check if current route is services, resources, or contact
     const showBanner = pathname && (
@@ -74,12 +74,17 @@ export default function Footer() {
                 </div>
                 </ScrollReveal>
 
-                <ScrollReveal direction="up" delay={0.1}>
-                <div className="footer-col">
-                    <div className="footer-heading-wrapper">
+                <ScrollReveal direction="up" delay={0.1} className="w-full">
+                <div className={`footer-col ${isMobile ? 'accordion' : ''}`}>
+                    <div className="footer-heading-wrapper" onClick={() => toggleSection('company')}>
                     <h3 className="footer-heading">Company</h3>
+                    {isMobile && (
+                      <span className={`chevron ${activeSection === 'company' ? 'active' : ''}`}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                      </span>
+                    )}
                     </div>
-                    <ul className="footer-links">
+                    <ul className={`footer-links ${isMobile && activeSection !== 'company' ? 'collapsed' : 'expanded'}`}>
                     <li><Link href="/about">About us</Link></li>
                     <li><a href="#">Career</a></li>
                     <li><a href="#">Blog</a></li>
@@ -90,12 +95,17 @@ export default function Footer() {
                 </div>
                 </ScrollReveal>
 
-                <ScrollReveal direction="up" delay={0.2}>
-                <div className="footer-col">
-                    <div className="footer-heading-wrapper">
+                <ScrollReveal direction="up" delay={0.2} className="w-full">
+                <div className={`footer-col ${isMobile ? 'accordion' : ''}`}>
+                    <div className="footer-heading-wrapper" onClick={() => toggleSection('services')}>
                     <h3 className="footer-heading">Services</h3>
+                    {isMobile && (
+                      <span className={`chevron ${activeSection === 'services' ? 'active' : ''}`}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                      </span>
+                    )}
                     </div>
-                <ul className="footer-links">
+                <ul className={`footer-links ${isMobile && activeSection !== 'services' ? 'collapsed' : 'expanded'}`}>
                   <li><a href="#">CyberShield Solutions</a></li>
                   <li><a href="#">Governance, Risk & Compliance (GRC)</a></li>
                   <li><a href="#">Offensive Security</a></li>
@@ -149,12 +159,11 @@ export default function Footer() {
                 Cybervol
               </h2>
             </div>
-            {/* Small Branding (Mobile/Tablet Only) */}
-            <div className="block lg:hidden w-full text-center pt-[40px] pb-[20px] min-h-[68px]">
+            <div className="block lg:hidden w-full text-center pt-0 pb-[20px] min-h-[68px]">
               <h2 
                 className="font-sora font-bold m-0 tracking-[-2px] leading-none bg-clip-text text-transparent select-none mx-auto relative z-[1]"
                 style={{
-                  marginTop:"12px",
+                  marginTop:"0px",
                   backgroundImage:"linear-gradient(171.02deg, #6F90B4 -36.59%, rgba(84, 122, 162, 0.27) 19.25%, rgba(46, 90, 136, 0) 98.42%)",
                   maxWidth: "100%",
                   height: "auto",
