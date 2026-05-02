@@ -179,7 +179,7 @@ export default function Footer() {
       <div className="footer-bottom-wrapper">
         <div className="footer-container">
           <div className="footer-bottom">
-            <p>© 2025 Cybervol. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Cybervol. All rights reserved.</p>
             <div className="footer-bottom-links">
               <a href="#">Privacy Policy</a>
               <span className="separator">|</span>
