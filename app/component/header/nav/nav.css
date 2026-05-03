@@ -48,9 +48,8 @@ html {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    width: 183px;
-    height: 40.497px;
+    width: auto;
+    height: 42px;
 }
 
 .logo img {

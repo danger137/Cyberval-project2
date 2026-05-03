@@ -54,20 +54,14 @@ export default function Nav() {
         <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''} ${isBlogDetail ? 'blog-detail-nav' : ''} ${scrolled ? 'nav-scrolled' : ''}`}>
             <div className="nav-container max-[1024px]:max-w-[440px] max-[1024px]:mx-auto">
                 <div className="logo">
-                    <img src={isBlogDetail ? "/images/header-items/nav/Group 1.svg" : "/images/header-items/header-logo.svg"} alt="Cybervol" />
-                    {!isBlogDetail && (
-                        <div className="logo-text">
-                            <span className="brand-name">Cybervol</span>
-                            <span className="tagline">by Rotvol Solutions</span>
-                        </div>
-                    )}
+                    <img src="/cybervol-logo.png" alt="Cybervol" />
                 </div>
 
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     {/* Mobile Header - Logo and Close Icon */}
                     <div className="mobile-menu-header">
                         <div className="logo">
-                            <img src="/images/header-items/nav/Group 1.svg" alt="Cybervol" className="mobile-logo-img-full" />
+                            <img src="/cybervol-logo.png" alt="Cybervol" className="mobile-logo-img-full" />
                         </div>
                         <div className="close-menu-icon" onClick={closeAll}>
                             <img src="/images/header-items/nav/Vector.svg" alt="Close" />

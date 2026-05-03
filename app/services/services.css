@@ -251,24 +251,39 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  background: linear-gradient(135deg, #6F90B4 0%, #2E5A88 56%, #87BBF3 100%);
+  box-shadow: 0 4px 12px rgba(46, 90, 136, 0.2);
   cursor: pointer;
-  transition: transform 0.25s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 0;
-  width: 56px;
-  height: 56px;
-  border-radius: 8px; /* Optional: adjust if needed to match image */
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 20;
 }
 
 .card-btn-icon {
-  width: 100%;
-  height: 100%;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
-  transform: scale(1.8);
+  transition: transform 0.3s ease;
 }
 
 .card-btn:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 90, 136, 0.3);
+}
+
+.service-card:hover .card-btn,
+.service-card.card-hovered .card-btn {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.service-card:hover .card-btn-icon,
+.service-card.card-hovered .card-btn-icon {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(21%) saturate(2361%) hue-rotate(174deg) brightness(91%) contrast(92%); /* Makes it the blue color on hover */
 }
 
 .service-card:hover .svg-btn-click-area {

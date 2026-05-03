@@ -166,11 +166,21 @@ export default function ServicesPage() {
                     
                     <Link href={card.link}>
                       <button className="card-btn" aria-label={`Learn more about ${card.title}`}>
-                        <img 
-                          src={hoveredIndex === index ? card.hoverIcon : card.defaultIcon} 
-                          alt="Arrow Icon" 
+                        <svg 
+                          width="18" 
+                          height="18" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="3" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
                           className="card-btn-icon"
-                        />
+                          style={{ color: hoveredIndex === index ? '#2E5A88' : 'white' }}
+                        >
+                          <line x1="7" y1="17" x2="17" y2="7"></line>
+                          <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
                       </button>
                     </Link>
                   </div>

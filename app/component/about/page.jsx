@@ -35,7 +35,9 @@ export default function AboutPage() {
                 </p>
               </div>
               
-              <button className="btn-read-more">Read More</button>
+              <Link href="/About2">
+                <button className="btn-read-more">Read More</button>
+              </Link>
             </div>
           </ScrollReveal>
         </div>

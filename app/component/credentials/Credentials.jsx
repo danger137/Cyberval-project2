@@ -13,7 +13,7 @@ export default function Credentials() {
                 <span className="credentials-badge">CERTIFIED EXCELLENCE</span>
               </div>
               <h2 className="credentials-title">
-                <span className="highlight">Trusted Credentials</span> That <br />Validate Our Expertise
+                <span className="highlight">Trusted Credentials</span> That <br className="desktop-br" />Validate Our Expertise
               </h2>
               <p className="credentials-subtitle">
                 Our team has global certifications, guaranteeing top cybersecurity standards and excellent data protection.

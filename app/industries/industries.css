@@ -265,6 +265,10 @@
   .industries-badge {
     margin: 0 0 20px 0;
   }
+
+  .industries-slider-viewport {
+    overflow: visible; /* Allow negative margin row to not be clipped */
+  }
   
   .industries-cards-row {
     display: flex;
