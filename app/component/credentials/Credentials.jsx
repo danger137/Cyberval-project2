@@ -21,8 +21,36 @@ export default function Credentials() {
               <div className="company-cert-wrapper">
                 <span className="company-cert-label">COMPANY CERTIFICATION</span>
                 <div className="credentials-left-visual">
-                  <img src="/images/pages/left-colun.svg" alt="Company Certifications" className="credentials-svg desktop-visual" />
-                  <img src="/cards5.svg" alt="Company Certifications Mobile" className="credentials-svg mobile-visual" />
+                  <div className="ndpa-trust-card">
+                    <div className="ndpa-trust-card__info">
+                      <div className="ndpa-trust-card__top">
+                        <img
+                          src="/ndpc-logo.png"
+                          alt="NDPC - Nigeria Data Protection Commission"
+                          className="ndpa-trust-card__logo"
+                        />
+                      </div>
+                      <div className="ndpa-trust-card__body">
+                        <h3 className="ndpa-trust-card__title">
+                          <strong>NDPA</strong> Trust Mark Verification
+                        </h3>
+                        <p className="ndpa-trust-card__subtitle">
+                          Scan to verify our NDPA compliance
+                        </p>
+                        <a href="#" className="ndpa-trust-card__link">
+                          Or click to verify
+                        </a>
+                      </div>
+                    </div>
+                    <div className="ndpa-trust-card__qr-wrapper">
+                      <div className="ndpa-trust-card__qr">
+                        <img
+                          src="/ndpc-qr-code.png"
+                          alt="NDPA Trust Mark QR Code"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -52,7 +52,7 @@ export default function Nav() {
 
     return (
         <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''} ${isBlogDetail ? 'blog-detail-nav' : ''} ${scrolled ? 'nav-scrolled' : ''}`}>
-            <div className="nav-container max-[1024px]:max-w-[440px] max-[1024px]:mx-auto">
+            <div className="nav-container">
                 <div className="logo">
                     <img src="/cybervol-logo.png" alt="Cybervol" />
                 </div>
