@@ -1,56 +1,87 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
   Briefcase, 
   Users, 
   FileText, 
   ArrowUpRight,
-  Loader2 
+  ArrowDownRight
 } from "lucide-react";
+import { prisma } from "@/lib/db";
+import { formatDistanceToNow } from "date-fns";
 
-export default function DashboardPage() {
-  const [stats, setStats] = useState({
-    jobs: 0,
-    applications: 0,
-    forms: 0,
+export const dynamic = "force-dynamic";
+
+async function getPercentageChange(model, extraWhere = {}) {
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  
+  const sixtyDaysAgo = new Date();
+  sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60);
+
+  const currentPeriodCount = await model.count({
+    where: {
+      ...extraWhere,
+      createdAt: { gte: thirtyDaysAgo }
+    }
   });
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const response = await fetch("/api/analytics");
-        const data = await response.json();
-        setStats(data);
-      } catch (error) {
-        console.error("Error fetching stats:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchStats();
-  }, []);
+  const previousPeriodCount = await model.count({
+    where: {
+      ...extraWhere,
+      createdAt: { gte: sixtyDaysAgo, lt: thirtyDaysAgo }
+    }
+  });
+
+  if (previousPeriodCount === 0) return currentPeriodCount > 0 ? 100 : 0;
+  
+  return Math.round(((currentPeriodCount - previousPeriodCount) / previousPeriodCount) * 100);
+}
+
+export default async function DashboardPage() {
+  // Fetch stats concurrently
+  const [
+    jobsCount, 
+    applicationsCount, 
+    formsCount, 
+    recentApplications,
+    jobsChange,
+    applicationsChange,
+    formsChange
+  ] = await Promise.all([
+    prisma.job.count({ where: { status: "OPEN" } }),
+    prisma.application.count(),
+    prisma.submission.count(),
+    prisma.application.findMany({
+      take: 3,
+      orderBy: { createdAt: 'desc' },
+      include: { job: true }
+    }),
+    getPercentageChange(prisma.job, { status: "OPEN" }),
+    getPercentageChange(prisma.application),
+    getPercentageChange(prisma.submission)
+  ]);
 
   const statCards = [
     {
       label: "Total Job Openings",
-      value: stats.jobs,
+      value: jobsCount,
+      trend: jobsChange,
       icon: Briefcase,
       color: "text-sky-500",
       bgColor: "bg-sky-500/10",
     },
     {
       label: "New Applications",
-      value: stats.applications,
+      value: applicationsCount,
+      trend: applicationsChange,
       icon: Users,
       color: "text-violet-500",
       bgColor: "bg-violet-500/10",
     },
     {
       label: "Form Submissions",
-      value: stats.forms,
+      value: formsCount,
+      trend: formsChange,
       icon: FileText,
       color: "text-emerald-500",
       bgColor: "bg-emerald-500/10",
@@ -61,7 +92,7 @@ export default function DashboardPage() {
     <div className="space-y-8">
       <div>
         <h2 className="text-3xl font-bold tracking-tight font-sora text-white">Dashboard Overview</h2>
-        <p className="text-zinc-400">Welcome back to your Cyberval command center.</p>
+        <p className="text-zinc-400">Welcome back to your Cybervol command center.</p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -71,15 +102,19 @@ export default function DashboardPage() {
               <div className={stat.bgColor + " p-3 rounded-lg"}>
                 <stat.icon className={stat.color + " h-6 w-6"} />
               </div>
-              <div className="flex items-center text-emerald-400 text-sm font-medium">
-                <ArrowUpRight className="h-4 w-4 mr-1" />
-                +12%
+              <div className={`flex items-center text-sm font-medium ${stat.trend >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                {stat.trend >= 0 ? (
+                  <ArrowUpRight className="h-4 w-4 mr-1" />
+                ) : (
+                  <ArrowDownRight className="h-4 w-4 mr-1" />
+                )}
+                {stat.trend > 0 ? '+' : ''}{stat.trend}%
               </div>
             </div>
             <div className="mt-4">
               <p className="text-sm font-medium text-zinc-400">{stat.label}</p>
               <h3 className="text-2xl font-bold text-white mt-1">
-                {loading ? "..." : stat.value}
+                {stat.value}
               </h3>
             </div>
           </div>
@@ -90,15 +125,23 @@ export default function DashboardPage() {
         <div className="p-6 bg-[#0b1b33] border border-white/10 rounded-xl">
           <h3 className="text-lg font-semibold text-white mb-4">Recent Activity</h3>
           <div className="space-y-4">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="flex items-center gap-x-3 p-3 rounded-lg hover:bg-white/5 transition">
-                <div className="h-2 w-2 rounded-full bg-sky-500" />
-                <div className="flex-1">
-                  <p className="text-sm text-zinc-300">New job application received for <span className="text-white font-medium">Security Analyst</span></p>
-                  <p className="text-xs text-zinc-500">2 hours ago</p>
+            {recentApplications.length > 0 ? (
+              recentApplications.map((activity) => (
+                <div key={activity.id} className="flex items-center gap-x-3 p-3 rounded-lg hover:bg-white/5 transition">
+                  <div className="h-2 w-2 rounded-full bg-sky-500" />
+                  <div className="flex-1">
+                    <p className="text-sm text-zinc-300">
+                      New job application received for <span className="text-white font-medium">{activity.job?.title || "a role"}</span>
+                    </p>
+                    <p className="text-xs text-zinc-500">
+                      {formatDistanceToNow(new Date(activity.createdAt), { addSuffix: true })}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              <p className="text-sm text-zinc-500 text-center py-4">No recent activity found.</p>
+            )}
           </div>
         </div>
         

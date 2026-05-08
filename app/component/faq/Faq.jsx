@@ -4,7 +4,7 @@ import ScrollReveal from "../ScrollReveal";
 import "./Faq.css";
 
 const faqData = [
-  { question: "Who is Cyberval best suited for?", answer: "We work with organizations that treat security as a strategic capability—from growing teams that need structure, to mature programs looking to validate or extend what they already have." },
+  { question: "Who is Cybervol best suited for?", answer: "We work with organizations that treat security as a strategic capability—from growing teams that need structure, to mature programs looking to validate or extend what they already have." },
   { question: "Do you only offer long-term engagements?", answer: "We offer flexible engagement models ranging from short-term rapid assessments and incident response to long-term strategic partnerships and managed security services." },
   { question: "Can you integrate with our existing tools and vendors?", answer: "Yes, our solutions are designed to be vendor-agnostic and we specialize in optimizing and integrating with your existing security stack to maximize your current investments." },
   { question: "Where can we contact you?", answer: "You can reach out to us via our contact form on the website, or directly through our sales and support email addresses provided in the footer." },

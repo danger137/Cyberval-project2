@@ -116,13 +116,17 @@ export default function NewResourcePage() {
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium text-zinc-400">Category</label>
-              <input
+              <select
                 required
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                placeholder="e.g. Compliance, Threat Intel"
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition"
-              />
+              >
+                <option value="" disabled className="bg-[#0b1b33]">Select Category</option>
+                <option value="E-book" className="bg-[#0b1b33]">E-book</option>
+                <option value="Blog" className="bg-[#0b1b33]">Blog</option>
+                <option value="Newsletter" className="bg-[#0b1b33]">Newsletter</option>
+              </select>
             </div>
           </div>
 

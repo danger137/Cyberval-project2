@@ -1,6 +1,11 @@
 import { Sora, Manrope } from 'next/font/google'
 import "./globals.css";
 
+export const metadata = {
+  title: "Cybervol - Cybersecurity & Risk Transformation Strategy Company",
+  description: "Elite cybersecurity solutions to protect your digital assets and boost security. We provide tailored strategies for resilient growth.",
+};
+
 const sora = Sora({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
