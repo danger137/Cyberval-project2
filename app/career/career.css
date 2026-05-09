@@ -111,12 +111,102 @@
   margin-bottom: 40px;
 }
 
+.tabs-wrapper-outer {
+  position: relative;
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto 60px;
+  display: flex;
+  align-items: center;
+}
+
 .tabs-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 60px;
+  width: 100%;
+  padding: 4px;
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #E2E8F0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  color: #2E5A88;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.scroll-arrow:hover {
+  background: white;
+  color: #1A365D;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.scroll-arrow.left {
+  left: 0;
+}
+
+.scroll-arrow.right {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .tabs-wrapper-outer {
+    margin-bottom: 40px;
+  }
+
+  .tabs-container {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 45px; /* More padding to make space for arrows */
+    margin-left: -20px;
+    margin-right: -20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 8px;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  }
+
+  .scroll-arrow {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .scroll-arrow.left {
+    left: -5px;
+  }
+
+  .scroll-arrow.right {
+    right: -5px;
+  }
+
+  .tabs-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
 }
 
 .tab-btn {
@@ -136,11 +226,14 @@
   background: #6D8EAD;
   color: white;
   border-color: #6D8EAD;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(109, 142, 173, 0.25);
 }
 
 .tab-btn:hover:not(.active) {
   border-color: #6D8EAD;
   color: #6D8EAD;
+  background: #F8FAFC;
 }
 
 /* Job Listings */

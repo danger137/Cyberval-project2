@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import "./career.css";
 import ScrollReveal from "../component/ScrollReveal";
@@ -17,6 +17,48 @@ const categories = [
 export default function CareerPage() {
   const [activeTab, setActiveTab] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+  const tabsRef = useRef(null);
+
+  const checkScroll = () => {
+    if (tabsRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = tabsRef.current;
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener("resize", checkScroll);
+    return () => window.removeEventListener("resize", checkScroll);
+  }, []);
+
+  // Scroll active tab into view on mobile
+  useEffect(() => {
+    if (tabsRef.current) {
+      const activeTabElement = tabsRef.current.querySelector(".tab-btn.active");
+      if (activeTabElement) {
+        activeTabElement.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center"
+        });
+      }
+      setTimeout(checkScroll, 300); // Check after scroll animation
+    }
+  }, [activeTab]);
+
+  const scrollTabs = (direction) => {
+    if (tabsRef.current) {
+      const scrollAmount = 200;
+      tabsRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  };
 
   const filteredJobs = jobsData.filter(job => {
     const matchesTab = activeTab === "All" || job.category === activeTab;
@@ -66,16 +108,47 @@ export default function CareerPage() {
       <section className="tabs-section">
         <ScrollReveal direction="up">
           <h2 className="section-heading">We have {jobsData.length} open positions now!</h2>
-          <div className="tabs-container">
-            {categories.map(category => (
+          
+          <div className="tabs-wrapper-outer">
+            {canScrollLeft && (
               <button 
-                key={category}
-                className={`tab-btn ${activeTab === category ? "active" : ""}`}
-                onClick={() => setActiveTab(category)}
+                className="scroll-arrow left" 
+                onClick={() => scrollTabs("left")}
+                aria-label="Scroll left"
               >
-                {category} {category !== "All" && `(${getCategoryCount(category)})`}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
               </button>
-            ))}
+            )}
+            
+            <div 
+              className="tabs-container" 
+              ref={tabsRef}
+              onScroll={checkScroll}
+            >
+              {categories.map(category => (
+                <button 
+                  key={category}
+                  className={`tab-btn ${activeTab === category ? "active" : ""}`}
+                  onClick={() => setActiveTab(category)}
+                >
+                  {category} {category !== "All" && `(${getCategoryCount(category)})`}
+                </button>
+              ))}
+            </div>
+
+            {canScrollRight && (
+              <button 
+                className="scroll-arrow right" 
+                onClick={() => scrollTabs("right")}
+                aria-label="Scroll right"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            )}
           </div>
         </ScrollReveal>
 
