@@ -29,7 +29,8 @@ export default function Footer() {
     // Check if current route is services, resources, or contact
     const showBanner = pathname && (
         pathname.startsWith("/services") || 
-        pathname.startsWith("/resources")
+        pathname.startsWith("/resources") ||
+        pathname.startsWith("/career")
     );
     
     const isService1 = pathname && pathname.includes("service-1");
@@ -85,11 +86,11 @@ export default function Footer() {
                     </div>
                     <ul className={`footer-links ${isMobile && activeSection !== 'company' ? 'collapsed' : 'expanded'}`}>
                     <li><Link href="/about">About us</Link></li>
-                    <li><a href="#">Career</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Webinars</a></li>
-                    <li><a href="#">eBooks</a></li>
-                    <li><a href="#">Data sheets</a></li>
+                    <li><Link href="/career">Career</Link></li>
+                    <li><Link href="/resources/Blog">Blog</Link></li>
+                    <li><Link href="/resources/Webinars">Webinars</Link></li>
+                    <li><Link href="/resources/Ebooks">eBooks</Link></li>
+                    <li><Link href="/resources/DataSheet">Data sheets</Link></li>
                     </ul>
                 </div>
                 </ScrollReveal>

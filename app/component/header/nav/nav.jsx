@@ -46,15 +46,16 @@ export default function Nav() {
     };
 
     const isBlogDetail = pathname.startsWith("/resources/Blog/") && pathname !== "/resources/Blog";
-    const isServiceOrResource = pathname.startsWith("/services/") || pathname.startsWith("/resources/");
+    const isCareerDetail = pathname.startsWith("/career/") && pathname !== "/career";
+    const isLightBgPage = isBlogDetail || isCareerDetail;
 
     const isActive = (path) => pathname === path;
 
     return (
-        <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''} ${isBlogDetail ? 'blog-detail-nav' : ''} ${scrolled ? 'nav-scrolled' : ''}`}>
+        <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''} ${isLightBgPage ? 'light-bg-nav' : ''} ${scrolled ? 'nav-scrolled' : ''}`}>
             <div className="nav-container">
                 <div className="logo">
-                    <img src="/cybervol-logo.png" alt="Cybervol" />
+                    <img src={isLightBgPage && !scrolled ? "/lightBg-logo.png" : "/cybervol-logo.png"} alt="Cybervol" />
                 </div>
 
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
@@ -249,6 +250,7 @@ export default function Nav() {
                             </div>
                         </div>
                     </li>
+                    <li><Link href="/career" className={isActive('/career') ? 'active' : ''} onClick={closeAll}>Career</Link></li>
                     
                     {/* Mobile Footer - Contact Button */}
                     <div className="mobile-menu-footer">

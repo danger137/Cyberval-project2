@@ -784,44 +784,44 @@ html {
 
 
 
-/* Blog Detail Nav Styles */
-.blog-detail-nav .brand-name {
+/* Light Background Nav Styles (Blog & Career Detail) */
+.light-bg-nav:not(.nav-scrolled) .brand-name {
     color: #212121;
 }
 
-.blog-detail-nav .tagline {
+.light-bg-nav:not(.nav-scrolled) .tagline {
     color: #585858;
 }
 
-.blog-detail-nav .nav-links li a,
-.blog-detail-nav .dropdown-trigger {
+.light-bg-nav:not(.nav-scrolled) .nav-links li a,
+.light-bg-nav:not(.nav-scrolled) .dropdown-trigger {
     color: #212121;
 }
 
-.blog-detail-nav .contact-btn {
+.light-bg-nav:not(.nav-scrolled) .contact-btn {
     background: #2E5A88;
     color: #FFFFFF;
 }
 
-.blog-detail-nav .hamburger span {
+.light-bg-nav:not(.nav-scrolled) .hamburger span {
     background-color: #2E5A88;
 }
 
-.blog-detail-nav .logo img {
+.light-bg-nav:not(.nav-scrolled) .logo img {
     filter: none;
 }
 
-.blog-detail-nav .nav-links li a:hover::after,
-.blog-detail-nav .nav-links li a:focus::after,
-.blog-detail-nav .nav-links li a.active::after,
-.blog-detail-nav .dropdown-trigger .arrow {
+.light-bg-nav:not(.nav-scrolled) .nav-links li a:hover::after,
+.light-bg-nav:not(.nav-scrolled) .nav-links li a:focus::after,
+.light-bg-nav:not(.nav-scrolled) .nav-links li a.active::after,
+.light-bg-nav:not(.nav-scrolled) .dropdown-trigger .arrow {
     filter: invert(31%) sepia(19%) saturate(3015%) hue-rotate(178deg) brightness(92%) contrast(88%);
 }
 
-.blog-detail-nav .nav-links li a:hover::after,
-.blog-detail-nav .nav-links li a:focus::after,
-.blog-detail-nav .nav-links li a.active::after,
-.blog-detail-nav .dropdown.open .dropdown-trigger::after,
-.blog-detail-nav .dropdown.active .dropdown-trigger::after {
+.light-bg-nav:not(.nav-scrolled) .nav-links li a:hover::after,
+.light-bg-nav:not(.nav-scrolled) .nav-links li a:focus::after,
+.light-bg-nav:not(.nav-scrolled) .nav-links li a.active::after,
+.light-bg-nav:not(.nav-scrolled) .dropdown.open .dropdown-trigger::after,
+.light-bg-nav:not(.nav-scrolled) .dropdown.active .dropdown-trigger::after {
     background-color: #2E5A88;
 }
