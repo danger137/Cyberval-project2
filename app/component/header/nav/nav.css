@@ -811,11 +811,8 @@ html {
     filter: none;
 }
 
-.light-bg-nav:not(.nav-scrolled) .nav-links li a:hover::after,
-.light-bg-nav:not(.nav-scrolled) .nav-links li a:focus::after,
-.light-bg-nav:not(.nav-scrolled) .nav-links li a.active::after,
 .light-bg-nav:not(.nav-scrolled) .dropdown-trigger .arrow {
-    filter: invert(31%) sepia(19%) saturate(3015%) hue-rotate(178deg) brightness(92%) contrast(88%);
+    filter: brightness(0);
 }
 
 .light-bg-nav:not(.nav-scrolled) .nav-links li a:hover::after,
