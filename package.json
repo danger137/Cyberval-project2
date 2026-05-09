@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.10.2",
@@ -23,6 +24,7 @@
     "next-auth": "^4.24.6",
     "next-cloudinary": "^6.3.0",
     "react": "19.2.4",
+    "react-calendly": "^4.4.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "19.2.4",
     "recharts": "^3.8.1",

@@ -42,7 +42,7 @@ export default function LoginPage() {
       <div className="max-w-md w-full space-y-8 p-8 bg-[#0b1b33] border border-white/10 rounded-2xl shadow-2xl">
         <div className="text-center">
           <h1 className="text-3xl font-bold font-sora text-white">
-            Cyberval<span className="text-sky-500">.</span> Admin
+            Cybervol<span className="text-sky-500">.</span> Admin
           </h1>
           <p className="mt-2 text-zinc-400">Sign in to manage your command center</p>
         </div>
