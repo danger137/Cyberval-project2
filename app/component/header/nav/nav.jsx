@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import { User } from "lucide-react";
 import "./nav.css"
 
 export default function Nav() {
@@ -271,12 +272,15 @@ export default function Nav() {
                     </div>
                 </ul>
 
-                <div className="nav-right">
+                <div className="nav-right" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                     <div className="nav-cta">
                         <Link href="/Contact" onClick={closeAll}>
                             <button className="contact-btn">Contact us</button>
                         </Link>
                     </div>
+                    <Link href="/login" onClick={closeAll} aria-label="Login" style={{ color: 'white', display: 'flex', alignItems: 'center' }} className="hover:text-sky-400 transition">
+                        <User size={24} />
+                    </Link>
                     <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
                         <span></span>
                         <span></span>
