@@ -11,8 +11,7 @@ export async function POST(req) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const body = await req.json();
-    const { title, client, description, image, category, date } = body;
+    const { title, client, description, image, category, date, testimonial, results } = body;
 
     if (!title || !client || !description) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -23,9 +22,11 @@ export async function POST(req) {
         title,
         client,
         description,
-        images: image ? [image] : [],
+        images: Array.isArray(image) ? image : (image ? [image] : []),
         category,
         date: date ? new Date(date) : new Date(),
+        testimonial,
+        results,
       },
     });
 

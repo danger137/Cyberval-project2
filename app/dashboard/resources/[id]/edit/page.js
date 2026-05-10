@@ -1,23 +1,25 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, useParams } from "next/navigation";
 import { 
   FileText, 
   ArrowLeft, 
   Save, 
   Loader2,
-  FileUp,
-  ShieldCheck,
+  Image as ImageIcon,
+  CheckCircle2,
   X,
-  CheckCircle2
+  FileUp
 } from "lucide-react";
 import Link from "next/link";
 import { CldUploadWidget } from "next-cloudinary";
 
-export default function NewResourcePage() {
+export default function EditResourcePage() {
   const router = useRouter();
+  const params = useParams();
   const [loading, setLoading] = useState(false);
+  const [fetching, setFetching] = useState(true);
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -29,6 +31,36 @@ export default function NewResourcePage() {
     author: "",
   });
 
+  useEffect(() => {
+    const fetchResource = async () => {
+      try {
+        const response = await fetch(`/api/resources/${params.id}`);
+        const data = await response.json();
+
+        if (response.ok) {
+          setFormData({
+            title: data.title || "",
+            description: data.description || "",
+            type: data.type || "Article",
+            category: data.category || "Blog",
+            fileUrl: data.fileUrl || "",
+            image: data.image || "",
+            content: data.content || "",
+            author: data.author || "",
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching resource:", error);
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    if (params.id) {
+      fetchResource();
+    }
+  }, [params.id]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.category === "E-book" && !formData.fileUrl) {
@@ -38,30 +70,36 @@ export default function NewResourcePage() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/resources", {
-        method: "POST",
+      const response = await fetch(`/api/resources/${params.id}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
+        const data = await response.json();
         throw new Error(data.error || "Something went wrong");
       }
 
-      console.log("Resource added successfully:", data);
       router.push("/dashboard/resources");
       router.refresh();
     } catch (err) {
-      console.error("Error adding resource:", err);
+      console.error("Error updating resource:", err);
       alert(err.message);
     } finally {
       setLoading(false);
     }
   };
+
+  if (fetching) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-8 w-8 animate-spin text-sky-500" />
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -72,7 +110,7 @@ export default function NewResourcePage() {
               <ArrowLeft className="h-5 w-5" />
             </button>
           </Link>
-          <h2 className="text-3xl font-bold tracking-tight font-sora text-white">Upload Resource</h2>
+          <h2 className="text-3xl font-bold tracking-tight font-sora text-white">Edit Resource</h2>
         </div>
       </div>
 
@@ -209,18 +247,6 @@ export default function NewResourcePage() {
               </div>
             )}
           </div>
-
-
-
-          <div className="p-4 bg-sky-500/10 border border-sky-500/20 rounded-xl flex items-start gap-x-3">
-            <ShieldCheck className="h-5 w-5 text-sky-500 mt-0.5" />
-            <div>
-              <p className="text-sm font-bold text-sky-500">Gated Content Protection</p>
-              <p className="text-xs text-sky-500/70 mt-1">
-                By default, all uploaded resources are "Gated". Users must provide their contact information on the public site to download these files.
-              </p>
-            </div>
-          </div>
         </div>
 
         <div className="flex justify-end gap-x-4">
@@ -235,7 +261,7 @@ export default function NewResourcePage() {
             className="flex items-center gap-x-2 px-8 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-xl transition font-bold disabled:opacity-50"
           >
             {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Save className="h-5 w-5" />}
-            Publish Resource
+            Update Resource
           </button>
         </div>
       </form>

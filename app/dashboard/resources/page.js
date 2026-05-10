@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Plus, FileText, Download, Trash2, Eye, Lock, AlertTriangle } from "lucide-react";
+import { Plus, FileText, Download, Trash2, Eye, Lock, AlertTriangle, Edit } from "lucide-react";
 import Link from "next/link";
 
 const ResourcesPage = () => {
@@ -104,8 +104,13 @@ const ResourcesPage = () => {
                   <p className="text-[10px] text-zinc-500 uppercase font-medium">Downloads</p>
                 </div>
                 <div className="flex items-center gap-x-2">
+                  <Link href={`/dashboard/resources/${resource.id}/edit`}>
+                    <button className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-white transition">
+                      <Edit className="h-4 w-4" />
+                    </button>
+                  </Link>
                   <button 
-                    onClick={() => window.open(resource.fileUrl, "_blank")}
+                    onClick={() => window.open(resource.fileUrl || resource.image, "_blank")}
                     className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-white transition"
                   >
                     <Eye className="h-4 w-4" />

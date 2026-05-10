@@ -4,55 +4,29 @@ import React, { useState } from "react";
 import Link from "next/link";
 import ScrollReveal from "../../component/ScrollReveal";
 
-const blogData =[
-  {
-    id: 1,
-    title: "Top Cybersecurity Trends Every Business Should Know in 2026",
-    date: "Jan 15, 2026",
-    image: "/images/pages/resources/Blog/card-1-image.svg",
-    // description: "Discover the latest threats and protection strategies as the digital landscape continues to evolve in the coming year."
-  },
-  {
-    id: 2,
-    title: "Top Cybersecurity Trends Every Business Should Know in 2026",
-    date: "Jan 10, 2026",
-    image: "/images/pages/resources/Blog/card-2-image.svg",
-    // description: "How organizations can safely adopt AI while maintaining a robust security posture and protecting sensitive data."
-  },
-  {
-    id: 3,
-    title: "The Future of Cloud Security: Best Practices for Organizations",
-    date: "Jan 05, 2026",
-    image: "/images/pages/resources/Blog/card-3-image.svg",
-    // description: "Stay ahead of regulatory changes and ensure your organization remains compliant and secure in an increasingly regulated world."
-  },
-  {
-    id: 4,
-    title: "Navigating AI Regulations: What Companies Need to Watch",
-    date: "Jan 02, 2026",
-    image: "/images/pages/resources/Blog/card-1-image.svg",
-    // description: "Learn why Zero Trust is becoming the gold standard for enterprise security in a perimeter-less world."
-  },
-  {
-    id: 5,
-    title: "Navigating AI Regulations: What Companies Need to Watch",
-    date: "Dec 28, 2025",
-    image: "/images/pages/resources/Blog/card-2-image.svg",
-    // description: "Best practices for maintaining visibility and control over distributed teams and cloud-native applications."
-  },
-  {
-    id: 6,
-    title: "Enhancing Data Privacy: Techniques for Modern Enterprises",
-    date: "Dec 20, 2025",
-    image: "/images/pages/resources/Blog/card-3-image.svg",
-    // description: "A comprehensive guide to building a resilient incident response plan that minimizes business disruption."
-  }
-];
-
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredBlogs = blogData.filter((blog) =>
+  React.useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch("/api/resources?category=Blog");
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setBlogs(data);
+        }
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBlogs();
+  }, []);
+
+  const filteredBlogs = blogs.filter((blog) =>
     blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     (blog.description && blog.description.toLowerCase().includes(searchTerm.toLowerCase()))
   );
@@ -116,7 +90,7 @@ export default function BlogPage() {
                         />
                       </div>
                       <div className="flex flex-col flex-1">
-                        <span className="text-[14px] text-[#585858] mb-[8px] font-medium font-manrope">{blog.date}</span>
+                        <span className="text-[14px] text-[#585858] mb-[8px] font-medium font-manrope">{new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                         <h3 className="text-[18px] font-bold text-[#030D1A] mb-[12px] leading-[1.3] line-clamp-2 group-hover:text-[#2E5A88] transition-colors font-sora antialiased">
                           {blog.title}
                         </h3>

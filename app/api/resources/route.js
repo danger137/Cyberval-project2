@@ -12,9 +12,9 @@ export async function POST(req) {
     }
 
     const body = await req.json();
-    const { title, type, category, fileUrl, description } = body;
+    const { title, type, category, fileUrl, description, image, content, author } = body;
 
-    if (!title || !type || !fileUrl || !description) {
+    if (!title || !description) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
@@ -25,6 +25,9 @@ export async function POST(req) {
         category,
         fileUrl,
         description,
+        image,
+        content,
+        author,
       },
     });
 
@@ -32,7 +35,7 @@ export async function POST(req) {
     await prisma.notification.create({
       data: {
         title: "New Resource Added",
-        message: `A new ${type} titled "${title}" has been added to the resources.`,
+        message: `A new ${category || 'Resource'} titled "${title}" has been added.`,
         type: "RESOURCE_ADDED"
       }
     });
@@ -44,9 +47,13 @@ export async function POST(req) {
   }
 }
 
-export async function GET() {
+export async function GET(request) {
   try {
+    const { searchParams } = new URL(request.url);
+    const category = searchParams.get("category");
+
     const resources = await prisma.resource.findMany({
+      where: category ? { category } : {},
       orderBy: {
         createdAt: "desc",
       },

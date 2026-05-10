@@ -81,6 +81,10 @@ const TeamPage = () => {
                     src={member.imageUrl} 
                     alt={member.name} 
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = "/Cards.svg";
+                    }}
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-zinc-600">

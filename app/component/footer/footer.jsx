@@ -86,10 +86,12 @@ export default function Footer() {
                     </div>
                     <ul className={`footer-links ${isMobile && activeSection !== 'company' ? 'collapsed' : 'expanded'}`}>
                     <li><Link href="/about">About us</Link></li>
+                    <li><Link href="/portfolio">Portfolio</Link></li>
                     <li><Link href="/career">Career</Link></li>
                     <li><Link href="/resources/Blog">Blog</Link></li>
                     <li><Link href="/resources/Webinars">Webinars</Link></li>
                     <li><Link href="/resources/Ebooks">eBooks</Link></li>
+                    <li><Link href="/resources/Newsletter">Newsletter</Link></li>
                     <li><Link href="/resources/DataSheet">Data sheets</Link></li>
                     </ul>
                 </div>

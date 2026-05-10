@@ -4,22 +4,29 @@ import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import "./career.css";
 import ScrollReveal from "../component/ScrollReveal";
-import { jobsData } from "./jobsData";
-
-const categories = [
-  "All",
-  "Security Engineering",
-  "Threat Analysis",
-  "Security Design",
-  "Incident Response"
-];
-
 export default function CareerPage() {
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const tabsRef = useRef(null);
+
+  const fetchJobs = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch("/api/jobs");
+      const data = await response.json();
+      if (Array.isArray(data)) {
+        setJobs(data);
+      }
+    } catch (error) {
+      console.error("Error fetching jobs:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const checkScroll = () => {
     if (tabsRef.current) {
@@ -30,6 +37,7 @@ export default function CareerPage() {
   };
 
   useEffect(() => {
+    fetchJobs();
     checkScroll();
     window.addEventListener("resize", checkScroll);
     return () => window.removeEventListener("resize", checkScroll);
@@ -60,17 +68,19 @@ export default function CareerPage() {
     }
   };
 
-  const filteredJobs = jobsData.filter(job => {
-    const matchesTab = activeTab === "All" || job.category === activeTab;
+  const filteredJobs = jobs.filter(job => {
+    const matchesTab = activeTab === "All" || job.department === activeTab;
     const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                          job.description.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesTab && matchesSearch;
   });
 
   const getCategoryCount = (category) => {
-    if (category === "All") return jobsData.length;
-    return jobsData.filter(job => job.category === category).length;
+    if (category === "All") return jobs.length;
+    return jobs.filter(job => job.department === category).length;
   };
+
+  const dynamicCategories = ["All", ...new Set(jobs.map(job => job.department))];
 
   return (
     <div className="career-container">
@@ -107,7 +117,7 @@ export default function CareerPage() {
       {/* Tabs Section */}
       <section className="tabs-section">
         <ScrollReveal direction="up">
-          <h2 className="section-heading">We have {jobsData.length} open positions now!</h2>
+          <h2 className="section-heading">We have {jobs.length} open positions now!</h2>
           
           <div className="tabs-wrapper-outer">
             {canScrollLeft && (
@@ -127,7 +137,7 @@ export default function CareerPage() {
               ref={tabsRef}
               onScroll={checkScroll}
             >
-              {categories.map(category => (
+              {dynamicCategories.map(category => (
                 <button 
                   key={category}
                   className={`tab-btn ${activeTab === category ? "active" : ""}`}
@@ -154,7 +164,11 @@ export default function CareerPage() {
 
         {/* Job Listings */}
         <div className="jobs-list">
-          {filteredJobs.map((job, index) => (
+          {loading ? (
+            <div className="py-20 flex justify-center">
+               <div className="h-8 w-8 border-4 border-sky-500 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          ) : filteredJobs.map((job, index) => (
             <ScrollReveal key={job.id} direction="up" delay={index * 0.1} className="job-card-wrapper">
               <div className="job-card">
                 <div className="job-info text-left">
@@ -164,7 +178,7 @@ export default function CareerPage() {
                     {job.workMode && <span className="job-tag">{job.workMode}</span>}
                     <span className="job-tag">{job.type}</span>
                   </div>
-                  <p className="job-description">
+                  <p className="job-description line-clamp-3">
                     {job.description}
                   </p>
                 </div>
@@ -181,14 +195,14 @@ export default function CareerPage() {
             </ScrollReveal>
           ))}
           
-          {filteredJobs.length === 0 && (
+          {!loading && filteredJobs.length === 0 && (
             <div className="py-20">
               <p className="font-manrope text-gray-500 text-lg">No positions found matching your criteria.</p>
             </div>
           )}
         </div>
 
-        {filteredJobs.length > 0 && (
+        {!loading && filteredJobs.length > 0 && (
           <div className="show-more-container">
             <button className="show-more-btn">Show More</button>
           </div>

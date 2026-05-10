@@ -71,6 +71,7 @@ export default function Nav() {
 
                     <li><Link href="/" className={isActive('/') ? 'active' : ''} onClick={closeAll}>Home</Link></li>
                     <li><Link href="/About2" className={isActive('/About2') ? 'active' : ''} onClick={closeAll}>About us</Link></li>
+                    <li><Link href="/portfolio" className={isActive('/portfolio') ? 'active' : ''} onClick={closeAll}>Portfolio</Link></li>
                     <li className={`dropdown ${activeDropdown === 'services' ? 'open' : ''} ${pathname.startsWith('/services') ? 'active' : ''}`}>
                         <div className="dropdown-trigger" tabIndex="0" onClick={(e) => toggleDropdown(e, 'services')}>
                             Services <img src="/images/header-items/nav/dropdown-menu-icon.svg" alt="" className="arrow mobile-arrow" />
@@ -172,6 +173,7 @@ export default function Nav() {
                                 <Link href="/resources/Blog" onClick={closeAll}>Blogs</Link>
                                 <Link href="/resources/Webinars" onClick={closeAll}>Webinar</Link>
                                 <Link href="/resources/Ebooks" onClick={closeAll}>Ebooks</Link>
+                                <Link href="/resources/Newsletter" onClick={closeAll}>Newsletter</Link>
                                 <Link href="/resources/DataSheet" onClick={closeAll}>Data Sheets</Link>
                             </div>
 
@@ -212,6 +214,15 @@ export default function Nav() {
                                         <div className="mega-item-text">
                                             <h4>Data Sheets</h4>
                                             <p>Browse our latest Datasheets content and open each item to read the full detail page.</p>
+                                        </div>
+                                    </Link>
+                                    <Link href="/resources/Newsletter" className="mega-item resource-item" onClick={closeAll}>
+                                        <div className="mega-icon">
+                                            <img src="/images/header-items/resources-icons/icon-1.svg" alt="Newsletter" />
+                                        </div>
+                                        <div className="mega-item-text">
+                                            <h4>Newsletter</h4>
+                                            <p>Stay updated with our latest news and security insights.</p>
                                         </div>
                                     </Link>
                                 </div>

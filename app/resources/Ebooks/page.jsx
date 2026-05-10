@@ -4,51 +4,31 @@ import React, { useState } from "react";
 import Link from "next/link";
 import ScrollReveal from "../../component/ScrollReveal";
 
-const ebooksData = [
-  {
-    id: 1,
-    title: "The Art of Invisibility",
-    author: "Kevin Mitnick",
-    image: "/images/pages/resources/Ebooks/card-1-image.svg"
-  },
-  {
-    id: 2,
-    title: "Cybersecurity and Cyberwar",
-    author: "P.W. Singer & Allan Friedman",
-    image: "/images/pages/resources/Ebooks/card-2-image.svg"
-  },
-  {
-    id: 3,
-    title: "Social Engineering",
-    author: "Christopher Hadnagy",
-    image: "/images/pages/resources/Ebooks/card-3-image.svg"
-  },
-  {
-    id: 4,
-    title: "Ghost in the Wires",
-    author: "Kevin Mitnick",
-    image: "/images/pages/resources/Ebooks/card-4-image.svg"
-  },
-  {
-    id: 5,
-    title: "Practical Malware Analysis",
-    author: "Michael Sikorski",
-    image: "/images/pages/resources/Ebooks/card-5-image.svg"
-  },
-  {
-    id: 6,
-    title: "Hacking: The Art of Exploitation",
-    author: "Jon Erickson",
-    image: "/images/pages/resources/Ebooks/card-3-image.svg" // User previously set card 6 to use card 3
-  }
-];
-
 export default function EbooksPage() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [ebooks, setEbooks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredEbooks = ebooksData.filter((ebook) =>
+  React.useEffect(() => {
+    const fetchEbooks = async () => {
+      try {
+        const response = await fetch("/api/resources?category=E-book");
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setEbooks(data);
+        }
+      } catch (error) {
+        console.error("Error fetching ebooks:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchEbooks();
+  }, []);
+
+  const filteredEbooks = ebooks.filter((ebook) =>
     ebook.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    ebook.author.toLowerCase().includes(searchTerm.toLowerCase())
+    (ebook.author && ebook.author.toLowerCase().includes(searchTerm.toLowerCase()))
   );
 
   return (

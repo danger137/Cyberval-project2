@@ -97,12 +97,16 @@ const CaseStudiesPage = () => {
 
             <div className="flex items-center gap-x-4">
               <div className="flex items-center gap-x-2 border-l border-white/10 pl-4 ml-4">
-                <button className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-white transition">
-                  <Edit className="h-4 w-4" />
-                </button>
-                <button className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-sky-500 transition">
-                  <ExternalLink className="h-4 w-4" />
-                </button>
+                <Link href={`/dashboard/portfolio/${project.id}/edit`}>
+                  <button className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-white transition">
+                    <Edit className="h-4 w-4" />
+                  </button>
+                </Link>
+                <Link href={`/portfolio/${project.id}`} target="_blank">
+                  <button className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-sky-500 transition">
+                    <ExternalLink className="h-4 w-4" />
+                  </button>
+                </Link>
                 <button 
                   onClick={() => {
                     setProjectToDelete(project.id);

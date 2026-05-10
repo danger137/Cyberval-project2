@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, useParams } from "next/navigation";
 import { 
   FileText, 
   User, 
@@ -10,15 +10,16 @@ import {
   Loader2,
   Calendar,
   Image as ImageIcon,
-  Plus,
   Trash2
 } from "lucide-react";
 import Link from "next/link";
 import { CldUploadWidget } from "next-cloudinary";
 
-export default function NewCaseStudyPage() {
+export default function EditCaseStudyPage() {
   const router = useRouter();
+  const params = useParams();
   const [loading, setLoading] = useState(false);
+  const [fetching, setFetching] = useState(true);
   const [formData, setFormData] = useState({
     title: "",
     client: "",
@@ -30,13 +31,43 @@ export default function NewCaseStudyPage() {
     image: ""
   });
 
+  useEffect(() => {
+    const fetchProject = async () => {
+      try {
+        const response = await fetch(`/api/case-studies/${params.id}`);
+        const data = await response.json();
+
+        if (response.ok) {
+          setFormData({
+            title: data.title || "",
+            client: data.client || "",
+            category: data.category || "",
+            date: data.date ? new Date(data.date).toISOString().split('T')[0] : "",
+            description: data.description || "",
+            results: data.results || "",
+            testimonial: data.testimonial || "",
+            image: data.images?.[0] || ""
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching project:", error);
+      } finally {
+        setFetching(false);
+      }
+    };
+
+    if (params.id) {
+      fetchProject();
+    }
+  }, [params.id]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      const response = await fetch("/api/case-studies", {
-        method: "POST",
+      const response = await fetch(`/api/case-studies/${params.id}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
@@ -49,16 +80,23 @@ export default function NewCaseStudyPage() {
         throw new Error(data.error || "Something went wrong");
       }
 
-      console.log("Case study created successfully:", data);
       router.push("/dashboard/portfolio");
       router.refresh();
     } catch (err) {
-      console.error("Error creating case study:", err);
+      console.error("Error updating case study:", err);
       alert(err.message);
     } finally {
       setLoading(false);
     }
   };
+
+  if (fetching) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-8 w-8 animate-spin text-sky-500" />
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -69,7 +107,7 @@ export default function NewCaseStudyPage() {
               <ArrowLeft className="h-5 w-5" />
             </button>
           </Link>
-          <h2 className="text-3xl font-bold tracking-tight font-sora text-white">Create New Project</h2>
+          <h2 className="text-3xl font-bold tracking-tight font-sora text-white">Edit Project</h2>
         </div>
       </div>
 
@@ -221,7 +259,7 @@ export default function NewCaseStudyPage() {
             className="flex items-center gap-x-2 px-8 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-xl transition font-bold disabled:opacity-50"
           >
             {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Save className="h-5 w-5" />}
-            Save Project
+            Update Project
           </button>
         </div>
       </form>

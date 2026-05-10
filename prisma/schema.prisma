@@ -29,15 +29,20 @@ model User {
 }
 
 model Job {
-  id           String        @id @default(cuid())
-  title        String
-  description  String
-  department   String
-  location     String
-  status       JobStatus     @default(OPEN)
-  applications Application[]
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  id             String        @id @default(cuid())
+  title          String
+  description    String
+  department     String
+  location       String
+  type           String        @default("Full-time")
+  workMode       String?       @default("On-site")
+  experience     String?
+  requirements   String[]
+  qualifications String[]
+  status         JobStatus     @default(OPEN)
+  applications   Application[]
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
 }
 
 model Application {
@@ -68,9 +73,12 @@ model Resource {
   id          String   @id @default(cuid())
   title       String
   description String
-  category    String?
-  fileUrl     String
-  type        String   // e.g., PDF, Whitepaper
+  category    String?  // Blog, E-book, Newsletter
+  image       String?  // Cover image
+  content     String?  // For blogs/newsletters
+  fileUrl     String?  // For downloadable ebooks/newsletters
+  type        String?  // e.g., PDF, Whitepaper, Article
+  author      String?  // For ebooks
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

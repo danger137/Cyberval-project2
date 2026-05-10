@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, useParams } from "next/navigation";
 import { 
   Briefcase, 
   MapPin, 
@@ -15,9 +15,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-export default function NewJobPage() {
+export default function EditJobPage() {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
+  const { jobId } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     department: "",
@@ -29,17 +31,42 @@ export default function NewJobPage() {
     experience: "",
     requirements: "",
     qualifications: "",
+    status: "OPEN"
   });
+
+  useEffect(() => {
+    const fetchJob = async () => {
+      try {
+        const response = await fetch(`/api/jobs/${jobId}`);
+        const data = await response.json();
+        
+        if (response.ok) {
+          setFormData({
+            ...data,
+            requirements: data.requirements?.join('\n') || "",
+            qualifications: data.qualifications?.join('\n') || "",
+            customDepartment: "" // Will be set if department is not in list
+          });
+        }
+      } catch (error) {
+        console.error("Error fetching job:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchJob();
+  }, [jobId]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setSaving(true);
 
     const finalDepartment = formData.department === "Other" ? formData.customDepartment : formData.department;
 
     try {
-      const response = await fetch("/api/jobs", {
-        method: "POST",
+      const response = await fetch(`/api/jobs/${jobId}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
@@ -57,16 +84,23 @@ export default function NewJobPage() {
         throw new Error(data.error || "Something went wrong");
       }
 
-      console.log("Job posted successfully:", data);
       router.push("/dashboard/jobs");
       router.refresh();
     } catch (err) {
-      console.error("Error posting job:", err);
+      console.error("Error updating job:", err);
       alert(err.message);
     } finally {
-      setLoading(false);
+      setSaving(false);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[400px]">
+        <Loader2 className="h-8 w-8 animate-spin text-sky-500" />
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -77,7 +111,7 @@ export default function NewJobPage() {
               <ArrowLeft className="h-5 w-5" />
             </button>
           </Link>
-          <h2 className="text-3xl font-bold tracking-tight font-sora text-white">Post New Job</h2>
+          <h2 className="text-3xl font-bold tracking-tight font-sora text-white">Edit Job</h2>
         </div>
       </div>
 
@@ -92,7 +126,6 @@ export default function NewJobPage() {
                   required
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  placeholder="e.g. Senior Security Analyst"
                   className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition"
                 />
               </div>
@@ -105,8 +138,7 @@ export default function NewJobPage() {
                 onChange={(e) => setFormData({ ...formData, department: e.target.value })}
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition"
               >
-                <option value="" disabled className="bg-[#0b1b33]">Select Department</option>
-                <option value="Security" className="bg-[#0b1b33]">Security Engineering</option>
+                <option value="Security Engineering" className="bg-[#0b1b33]">Security Engineering</option>
                 <option value="Infrastructure" className="bg-[#0b1b33]">Infrastructure</option>
                 <option value="Threat Analysis" className="bg-[#0b1b33]">Threat Analysis</option>
                 <option value="Security Design" className="bg-[#0b1b33]">Security Design</option>
@@ -114,18 +146,6 @@ export default function NewJobPage() {
                 <option value="Other" className="bg-[#0b1b33]">Other (Add Custom)</option>
               </select>
             </div>
-            {formData.department === "Other" && (
-              <div className="space-y-2 md:col-span-2">
-                <label className="text-sm font-medium text-sky-500">Custom Department Name</label>
-                <input
-                  required
-                  value={formData.customDepartment}
-                  onChange={(e) => setFormData({ ...formData, customDepartment: e.target.value })}
-                  placeholder="Enter department name"
-                  className="w-full bg-sky-500/5 border border-sky-500/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition"
-                />
-              </div>
-            )}
             
             <div className="space-y-2">
               <label className="text-sm font-medium text-zinc-400">Location</label>
@@ -135,7 +155,6 @@ export default function NewJobPage() {
                   required
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  placeholder="e.g. USA, Tallinn, Remote"
                   className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition"
                 />
               </div>
@@ -148,7 +167,6 @@ export default function NewJobPage() {
                 <input
                   value={formData.experience}
                   onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
-                  placeholder="e.g. 5 Years"
                   className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition"
                 />
               </div>
@@ -186,6 +204,18 @@ export default function NewJobPage() {
                 </select>
               </div>
             </div>
+
+            <div className="space-y-2 md:col-span-2">
+              <label className="text-sm font-medium text-zinc-400">Status</label>
+              <select
+                value={formData.status}
+                onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition"
+              >
+                <option value="OPEN" className="bg-[#0b1b33]">OPEN</option>
+                <option value="CLOSED" className="bg-[#0b1b33]">CLOSED</option>
+              </select>
+            </div>
           </div>
 
           <div className="space-y-2">
@@ -195,7 +225,6 @@ export default function NewJobPage() {
               rows={5}
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              placeholder="Provide a general overview of the role..."
               className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition resize-none"
             />
           </div>
@@ -208,7 +237,6 @@ export default function NewJobPage() {
                 rows={5}
                 value={formData.requirements}
                 onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
-                placeholder="Enter requirements, one per line..."
                 className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition resize-none"
               />
             </div>
@@ -222,7 +250,6 @@ export default function NewJobPage() {
                 rows={5}
                 value={formData.qualifications}
                 onChange={(e) => setFormData({ ...formData, qualifications: e.target.value })}
-                placeholder="Enter qualifications, one per line..."
                 className="w-full bg-white/5 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition resize-none"
               />
             </div>
@@ -237,11 +264,11 @@ export default function NewJobPage() {
           </Link>
           <button
             type="submit"
-            disabled={loading}
+            disabled={saving}
             className="flex items-center gap-x-2 px-8 py-3 bg-sky-500 hover:bg-sky-600 text-white rounded-xl transition font-bold disabled:opacity-50"
           >
-            {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Save className="h-5 w-5" />}
-            Publish Job
+            {saving ? <Loader2 className="h-5 w-5 animate-spin" /> : <Save className="h-5 w-5" />}
+            Save Changes
           </button>
         </div>
       </form>

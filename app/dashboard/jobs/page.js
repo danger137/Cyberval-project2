@@ -141,8 +141,13 @@ const JobsPage = () => {
                 <td className="px-6 py-4 text-right">
                   <div className="flex items-center justify-end gap-x-2">
                     <Link href={`/dashboard/jobs/${job.id}/applications`}>
-                      <button className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-sky-500 transition">
+                      <button className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-sky-500 transition" title="Applications">
                         <Users className="h-4 w-4" />
+                      </button>
+                    </Link>
+                    <Link href={`/dashboard/jobs/${job.id}/edit`}>
+                      <button className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-emerald-500 transition" title="Edit Job">
+                        <MoreVertical className="h-4 w-4" />
                       </button>
                     </Link>
                     <button 
@@ -151,6 +156,7 @@ const JobsPage = () => {
                         setShowDeleteModal(true);
                       }}
                       className="p-2 hover:bg-white/10 rounded-lg text-zinc-400 hover:text-red-500 transition"
+                      title="Delete Job"
                     >
                       <Trash2 className="h-4 w-4" />
                     </button>

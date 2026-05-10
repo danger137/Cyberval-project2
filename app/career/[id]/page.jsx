@@ -9,9 +9,60 @@ import { jobsData } from "../jobsData";
 
 export default function JobDetailPage() {
   const { id } = useParams();
-  const job = jobsData.find(j => j.id === parseInt(id)) || jobsData[0];
+  const [job, setJob] = useState(null);
+  const [similarJobs, setSimilarJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const similarJobs = jobsData.filter(j => j.id !== job.id).slice(0, 3);
+  useEffect(() => {
+    const fetchJobData = async () => {
+      try {
+        setLoading(true);
+        // Fetch current job
+        const res = await fetch(`/api/jobs/${id}`);
+        const data = await res.json();
+        
+        if (res.ok) {
+          setJob(data);
+          
+          // Fetch all jobs to find similar ones (filtered by department)
+          const allRes = await fetch("/api/jobs");
+          const allData = await allRes.json();
+          if (Array.isArray(allData)) {
+            setSimilarJobs(
+              allData
+                .filter(j => j.id !== data.id && j.department === data.department)
+                .slice(0, 3)
+            );
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching job:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchJobData();
+    }
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC]">
+        <div className="h-10 w-10 border-4 border-sky-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (!job) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#F8FAFC]">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">Job Not Found</h2>
+        <Link href="/career" className="text-sky-500 hover:underline">Back to Careers</Link>
+      </div>
+    );
+  }
 
   return (
     <div className="job-detail-container">
@@ -48,47 +99,27 @@ export default function JobDetailPage() {
               <p className="job-section-text">{job.description}</p>
             </div>
 
-            <div className="job-section">
-              <h2 className="job-section-title">Position</h2>
-              <p className="job-section-text">
-                We are seeking skilled Cybersecurity Specialists to join our dynamic Security team. You will collaborate closely with IT, Compliance, and Risk Management to assess, develop, monitor, test, deploy, and maintain security measures for our systems and data.
-              </p>
-            </div>
-
-            <div className="job-section">
-              <h2 className="job-section-title">Requirements</h2>
-              <ul className="job-list-items">
-                {job.requirements && job.requirements.length > 0 ? (
-                  job.requirements.map((req, i) => (
+            {job.requirements && job.requirements.length > 0 && (
+              <div className="job-section">
+                <h2 className="job-section-title">Requirements</h2>
+                <ul className="job-list-items">
+                  {job.requirements.map((req, i) => (
                     <li key={i} className="job-list-item">{req}</li>
-                  ))
-                ) : (
-                  <>
-                    <li className="job-list-item">Proven experience in cybersecurity and information security practices.</li>
-                    <li className="job-list-item">Strong knowledge of network security, firewalls, and intrusion detection systems.</li>
-                    <li className="job-list-item">Ability to conduct vulnerability assessments and penetration testing.</li>
-                    <li className="job-list-item">Familiarity with security standards and compliance requirements (e.g., ISO 27001, GDPR).</li>
-                  </>
-                )}
-              </ul>
-            </div>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            <div className="job-section">
-              <h2 className="job-section-title">Qualification & Experience</h2>
-              <ul className="job-list-items">
-                {job.qualifications && job.qualifications.length > 0 ? (
-                  job.qualifications.map((qual, i) => (
+            {job.qualifications && job.qualifications.length > 0 && (
+              <div className="job-section">
+                <h2 className="job-section-title">Qualification & Experience</h2>
+                <ul className="job-list-items">
+                  {job.qualifications.map((qual, i) => (
                     <li key={i} className="job-list-item">{qual}</li>
-                  ))
-                ) : (
-                  <>
-                    <li className="job-list-item">Proven experience in cybersecurity roles, preferably in a fast-paced environment.</li>
-                    <li className="job-list-item">Strong knowledge of network security, threat analysis, and vulnerability assessment.</li>
-                    <li className="job-list-item">Relevant certifications such as CISSP, CEH, or CISM are a plus.</li>
-                  </>
-                )}
-              </ul>
-            </div>
+                  ))}
+                </ul>
+              </div>
+            )}
           </ScrollReveal>
         </div>
 
@@ -97,23 +128,23 @@ export default function JobDetailPage() {
           <h3 className="sidebar-title">Job Position</h3>
           <div className="sidebar-info-item">
             <span className="info-label">Employee Type</span>
-            <span className="info-value">{job.details?.employeeType || "Full Time"}</span>
+            <span className="info-value">{job.type || "Full Time"}</span>
           </div>
           <div className="sidebar-info-item">
             <span className="info-label">Location</span>
-            <span className="info-value">{job.details?.location || job.location}</span>
+            <span className="info-value">{job.location}</span>
           </div>
           <div className="sidebar-info-item">
             <span className="info-label">Job Type</span>
-            <span className="info-value">{job.details?.jobType || job.type}</span>
+            <span className="info-value">{job.workMode || "On-site"}</span>
           </div>
           <div className="sidebar-info-item">
             <span className="info-label">Experience</span>
-            <span className="info-value">{job.details?.experience || "5 Years"}</span>
+            <span className="info-value">{job.experience || "Not specified"}</span>
           </div>
           <div className="sidebar-info-item">
             <span className="info-label">Job Posted</span>
-            <span className="info-value">{job.details?.datePosted || "May 01, 2026"}</span>
+            <span className="info-value">{new Date(job.createdAt).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}</span>
           </div>
         </aside>
       </div>
@@ -159,31 +190,33 @@ export default function JobDetailPage() {
       </section>
 
       {/* Similar Jobs */}
-      <section className="similar-jobs-section">
-        <ScrollReveal direction="up">
-          <h2 className="font-sora text-[32px] font-semibold text-[#030D1A] text-left">Similar Jobs</h2>
-          <div className="similar-jobs-grid">
-            {similarJobs.map((sJob) => (
-              <div key={sJob.id} className="similar-job-card">
-                <h3 className="similar-job-title">{sJob.title}</h3>
-                <div className="similar-job-meta">
-                  {sJob.location} • {sJob.type}
+      {similarJobs.length > 0 && (
+        <section className="similar-jobs-section">
+          <ScrollReveal direction="up">
+            <h2 className="font-sora text-[32px] font-semibold text-[#030D1A] text-left">Similar Jobs</h2>
+            <div className="similar-jobs-grid">
+              {similarJobs.map((sJob) => (
+                <div key={sJob.id} className="similar-job-card">
+                  <h3 className="similar-job-title">{sJob.title}</h3>
+                  <div className="similar-job-meta">
+                    {sJob.location} • {sJob.type}
+                  </div>
+                  <div className="mb-4 text-[12px] text-[#64748B]">
+                    {new Date(sJob.createdAt).toLocaleDateString()} • {sJob._count?.applications || 0} applicants
+                  </div>
+                  <Link href={`/career/${sJob.id}`} className="see-positions-btn">
+                    See Positions
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
                 </div>
-                <div className="mb-4 text-[12px] text-[#64748B]">
-                  2 days ago • {Math.floor(Math.random() * 1000)} applicants
-                </div>
-                <Link href={`/career/${sJob.id}`} className="see-positions-btn">
-                  See Positions
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-      </section>
+              ))}
+            </div>
+          </ScrollReveal>
+        </section>
+      )}
     </div>
   );
 }

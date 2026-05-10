@@ -12,7 +12,17 @@ export async function POST(req) {
     }
 
     const body = await req.json();
-    const { title, department, location, description } = body;
+    const { 
+      title, 
+      department, 
+      location, 
+      description,
+      type,
+      workMode,
+      experience,
+      requirements,
+      qualifications
+    } = body;
 
     if (!title || !department || !location || !description) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -24,6 +34,11 @@ export async function POST(req) {
         department,
         location,
         description,
+        type: type || "Full-time",
+        workMode: workMode || "On-site",
+        experience,
+        requirements: requirements || [],
+        qualifications: qualifications || [],
         status: "OPEN",
       },
     });
