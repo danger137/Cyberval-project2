@@ -7,13 +7,13 @@
 .portfolio-hero {
   position: relative;
   width: 100%;
-  min-height: 400px;
+  min-height: 450px;
   background: linear-gradient(180deg, #030D1A 0%, #051529 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px 20px 80px;
+  padding: 140px 20px 100px;
   overflow: hidden;
 }
 
@@ -74,7 +74,7 @@
 
 .portfolio-grid-section {
   max-width: 1230px;
-  margin: -60px auto 0;
+  margin: 0 auto;
   padding: 0 20px;
   position: relative;
   z-index: 20;
@@ -199,7 +199,74 @@
   gap: 12px;
 }
 
+/* Filter Section Styles */
+.portfolio-filter-wrapper {
+  max-width: 1230px;
+  margin: -40px auto 60px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 30;
+}
+
+.portfolio-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 15px 25px;
+  border-radius: 100px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.portfolio-filter-btn {
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: transparent;
+  color: #585858;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.portfolio-filter-btn:hover {
+  color: #2E5A88;
+  background: rgba(46, 90, 136, 0.05);
+}
+
+.portfolio-filter-btn.active {
+  background: #2E5A88;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(46, 90, 136, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .portfolio-filter-container {
+    border-radius: 30px;
+    padding: 15px;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
+  .portfolio-filter-wrapper {
+    margin-top: -30px;
+    margin-bottom: 40px;
+  }
+  
+  .portfolio-filter-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
   .portfolio-hero {
     padding: 140px 20px 100px;
   }

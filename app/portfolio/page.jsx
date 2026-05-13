@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Loader2, Search } from "lucide-react";
 import ScrollReveal from "../component/ScrollReveal";
-import Footer from "../component/footer/Footer";
+import Footer from "../component/footer/footer";
 import "./portfolio.css";
 
 export default function PortfolioPage() {
@@ -30,7 +30,16 @@ export default function PortfolioPage() {
     fetchProjects();
   }, []);
 
-  const categories = ["All", ...new Set(projects.map(p => p.category).filter(Boolean))];
+  const categories = [
+    "All", 
+    "Healthcare", 
+    "Telecommunication", 
+    "Manufacturing", 
+    "Public Sector", 
+    "E-commerce", 
+    "Finance", 
+    ...new Set(projects.map(p => p.category).filter(cat => cat && !["Healthcare", "Telecommunication", "Manufacturing", "Public Sector", "E-commerce", "Finance"].includes(cat)))
+  ];
 
   const filteredProjects = filter === "All" 
     ? projects 
@@ -52,22 +61,21 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="portfolio-grid-section">
-        <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
+      <section className="portfolio-filter-wrapper">
+        <div className="portfolio-filter-container">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-full font-manrope font-semibold transition-all duration-300 ${
-                filter === cat 
-                  ? "bg-[#2E5A88] text-white shadow-lg" 
-                  : "bg-white text-[#585858] border border-gray-200 hover:border-[#2E5A88] hover:text-[#2E5A88]"
-              }`}
+              className={`portfolio-filter-btn ${filter === cat ? "active" : ""}`}
             >
               {cat}
             </button>
           ))}
         </div>
+      </section>
+
+      <section className="portfolio-grid-section">
 
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
@@ -119,7 +127,6 @@ export default function PortfolioPage() {
         )}
       </section>
 
-      <Footer />
     </div>
   );
 }

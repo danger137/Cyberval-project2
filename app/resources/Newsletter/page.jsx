@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import ScrollReveal from "../../component/ScrollReveal";
-import Footer from "../../component/footer/Footer";
+import Footer from "../../component/footer/footer";
 import { Loader2, Mail } from "lucide-react";
 
 export default function NewsletterPage() {
@@ -123,8 +123,6 @@ export default function NewsletterPage() {
             </div>
           </ScrollReveal>
         </section>
-      </div>
-      <Footer />
     </div>
   );
 }

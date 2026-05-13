@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Calendar, User, Tag, CheckCircle2, Quote, Loader2 } from "lucide-react";
 import ScrollReveal from "../../component/ScrollReveal";
-import Footer from "../../component/footer/Footer";
+import Footer from "../../component/footer/footer";
 import "./portfolio.css";
 
 export default function PortfolioDetailPage() {
@@ -161,8 +161,6 @@ export default function PortfolioDetailPage() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 }
