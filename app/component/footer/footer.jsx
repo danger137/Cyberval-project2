@@ -57,13 +57,13 @@ export default function Footer() {
             <div className="footer-content">
                 <ScrollReveal direction="up" delay={0}>
                 <div className="footer-col branding">
-                    <div className="footer-logo">
+                <Link href="/" className="footer-logo">
                     <img src="/images/Footer/icons-logo/logo.svg" alt="Cybervol Logo" />
                     <div className="footer-logo-text-group">
                         <span className="footer-logo-text">Cybervol</span>
                         <span className="footer-logo-subtext">by Rotvol Solutions</span>
                     </div>
-                    </div>
+                </Link>
                     <p className="branding-tagline">Let's align our constellations! Reach out and let the magic of collaboration illuminate our skies.</p>
                     <div className="social-links">
                     <a href="#" className="soc-link"><img src="/images/Footer/icons-logo/icon-1.svg" alt="Facebook" /></a>

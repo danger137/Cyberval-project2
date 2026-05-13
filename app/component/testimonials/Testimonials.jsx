@@ -144,6 +144,29 @@ export default function Testimonials() {
             className="testimonials-cards-row"
             ref={scrollRef}
             onScroll={handleScroll}
+            onMouseEnter={(e) => {
+              const el = scrollRef.current;
+              if (!el) return;
+              el.classList.add('is-sliding');
+              const scrollInterval = setInterval(() => {
+                if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+                  el.scrollLeft = 0;
+                } else {
+                  el.scrollLeft += 2; 
+                }
+              }, 10); 
+              el.dataset.scrollInterval = scrollInterval;
+            }}
+            onMouseLeave={() => {
+              const el = scrollRef.current;
+              if (el) {
+                el.classList.remove('is-sliding');
+                if (el.dataset.scrollInterval) {
+                  clearInterval(parseInt(el.dataset.scrollInterval));
+                  delete el.dataset.scrollInterval;
+                }
+              }
+            }}
           >
             {testimonialData.map((item) => (
               <div key={item.id} className="testimonial-card-wrapper">

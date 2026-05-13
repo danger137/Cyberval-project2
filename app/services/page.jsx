@@ -142,6 +142,29 @@ export default function ServicesPage() {
               className="services-cards" 
               ref={scrollRef}
               onScroll={handleScroll}
+              onMouseEnter={() => {
+                const el = scrollRef.current;
+                if (!el) return;
+                el.classList.add('is-sliding');
+                const scrollInterval = setInterval(() => {
+                  if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
+                    el.scrollLeft = 0;
+                  } else {
+                    el.scrollLeft += 1.5;
+                  }
+                }, 16);
+                el.dataset.scrollInterval = scrollInterval;
+              }}
+              onMouseLeave={() => {
+                const el = scrollRef.current;
+                if (el) {
+                  el.classList.remove('is-sliding');
+                  if (el.dataset.scrollInterval) {
+                    clearInterval(parseInt(el.dataset.scrollInterval));
+                    delete el.dataset.scrollInterval;
+                  }
+                }
+              }}
             >
               
               {serviceCards.map((card, index) => (

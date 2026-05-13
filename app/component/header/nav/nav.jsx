@@ -55,16 +55,16 @@ export default function Nav() {
     return (
         <nav className={`nav ${isMenuOpen ? 'mobile-nav-active' : ''} ${isLightBgPage ? 'light-bg-nav' : ''} ${scrolled ? 'nav-scrolled' : ''}`}>
             <div className="nav-container">
-                <div className="logo">
+                <Link href="/" onClick={closeAll} className="logo">
                     <img src={isLightBgPage && !scrolled ? "/lightBg-logo.png" : "/cybervol-logo.png"} alt="Cybervol" />
-                </div>
+                </Link>
 
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     {/* Mobile Header - Logo and Close Icon */}
                     <div className="mobile-menu-header">
-                        <div className="logo">
+                        <Link href="/" onClick={closeAll} className="logo">
                             <img src="/cybervol-logo.png" alt="Cybervol" className="mobile-logo-img-full" />
-                        </div>
+                        </Link>
                         <div className="close-menu-icon" onClick={closeAll}>
                             <img src="/images/header-items/nav/Vector.svg" alt="Close" />
                         </div>

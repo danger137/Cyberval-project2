@@ -6,12 +6,6 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 // Fetch the main custom form (assuming we use one main form for now)
 export async function GET() {
   try {
-    const session = await getServerSession(authOptions);
-
-    if (!session) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const form = await prisma.customForm.findFirst({
       orderBy: {
         updatedAt: "desc",

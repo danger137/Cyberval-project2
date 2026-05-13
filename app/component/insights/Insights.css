@@ -78,6 +78,11 @@
   padding: 20px 0 20px 0; /* Added 20px top padding to prevent hover clipping */
 }
 
+.insights-grid.is-sliding {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+}
+
 .insights-grid::-webkit-scrollbar {
   display: none;
 }
@@ -236,7 +241,7 @@
 
 .indicator-segment.active {
   background: #3B659C;
-  border-radius: 10px;
+  border-radius: 100px;
 }
 
 @media (min-width: 1024px) {

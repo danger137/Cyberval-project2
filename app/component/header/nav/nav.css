@@ -51,6 +51,7 @@ html {
     width: auto;
     height: 42px;
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 .logo img {

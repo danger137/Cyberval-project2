@@ -99,6 +99,12 @@
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
+  scroll-snap-type: x mandatory;
+}
+
+.industries-cards-row.is-sliding {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
 }
 
 .industries-cards-row::-webkit-scrollbar {

@@ -5,33 +5,30 @@ import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 import ScrollReveal from "../component/ScrollReveal";
 
 export default function ContactPage() {
-  const [formConfig, setFormConfig] = useState(null);
-  const [formData, setFormData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: ""
+  });
+  const [formId, setFormId] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState("idle"); // idle, success, error
 
   useEffect(() => {
-    const fetchForm = async () => {
+    // We still fetch the form ID in the background to ensure submissions work with the existing backend
+    const fetchFormId = async () => {
       try {
         const response = await fetch("/api/forms");
         const data = await response.json();
-        if (data && data.fields) {
-          setFormConfig(data);
-          // Initialize form data
-          const initialData = {};
-          data.fields.forEach(field => {
-            initialData[field.id] = "";
-          });
-          setFormData(initialData);
+        if (data && data.id) {
+          setFormId(data.id);
         }
       } catch (error) {
-        console.error("Error fetching form config:", error);
-      } finally {
-        setLoading(false);
+        console.error("Error fetching form ID:", error);
       }
     };
-    fetchForm();
+    fetchFormId();
   }, []);
 
   const handleChange = (id, value) => {
@@ -40,8 +37,6 @@ export default function ContactPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formConfig) return;
-
     setSubmitting(true);
     setStatus("idle");
 
@@ -50,14 +45,19 @@ export default function ContactPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          formId: formConfig.id,
+          formId: formId || "static-contact-form",
           data: formData
         })
       });
 
       if (response.ok) {
         setStatus("success");
-        setFormData({}); // Reset
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          message: ""
+        });
       } else {
         setStatus("error");
       }
@@ -81,11 +81,11 @@ export default function ContactPage() {
               </div>
 
               <h1 className="font-sora text-[40px] font-semibold text-[#ffffff] w-full max-w-[750px] opacity-100 min-[1025px]:leading-[57px] text-center [text-wrap:balance] mx-auto m-0 max-[1024px]:!text-[32px] max-[1024px]:!leading-[1.4] antialiased">
-                {formConfig?.name || "Let's secure your digital future"}
+                Let's secure your digital future
               </h1>
 
               <p className="font-manrope font-normal text-[18px] leading-[30px] text-[#EEEEEE] w-full max-w-[687px] opacity-100 text-center mx-auto m-0 max-[1024px]:!text-[16px] max-[1024px]:!leading-[26px] antialiased">
-                {formConfig?.description || "Share a bit about your organization and what you're looking to solve. Our team will follow up with practical next steps."}
+                Share a bit about your organization and what you're looking to solve. Our team will follow up with practical next steps.
               </p>
             </div>
           </ScrollReveal>
@@ -107,12 +107,7 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                {loading ? (
-                  <div className="flex flex-col items-center justify-center py-20 bg-[#F9FAFB] rounded-[24px] border border-[#E1E8F533]">
-                    <Loader2 className="h-8 w-8 text-[#2E5A88] animate-spin mb-4" />
-                    <p className="text-zinc-500 font-medium">Loading form configuration...</p>
-                  </div>
-                ) : status === "success" ? (
+                {status === "success" ? (
                   <div className="flex flex-col items-center justify-center py-20 bg-emerald-50 rounded-[24px] border border-emerald-200 text-center px-10">
                     <CheckCircle2 className="h-16 w-16 text-emerald-500 mb-6" />
                     <h3 className="text-2xl font-bold text-[#030D1A] mb-2">Message Sent Successfully!</h3>
@@ -134,32 +129,64 @@ export default function ContactPage() {
                     )}
 
                     <div className="grid grid-cols-1 gap-[20px]">
-                      {formConfig?.fields.map((field) => (
-                        <div key={field.id} className="flex flex-col gap-[8px]">
-                          <label className="text-[14px] font-bold text-[#030D1A] font-manrope">
-                            {field.label}:
-                          </label>
-                          
-                          {field.type === "textarea" ? (
-                            <textarea 
-                              required
-                              placeholder={field.placeholder || "Write here"}
-                              value={formData[field.id] || ""}
-                              onChange={(e) => handleChange(field.id, e.target.value)}
-                              className="h-[150px] p-[20px] rounded-[12px] bg-white border border-[#EFEFEF] outline-none font-manrope text-[#030D1A] focus:border-[#2E5A88] resize-none placeholder:text-[#A4A4A4] transition-all"
-                            />
-                          ) : (
-                            <input 
-                              required
-                              type={field.type}
-                              placeholder={field.placeholder || "Write here"}
-                              value={formData[field.id] || ""}
-                              onChange={(e) => handleChange(field.id, e.target.value)}
-                              className="h-[56px] px-[20px] rounded-[12px] bg-white border border-[#EFEFEF] outline-none font-manrope text-[#030D1A] focus:border-[#2E5A88] placeholder:text-[#A4A4A4] transition-all"
-                            />
-                          )}
-                        </div>
-                      ))}
+                      {/* First Name */}
+                      <div className="flex flex-col gap-[8px]">
+                        <label className="text-[14px] font-bold text-[#030D1A] font-manrope">
+                          First Name:
+                        </label>
+                        <input 
+                          required
+                          type="text"
+                          placeholder="Enter text..."
+                          value={formData.firstName}
+                          onChange={(e) => handleChange("firstName", e.target.value)}
+                          className="h-[56px] px-[20px] rounded-[12px] bg-white border border-[#EFEFEF] outline-none font-manrope text-[#030D1A] focus:border-[#2E5A88] placeholder:text-[#A4A4A4] transition-all"
+                        />
+                      </div>
+
+                      {/* Last Name */}
+                      <div className="flex flex-col gap-[8px]">
+                        <label className="text-[14px] font-bold text-[#030D1A] font-manrope">
+                          Last Name:
+                        </label>
+                        <input 
+                          required
+                          type="text"
+                          placeholder="Enter text..."
+                          value={formData.lastName}
+                          onChange={(e) => handleChange("lastName", e.target.value)}
+                          className="h-[56px] px-[20px] rounded-[12px] bg-white border border-[#EFEFEF] outline-none font-manrope text-[#030D1A] focus:border-[#2E5A88] placeholder:text-[#A4A4A4] transition-all"
+                        />
+                      </div>
+
+                      {/* Email */}
+                      <div className="flex flex-col gap-[8px]">
+                        <label className="text-[14px] font-bold text-[#030D1A] font-manrope">
+                          Email:
+                        </label>
+                        <input 
+                          required
+                          type="email"
+                          placeholder="Enter text..."
+                          value={formData.email}
+                          onChange={(e) => handleChange("email", e.target.value)}
+                          className="h-[56px] px-[20px] rounded-[12px] bg-white border border-[#EFEFEF] outline-none font-manrope text-[#030D1A] focus:border-[#2E5A88] placeholder:text-[#A4A4A4] transition-all"
+                        />
+                      </div>
+
+                      {/* Message */}
+                      <div className="flex flex-col gap-[8px]">
+                        <label className="text-[14px] font-bold text-[#030D1A] font-manrope">
+                          Message:
+                        </label>
+                        <textarea 
+                          required
+                          placeholder="Enter text..."
+                          value={formData.message}
+                          onChange={(e) => handleChange("message", e.target.value)}
+                          className="h-[150px] p-[20px] rounded-[12px] bg-white border border-[#EFEFEF] outline-none font-manrope text-[#030D1A] focus:border-[#2E5A88] resize-none placeholder:text-[#A4A4A4] transition-all"
+                        />
+                      </div>
                     </div>
 
                     <div className="flex justify-end mt-[10px]">

@@ -113,14 +113,9 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
+    text-decoration: none;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
 
 
 .footer-logo-text-group {

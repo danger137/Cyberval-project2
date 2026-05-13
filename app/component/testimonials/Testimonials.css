@@ -91,6 +91,11 @@
   scroll-snap-type: x mandatory;
 }
 
+.testimonials-cards-row.is-sliding {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+}
+
 .testimonials-cards-row::-webkit-scrollbar {
   display: none;
 }

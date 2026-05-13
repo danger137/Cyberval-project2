@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Loader2, Search } from "lucide-react";
 import ScrollReveal from "../component/ScrollReveal";
-import Footer from "../component/footer/footer";
+
 import "./portfolio.css";
 
 export default function PortfolioPage() {
