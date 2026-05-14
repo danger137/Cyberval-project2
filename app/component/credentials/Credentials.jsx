@@ -1,26 +1,73 @@
 "use client";
 import { useState } from "react";
-import ScrollReveal from "../ScrollReveal";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import ScrollReveal from "../ScrollReveal";
 import "./Credentials.css";
 
+const certifications = [
+  {
+    id: 1,
+    title: <><strong>NDPA</strong> Trust Mark Verification</>,
+    subtitle: "Scan to verify our NDPA compliance",
+    logo: "/ndpc-logo.png",
+    qr: "/ndpc-qr-code.png",
+    link: "#",
+    label: "NDPA CERTIFIED"
+  },
+  {
+    id: 2,
+    title: <><strong>ISO 27001</strong> Information Security</>,
+    subtitle: "Verified security management standards",
+    logo: "/ndpc-logo.png", // Using same logo as placeholder if specific ISO logo not available
+    qr: "/ndpc-qr-code.png",
+    link: "#",
+    label: "ISO CERTIFIED"
+  },
+  {
+    id: 3,
+    title: <><strong>GDPR</strong> Compliance Standards</>,
+    subtitle: "Global data protection excellence",
+    logo: "/ndpc-logo.png", // Using same logo as placeholder
+    qr: "/ndpc-qr-code.png",
+    link: "#",
+    label: "GDPR COMPLIANT"
+  }
+];
+
 export default function Credentials() {
-  const [activeQr, setActiveQr] = useState(0);
-  const qrCodes = [
-    { src: "/ndpc-qr-code.png", alt: "NDPA Trust Mark QR Code 1" },
-    { src: "/ndpc-qr-code.png", alt: "NDPA Trust Mark QR Code 2" },
-    { src: "/ndpc-qr-code.png", alt: "NDPA Trust Mark QR Code 3" },
-  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  const handlePrev = (e) => {
-    e.preventDefault();
-    setActiveQr((prev) => (prev === 0 ? qrCodes.length - 1 : prev - 1));
+  const nextSlide = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % certifications.length);
   };
 
-  const handleNext = (e) => {
-    e.preventDefault();
-    setActiveQr((prev) => (prev === qrCodes.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + certifications.length) % certifications.length);
   };
+
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 50 : -50,
+      opacity: 0
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 50 : -50,
+      opacity: 0
+    })
+  };
+
+  const currentCert = certifications[currentIndex];
+
   return (
     <section className="credentials-section">
       <div className="credentials-container">
@@ -37,47 +84,76 @@ export default function Credentials() {
                 Our team has global certifications, guaranteeing top cybersecurity standards and excellent data protection.
               </p>
               <div className="company-cert-wrapper">
-                <span className="company-cert-label">COMPANY CERTIFICATION</span>
+                <div className="company-cert-header">
+                  <span className="company-cert-label">COMPANY CERTIFICATION</span>
+                  <div className="slider-controls">
+                    <button onClick={prevSlide} className="slider-arrow" aria-label="Previous certification">
+                      <ChevronLeft size={20} />
+                    </button>
+                    <div className="slider-dots">
+                      {certifications.map((_, idx) => (
+                        <div 
+                          key={idx} 
+                          className={`slider-dot ${idx === currentIndex ? 'active' : ''}`}
+                          onClick={() => {
+                            setDirection(idx > currentIndex ? 1 : -1);
+                            setCurrentIndex(idx);
+                          }}
+                        />
+                      ))}
+                    </div>
+                    <button onClick={nextSlide} className="slider-arrow" aria-label="Next certification">
+                      <ChevronRight size={20} />
+                    </button>
+                  </div>
+                </div>
+
                 <div className="credentials-left-visual">
                   <div className="ndpa-trust-card">
-                    <div className="ndpa-trust-card__info">
-                      <div className="ndpa-trust-card__top">
-                        <img
-                          src="/ndpc-logo.png"
-                          alt="NDPC - Nigeria Data Protection Commission"
-                          className="ndpa-trust-card__logo"
-                        />
-                      </div>
-                      <div className="ndpa-trust-card__body">
-                        <h3 className="ndpa-trust-card__title">
-                          <strong>NDPA</strong> Trust Mark Verification
-                        </h3>
-                        <p className="ndpa-trust-card__subtitle">
-                          Scan to verify our NDPA compliance
-                        </p>
-                        <a href="#" className="ndpa-trust-card__link">
-                          Or click to verify
-                        </a>
-                      </div>
-                    </div>
-                    <div className="ndpa-trust-card__qr-wrapper">
-                      <button onClick={handlePrev} className="qr-nav-btn qr-prev" aria-label="Previous QR code">
-                        <ChevronLeft size={20} strokeWidth={2.5} />
-                      </button>
-                      
-                      <div className="ndpa-trust-card__qr-carousel">
-                        <div className="ndpa-trust-card__qr" key={activeQr}>
-                          <img
-                            src={qrCodes[activeQr].src}
-                            alt={qrCodes[activeQr].alt}
-                          />
+                    <AnimatePresence initial={false} custom={direction} mode="wait">
+                      <motion.div
+                        key={currentIndex}
+                        custom={direction}
+                        variants={variants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        transition={{
+                          x: { type: "spring", stiffness: 300, damping: 30 },
+                          opacity: { duration: 0.2 }
+                        }}
+                        className="ndpa-trust-card-content"
+                      >
+                        <div className="ndpa-trust-card__info">
+                          <div className="ndpa-trust-card__top">
+                            <img
+                              src={currentCert.logo}
+                              alt={currentCert.label}
+                              className="ndpa-trust-card__logo"
+                            />
+                          </div>
+                          <div className="ndpa-trust-card__body">
+                            <h3 className="ndpa-trust-card__title">
+                              {currentCert.title}
+                            </h3>
+                            <p className="ndpa-trust-card__subtitle">
+                              {currentCert.subtitle}
+                            </p>
+                            <a href={currentCert.link} className="ndpa-trust-card__link">
+                              Or click to verify
+                            </a>
+                          </div>
                         </div>
-                      </div>
-
-                      <button onClick={handleNext} className="qr-nav-btn qr-next" aria-label="Next QR code">
-                        <ChevronRight size={20} strokeWidth={2.5} />
-                      </button>
-                    </div>
+                        <div className="ndpa-trust-card__qr-wrapper">
+                          <div className="ndpa-trust-card__qr">
+                            <img
+                              src={currentCert.qr}
+                              alt={`${currentCert.label} QR Code`}
+                            />
+                          </div>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
               </div>
