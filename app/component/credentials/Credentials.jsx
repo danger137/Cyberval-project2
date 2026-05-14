@@ -1,8 +1,26 @@
 "use client";
+import { useState } from "react";
 import ScrollReveal from "../ScrollReveal";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import "./Credentials.css";
 
 export default function Credentials() {
+  const [activeQr, setActiveQr] = useState(0);
+  const qrCodes = [
+    { src: "/ndpc-qr-code.png", alt: "NDPA Trust Mark QR Code 1" },
+    { src: "/ndpc-qr-code.png", alt: "NDPA Trust Mark QR Code 2" },
+    { src: "/ndpc-qr-code.png", alt: "NDPA Trust Mark QR Code 3" },
+  ];
+
+  const handlePrev = (e) => {
+    e.preventDefault();
+    setActiveQr((prev) => (prev === 0 ? qrCodes.length - 1 : prev - 1));
+  };
+
+  const handleNext = (e) => {
+    e.preventDefault();
+    setActiveQr((prev) => (prev === qrCodes.length - 1 ? 0 : prev + 1));
+  };
   return (
     <section className="credentials-section">
       <div className="credentials-container">
@@ -43,12 +61,22 @@ export default function Credentials() {
                       </div>
                     </div>
                     <div className="ndpa-trust-card__qr-wrapper">
-                      <div className="ndpa-trust-card__qr">
-                        <img
-                          src="/ndpc-qr-code.png"
-                          alt="NDPA Trust Mark QR Code"
-                        />
+                      <button onClick={handlePrev} className="qr-nav-btn qr-prev" aria-label="Previous QR code">
+                        <ChevronLeft size={20} strokeWidth={2.5} />
+                      </button>
+                      
+                      <div className="ndpa-trust-card__qr-carousel">
+                        <div className="ndpa-trust-card__qr" key={activeQr}>
+                          <img
+                            src={qrCodes[activeQr].src}
+                            alt={qrCodes[activeQr].alt}
+                          />
+                        </div>
                       </div>
+
+                      <button onClick={handleNext} className="qr-nav-btn qr-next" aria-label="Next QR code">
+                        <ChevronRight size={20} strokeWidth={2.5} />
+                      </button>
                     </div>
                   </div>
                 </div>
